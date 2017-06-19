@@ -1,0 +1,19 @@
+web:
+  build: .
+  ports:
+    - "80:8080"
+  volumes:
+    - .:/app
+  links:
+    - db
+  environment:
+    MONGODB_URI: mongodb://db/app
+    NODE_ENV: production
+    SESSION_SECRET: mean-prueba-secret
+
+db:
+  image: mongo:latest
+  volumes:
+    - ./data/db:/data/db
+  ports:
+    - "27016:27017"

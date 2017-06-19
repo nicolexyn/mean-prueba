@@ -1,0 +1,11 @@
+app/node_modules
+app/public
+app/.tmp
+app/.idea
+app/client/bower_components
+app/client/index.html
+app/dist
+app//server/config/local.env.js
+app/npm-debug.log
+app/coverage
+app/data
