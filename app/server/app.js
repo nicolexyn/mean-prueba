@@ -10,6 +10,8 @@ mongoose.Promise = require('bluebird');
 import config from './config/environment';
 import http from 'http';
 import seedDatabaseIfNeeded from './config/seed';
+import swaggerJSDoc from 'swagger-jsdoc';
+import path from 'path';
 
 // Connect to MongoDB
 mongoose.connect(config.mongo.uri, config.mongo.options);
@@ -20,6 +22,41 @@ mongoose.connection.on('error', function(err) {
 
 // Setup server
 var app = express();
+
+/************* Start Swagger *******************/
+
+app.use(express.static(path.join(__dirname, '/public')));
+
+// swagger definition
+var swaggerD = {
+  info: {
+    title: 'Node Swagger API',
+    version: '1.0.0',
+    description: 'Demonstrating how to describe a RESTful API with Swagger',
+  },
+  host: 'localhost:3000',
+  basePath: '/',
+};
+
+// options for the swagger docs
+var options = {
+  // import swaggerDefinitions
+  swaggerDefinition: swaggerD,
+  // path to the API docs
+  apis: [path.join(`${__dirname}/api/thing/index.js`)],
+};
+
+// initialize swagger-jsdoc
+var swaggerSpec = swaggerJSDoc(options);
+
+// serve swagger
+app.get('/swagger.json', function(req, res) {
+  res.setHeader('Content-Type', 'application/json');
+  res.send(swaggerSpec);
+});
+
+/************* End Swagger *******************/
+
 var server = http.createServer(app);
 require('./config/express').default(app);
 require('./routes').default(app);
