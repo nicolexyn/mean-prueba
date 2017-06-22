@@ -4,44 +4,5298 @@
  */
 
 'use strict';
-import Thing from '../api/thing/thing.model';
+import Hotel from '../api/hotel/hotel.model';
 import config from './environment/';
 
 export default function seedDatabaseIfNeeded() {
-  if(config.seedDB) {
-    Thing.find({}).remove()
-      .then(() => {
-        let thing = Thing.create({
-          name: 'Development Tools',
-          info: 'Integration with popular tools such as Webpack, Gulp, Babel, TypeScript, Karma, '
-                + 'Mocha, ESLint, Node Inspector, Livereload, Protractor, Pug, '
-                + 'Stylus, Sass, and Less.'
-        }, {
-          name: 'Server and Client integration',
-          info: 'Built with a powerful and fun stack: MongoDB, Express, '
-                + 'AngularJS, and Node.'
-        }, {
-          name: 'Smart Build System',
-          info: 'Build system ignores `spec` files, allowing you to keep '
-                + 'tests alongside code. Automatic injection of scripts and '
-                + 'styles into your index.html'
-        }, {
-          name: 'Modular Structure',
-          info: 'Best practice client and server structures allow for more '
-                + 'code reusability and maximum scalability'
-        }, {
-          name: 'Optimized Build',
-          info: 'Build process packs up your templates as a single JavaScript '
-                + 'payload, minifies your scripts/css/images, and rewrites asset '
-                + 'names for caching.'
-        }, {
-          name: 'Deployment Ready',
-          info: 'Easily deploy your app to Heroku or Openshift with the heroku '
-                + 'and openshift subgenerators'
-        });
-        return thing;
-      })
-      .then(() => console.log('finished populating things'))
-      .catch(err => console.log('error populating things', err));
-  }
+    if (config.seedDB) {
+        Hotel.find({}).remove()
+            .then(() => {
+                let hotel = Hotel.create({
+                    "id": "48998",
+                    "description": "<p><b>Ubicación del establecimiento</b> <br />Este hotel se encuentra cerca de Plaza Mayor y de Museo del Prado.  En Regente gozarás de una ubicación céntrica en Madrid, a pocos pasos de Plaza del Carmen y Plaza de Callao.</p><p><b>Habitaciones</b> <br />Te sentirás como en tu propia casa en una de las 153 habitaciones con aire acondicionado. El baño privado con ducha está provisto de bidé y secador de pelo. Las comodidades incluyen caja fuerte, escritorio y teléfono.</p><p><b>Servicios</b> <br />Recibe los cuidados que te mereces gracias al servicio de masajes o aprovecha instalaciones recreativas como centro de bienestar y muchas más.</p><p><b>Para comer</b> <br />Tienes una cafetería a tu disposición para comer algo, pero si lo prefieres, puedes llamar al servicio de habitaciones con horario limitado de este hotel. Disfruta de un detalle de bienvenida gratuito organizado por la recepción todos los días, donde podrás conocer a otros huéspedes mientras tomas un bocado. Apaga la sed con tu bebida favorita en el bar o lounge.</p><p><b>Servicios de negocios y otros</b> <br />Tendrás centro de negocios, periódicos gratuitos en el vestíbulo y servicio de tintorería a tu disposición. ¿Estás organizando un evento en Madrid? En este hotel tienes a tu disposición 100 metros cuadrados de espacio con centro de conferencias y una sala de reuniones.</p>",
+                    "name": "Regente",
+                    "geo_position": {
+                        "latitude": 40.41968,
+                        "longitude": -3.70424
+                    },
+                    "images": [{
+                        "id": "21943535",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_69_b.jpg"
+                    }, {
+                        "id": "21943536",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_38_b.jpg"
+                    }, {
+                        "id": "21943540",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_56_b.jpg"
+                    }, {
+                        "id": "21943541",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_59_b.jpg"
+                    }, {
+                        "id": "21943542",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_60_b.jpg"
+                    }, {
+                        "id": "21943543",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_61_b.jpg"
+                    }, {
+                        "id": "21943544",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_64_b.jpg"
+                    }, {
+                        "id": "21943545",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_65_b.jpg"
+                    }, {
+                        "id": "21943546",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_68_b.jpg"
+                    }, {
+                        "id": "21943547",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_71_b.jpg"
+                    }, {
+                        "id": "21943548",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_75_b.jpg"
+                    }, {
+                        "id": "21943549",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_78_b.jpg"
+                    }, {
+                        "id": "21943551",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_77_b.jpg"
+                    }, {
+                        "id": "21943552",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_70_b.jpg"
+                    }, {
+                        "id": "21943553",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_73_b.jpg"
+                    }, {
+                        "id": "21943554",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_76_b.jpg"
+                    }, {
+                        "id": "21943555",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_72_b.jpg"
+                    }, {
+                        "id": "21943556",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_79_b.jpg"
+                    }, {
+                        "id": "21943557",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_85_b.jpg"
+                    }, {
+                        "id": "21943558",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_88_b.jpg"
+                    }, {
+                        "id": "21943559",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_90_b.jpg"
+                    }, {
+                        "id": "21943560",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_86_b.jpg"
+                    }, {
+                        "id": "21943561",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_87_b.jpg"
+                    }, {
+                        "id": "21943562",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_96_b.jpg"
+                    }, {
+                        "id": "21943563",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_99_b.jpg"
+                    }, {
+                        "id": "21943564",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_101_b.jpg"
+                    }, {
+                        "id": "21943565",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_105_b.jpg"
+                    }, {
+                        "id": "21943566",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_108_b.jpg"
+                    }, {
+                        "id": "21943567",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_94_b.jpg"
+                    }, {
+                        "id": "21943568",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_103_b.jpg"
+                    }, {
+                        "id": "21943569",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_106_b.jpg"
+                    }, {
+                        "id": "21943570",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_113_b.jpg"
+                    }, {
+                        "id": "21943571",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_116_b.jpg"
+                    }, {
+                        "id": "21943572",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_117_b.jpg"
+                    }, {
+                        "id": "21943573",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_118_b.jpg"
+                    }, {
+                        "id": "21943574",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_133_b.jpg"
+                    }, {
+                        "id": "21943575",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_134_b.jpg"
+                    }, {
+                        "id": "21943576",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_104_b.jpg"
+                    }, {
+                        "id": "21943577",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_107_b.jpg"
+                    }, {
+                        "id": "21943578",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_110_b.jpg"
+                    }, {
+                        "id": "21943579",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_119_b.jpg"
+                    }, {
+                        "id": "21943580",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_122_b.jpg"
+                    }, {
+                        "id": "21943581",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_125_b.jpg"
+                    }, {
+                        "id": "21943582",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_130_b.jpg"
+                    }, {
+                        "id": "21943583",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_135_b.jpg"
+                    }, {
+                        "id": "21943584",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_93_b.jpg"
+                    }, {
+                        "id": "21943585",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_100_b.jpg"
+                    }, {
+                        "id": "21943586",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_102_b.jpg"
+                    }, {
+                        "id": "21943587",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_109_b.jpg"
+                    }, {
+                        "id": "21943589",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_115_b.jpg"
+                    }, {
+                        "id": "21943590",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_120_b.jpg"
+                    }, {
+                        "id": "21943593",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_114_b.jpg"
+                    }, {
+                        "id": "21943594",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_123_b.jpg"
+                    }, {
+                        "id": "21943595",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_126_b.jpg"
+                    }, {
+                        "id": "21943596",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_136_b.jpg"
+                    }, {
+                        "id": "21943597",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_140_b.jpg"
+                    }, {
+                        "id": "21943598",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/597669_143_b.jpg"
+                    }, {
+                        "id": "37522992",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/2e792198_b.jpg"
+                    }, {
+                        "id": "37522993",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/2ee64866_b.jpg"
+                    }, {
+                        "id": "37522994",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/3fa6bf66_b.jpg"
+                    }, {
+                        "id": "37522995",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/78d8ba1e_b.jpg"
+                    }, {
+                        "id": "37522996",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/6e7dd591_b.jpg"
+                    }, {
+                        "id": "37522997",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/a3184d6e_b.jpg"
+                    }, {
+                        "id": "37522998",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/f55c144e_b.jpg"
+                    }, {
+                        "id": "37522999",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/8880e341_b.jpg"
+                    }, {
+                        "id": "37523000",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/a4f78d44_b.jpg"
+                    }, {
+                        "id": "37523001",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/d13ca597_b.jpg"
+                    }, {
+                        "id": "37523002",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/fd18e2e9_b.jpg"
+                    }, {
+                        "id": "37523003",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/bb1b99d0_b.jpg"
+                    }, {
+                        "id": "37523004",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/ccf3b459_b.jpg"
+                    }, {
+                        "id": "37523005",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/d0e93c72_b.jpg"
+                    }, {
+                        "id": "37523006",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/e6096bbf_b.jpg"
+                    }, {
+                        "id": "37523007",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/f184993c_b.jpg"
+                    }, {
+                        "id": "37523008",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/0809f933_b.jpg"
+                    }, {
+                        "id": "37523009",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/2b98584c_b.jpg"
+                    }, {
+                        "id": "37523010",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/fd90f448_b.jpg"
+                    }, {
+                        "id": "37523011",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/ffe3843f_b.jpg"
+                    }, {
+                        "id": "37523012",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/8053a391_b.jpg"
+                    }, {
+                        "id": "40421770",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/b7c96bd4_b.jpg"
+                    }, {
+                        "id": "40421771",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/f1e67fbc_b.jpg"
+                    }, {
+                        "id": "40421772",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/62848add_b.jpg"
+                    }, {
+                        "id": "40421773",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/8b889a9f_b.jpg"
+                    }, {
+                        "id": "40421774",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/8bdd9dea_b.jpg"
+                    }, {
+                        "id": "40421775",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/94f4798d_b.jpg"
+                    }, {
+                        "id": "40421776",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/96085afd_b.jpg"
+                    }, {
+                        "id": "40421777",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/9f9a843e_b.jpg"
+                    }, {
+                        "id": "40421778",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/ab06b760_b.jpg"
+                    }, {
+                        "id": "40421779",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/e38bce9a_b.jpg"
+                    }, {
+                        "id": "40421780",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/eee17916_b.jpg"
+                    }, {
+                        "id": "40421781",
+                        "url": "//images.almundo.com/201/1000000/600000/597700/597669/f4d75b6e_b.jpg"
+                    }],
+                    "amenities": [{
+                        "code": "coffee-shop",
+                        "description": "tienda de café"
+                    }, {
+                        "code": "sheets",
+                        "description": "sábanas"
+                    }, {
+                        "code": "meeting-rooms",
+                        "description": "sala de reuniones"
+                    }, {
+                        "code": "bar",
+                        "description": "bar"
+                    }, {
+                        "code": "spa",
+                        "description": "spa"
+                    }, {
+                        "code": "check-in",
+                        "description": "check-in 24hs"
+                    }, {
+                        "code": "television",
+                        "description": "televisión"
+                    }, {
+                        "code": "tours-ticket-assistance",
+                        "description": "asistencia turística"
+                    }, {
+                        "code": "internet",
+                        "description": "internet"
+                    }, {
+                        "code": "laundry-facilities",
+                        "description": "lavanderia"
+                    }, {
+                        "code": "housekeeping",
+                        "description": "servicio de limpieza"
+                    }],
+                    "stars": 3,
+                    "recommended": true,
+                    "checkin_time": "",
+                    "checkout_time": "",
+                    "hotel_chain": "",
+                    "rating_summary": {},
+                    "rate": {
+                        "id": "2bc12f78-7608-4fb9-9a6d-a11875c6c7f0",
+                        "price": {
+                            "per_night": 2335.88,
+                            "total": 16351.13025,
+                            "discount": {
+                                "amount": 0,
+                                "percentage": 0
+                            },
+                            "currency": {
+                                "id": 2654210,
+                                "code": "ARS",
+                                "mask": "$",
+                                "ratio": 16.25
+                            },
+                            "price_without_discount": 16351.13025,
+                            "price_per_night_per_room": 2335.88,
+                            "total_with_operation_cost": 17168.6867625,
+                            "charges": [{
+                                "amount": 412.32983675722477,
+                                "type": "VAT",
+                                "description": "VAT",
+                                "included": true
+                            }],
+                            "show_amount": 13513.3307852591,
+                            "show_amount_per_night_per_room": 1930.48,
+                            "show_amount_with_operation_cost": 14188.997324522055,
+                            "show_amount_per_night_per_room_without_discount": 1930.48,
+                            "show_amount_without_discount": 13513.330785259102
+                        },
+                        "smoking_preference": {
+                            "code": ""
+                        },
+                        "meal_plan": {
+                            "code": "ROOM_ONLY",
+                            "description": "solo la habitación"
+                        },
+                        "payment_method": {
+                            "code": "PREPAID",
+                            "description": "Paga en cuotas"
+                        },
+                        "refundable": false,
+                        "promotion": "",
+                        "status": "UNCHECKED",
+                        "cancel_policies": [],
+                        "free_cancel_date": {
+                            "date": 0,
+                            "monthNumber": 0,
+                            "year": 0,
+                            "plain": ""
+                        }
+                    },
+                    "payment_methods": [{
+                        "code": "PREPAID",
+                        "description": "Paga en cuotas"
+                    }, {
+                        "code": "PAY_AT_DESTINATION",
+                        "description": "Paga en destino"
+                    }],
+                    "slug": "regente-48998",
+                    "defaultPaymentMethod": "PREPAID"
+                }, {
+                    "id": "76921",
+                    "description": "<p><b>Ubicación del establecimiento</b> <br />En Petit Palace Plaza España gozarás de una ubicación céntrica en Madrid, a pocos pasos de Plaza de Santo Domingo y Teatro Rialto.  Este hotel de 4 estrellas se encuentra cerca de lugares de interés como: Plaza Mayor y Museo del Prado.</p><p><b>Habitaciones</b> <br />Te sentirás como en tu propia casa en una de las 57 habitaciones con aire acondicionado, iPad y televisor LCD. Para los momentos de ocio, tienes un televisor con canales digitales y conexión a Internet por cable y wifi gratis. El baño privado con ducha está provisto de artículos de higiene personal gratuitos y secador de pelo. Las comodidades incluyen caja fuerte (cabe un portátil), escritorio y teléfono.</p><p><b>Servicios</b> <br />Aprovecha los prácticos servicios que se te ofrecen, como conexión a Internet wifi gratis, servicios de conserjería o servicio de canguro (de pago).</p><p><b>Para comer</b> <br />Tienes una cafetería a tu disposición para comer algo, pero si lo prefieres, puedes llamar al servicio de habitaciones con horario limitado de este hotel.</p><p><b>Servicios de negocios y otros</b> <br />Tendrás conexión a Internet de alta velocidad por cable (gratuita), centro de negocios abierto las 24 horas y periódicos gratuitos en el vestíbulo a tu disposición.</p>",
+                    "name": "Petit Palace Plaza España",
+                    "geo_position": {
+                        "latitude": 40.42088,
+                        "longitude": -3.70824
+                    },
+                    "images": [{
+                        "id": "34824701",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/1466559_113_b.jpg"
+                    }, {
+                        "id": "34824703",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/1466559_93_b.jpg"
+                    }, {
+                        "id": "34824705",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/1466559_109_b.jpg"
+                    }, {
+                        "id": "34824706",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/1466559_118_b.jpg"
+                    }, {
+                        "id": "34824709",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/1466559_126_b.jpg"
+                    }, {
+                        "id": "34824710",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/1466559_110_b.jpg"
+                    }, {
+                        "id": "34824712",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/1466559_131_b.jpg"
+                    }, {
+                        "id": "34824713",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/1466559_132_b.jpg"
+                    }, {
+                        "id": "36158832",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/431db3c9_b.jpg"
+                    }, {
+                        "id": "36158834",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/c2000776_b.jpg"
+                    }, {
+                        "id": "36158835",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/eeaa627d_b.jpg"
+                    }, {
+                        "id": "36158837",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/190a348a_b.jpg"
+                    }, {
+                        "id": "36158838",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/93b6ab80_b.jpg"
+                    }, {
+                        "id": "36158839",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/d3de29fb_b.jpg"
+                    }, {
+                        "id": "37470640",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/05ded75a_b.jpg"
+                    }, {
+                        "id": "39218308",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/a00a49ae_b.jpg"
+                    }, {
+                        "id": "39218309",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/3a7b5db3_b.jpg"
+                    }, {
+                        "id": "39218310",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/83241085_b.jpg"
+                    }, {
+                        "id": "39218311",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/deb381c5_b.jpg"
+                    }, {
+                        "id": "39218312",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/5ac773b8_b.jpg"
+                    }, {
+                        "id": "39218313",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/abacdcac_b.jpg"
+                    }, {
+                        "id": "39218314",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/cc392d6f_b.jpg"
+                    }, {
+                        "id": "39218315",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/46fcde4b_b.jpg"
+                    }, {
+                        "id": "39218316",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/72d7a4d0_b.jpg"
+                    }, {
+                        "id": "39218317",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/95763c1d_b.jpg"
+                    }, {
+                        "id": "39218318",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/26722ed2_b.jpg"
+                    }, {
+                        "id": "39218319",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/625b8796_b.jpg"
+                    }, {
+                        "id": "39218320",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/40819fac_b.jpg"
+                    }, {
+                        "id": "39218321",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/d5986605_b.jpg"
+                    }, {
+                        "id": "39218322",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/eba78419_b.jpg"
+                    }, {
+                        "id": "39218327",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/0a485860_b.jpg"
+                    }, {
+                        "id": "39218328",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/910d2005_b.jpg"
+                    }, {
+                        "id": "39218329",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/0224a12d_b.jpg"
+                    }, {
+                        "id": "39218330",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/210ab47e_b.jpg"
+                    }, {
+                        "id": "39218331",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/25e779cc_b.jpg"
+                    }, {
+                        "id": "39218332",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/39303395_b.jpg"
+                    }, {
+                        "id": "39218333",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/4ea61b81_b.jpg"
+                    }, {
+                        "id": "39218334",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/50c44313_b.jpg"
+                    }, {
+                        "id": "39218335",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/73fb4c5a_b.jpg"
+                    }, {
+                        "id": "39218336",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/7d548403_b.jpg"
+                    }, {
+                        "id": "39218337",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/8351637f_b.jpg"
+                    }, {
+                        "id": "39218338",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/8cf045c1_b.jpg"
+                    }, {
+                        "id": "39218339",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/a7f3bea2_b.jpg"
+                    }, {
+                        "id": "39218340",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/d5ec7727_b.jpg"
+                    }, {
+                        "id": "39218341",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/eafa0b72_b.jpg"
+                    }, {
+                        "id": "39218342",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/fa18ae19_b.jpg"
+                    }, {
+                        "id": "39218343",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/9d35bfd9_b.jpg"
+                    }, {
+                        "id": "39218344",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/c17c2c85_b.jpg"
+                    }, {
+                        "id": "39218345",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/ffee3288_b.jpg"
+                    }, {
+                        "id": "39352492",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/142c76af_b.jpg"
+                    }, {
+                        "id": "39352493",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/2d13697e_b.jpg"
+                    }, {
+                        "id": "39352494",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/513e6558_b.jpg"
+                    }, {
+                        "id": "39352495",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/65488aca_b.jpg"
+                    }, {
+                        "id": "39352496",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/7eedb4d3_b.jpg"
+                    }, {
+                        "id": "39352497",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/835583ab_b.jpg"
+                    }, {
+                        "id": "39352498",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/8b72c61a_b.jpg"
+                    }, {
+                        "id": "39352499",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/d5ebe4d8_b.jpg"
+                    }, {
+                        "id": "39352500",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/e90a0844_b.jpg"
+                    }, {
+                        "id": "39352501",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/f566421c_b.jpg"
+                    }, {
+                        "id": "41763998",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/1466559_127_b.jpg"
+                    }, {
+                        "id": "41763999",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/1466559_91_b.jpg"
+                    }, {
+                        "id": "41764000",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/1466559_89_b.jpg"
+                    }, {
+                        "id": "41764001",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/1466559_102_b.jpg"
+                    }, {
+                        "id": "41764002",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/1466559_97_b.jpg"
+                    }, {
+                        "id": "41764003",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/1466559_106_b.jpg"
+                    }, {
+                        "id": "41764004",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/1466559_112_b.jpg"
+                    }, {
+                        "id": "41764005",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/1466559_114_b.jpg"
+                    }, {
+                        "id": "41764006",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/1466559_122_b.jpg"
+                    }, {
+                        "id": "41764007",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/1466559_121_b.jpg"
+                    }, {
+                        "id": "41764008",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/61e1de30_b.jpg"
+                    }, {
+                        "id": "41764009",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/75eaf86e_b.jpg"
+                    }, {
+                        "id": "41764010",
+                        "url": "//images.almundo.com/201/2000000/1470000/1466600/1466559/b9dc6719_b.jpg"
+                    }],
+                    "amenities": [{
+                        "code": "coffee-shop",
+                        "description": "tienda de café"
+                    }, {
+                        "code": "business-center",
+                        "description": "centro de negocios"
+                    }, {
+                        "code": "safety-box",
+                        "description": "caja de seguridad"
+                    }, {
+                        "code": "check-in",
+                        "description": "check-in 24hs"
+                    }, {
+                        "code": "television",
+                        "description": "televisión"
+                    }, {
+                        "code": "tours-ticket-assistance",
+                        "description": "asistencia turística"
+                    }, {
+                        "code": "internet",
+                        "description": "internet"
+                    }, {
+                        "code": "laundry-facilities",
+                        "description": "lavanderia"
+                    }, {
+                        "code": "housekeeping",
+                        "description": "servicio de limpieza"
+                    }],
+                    "stars": 4,
+                    "recommended": true,
+                    "checkin_time": "2:00 PM",
+                    "checkout_time": "12:00 PM",
+                    "hotel_chain": "",
+                    "rating_summary": {},
+                    "rate": {
+                        "id": "708c4b83-674c-4438-8cc3-87982f53e030",
+                        "price": {
+                            "per_night": 2416.47,
+                            "total": 16915.25225,
+                            "discount": {
+                                "amount": 0,
+                                "percentage": 0
+                            },
+                            "currency": {
+                                "id": 2654210,
+                                "code": "ARS",
+                                "mask": "$",
+                                "ratio": 16.25
+                            },
+                            "price_without_discount": 16915.25225,
+                            "price_per_night_per_room": 2416.47,
+                            "total_with_operation_cost": 17761.0148625,
+                            "charges": [{
+                                "amount": 85.50596900419275,
+                                "type": "VAT",
+                                "description": "VAT",
+                                "included": true
+                            }],
+                            "show_amount": 13979.547314189382,
+                            "show_amount_per_night_per_room": 1997.08,
+                            "show_amount_with_operation_cost": 14678.524679898852,
+                            "show_amount_per_night_per_room_without_discount": 1997.08,
+                            "show_amount_without_discount": 13979.547314189382
+                        },
+                        "smoking_preference": {},
+                        "meal_plan": {
+                            "code": "ROOM_ONLY",
+                            "description": "solo la habitación"
+                        },
+                        "payment_method": {
+                            "code": "PREPAID",
+                            "description": "Paga en cuotas"
+                        },
+                        "refundable": false,
+                        "promotion": "",
+                        "status": "UNCHECKED",
+                        "cancel_policies": [],
+                        "free_cancel_date": {
+                            "date": 0,
+                            "monthNumber": 0,
+                            "year": 0,
+                            "plain": ""
+                        }
+                    },
+                    "payment_methods": [{
+                        "code": "PREPAID",
+                        "description": "Paga en cuotas"
+                    }, {
+                        "code": "PAY_AT_DESTINATION",
+                        "description": "Paga en destino"
+                    }],
+                    "slug": "petit-palace-plaza-espa-a-76921",
+                    "defaultPaymentMethod": "PREPAID"
+                }, {
+                    "id": "106662",
+                    "description": "<p><b>Ubicación del establecimiento</b> <br />Este hotel de 4 estrellas se encuentra cerca de lugares de interés como: Plaza Mayor y Museo del Prado.  En Iberostar Las Letras Gran Via gozarás de una ubicación céntrica en Madrid, a pocos pasos de Casino Gran Vía y de Casino de Madrid.</p><p><b>Habitaciones</b> <br />Te sentirás como en tu propia casa en una de las 109 habitaciones con decoraciones diferentes, dotadas de minibar y televisor de plasma. Descansa como nunca en una cama con edredón de plumas y sábanas de algodón egipcio. Para los momentos de ocio, tienes un televisor con canales digitales y conexión a Internet por cable y wifi gratis. El baño privado con bañera o ducha está provisto de artículos de higiene personal de diseño y secador de pelo.</p><p><b>Servicios</b> <br />Con gimnasio y muchas otras instalaciones recreativas a tu disposición, no te quedará ni un minuto libre. Tienes también una terraza en la azotea donde sentarte a contemplar el paisaje. Este hotel de estilo art decó ofrece además conexión a Internet wifi gratis, servicios de conserjería y servicio de celebración de bodas.</p><p><b>Para comer</b> <br />Si tienes hambre, pasa por el restaurante de este hotel, que ofrece almuerzos y cenas. También hay una cafetería y servicio de habitaciones con horario limitado. Apaga la sed con tu bebida favorita en el bar o lounge.</p><p><b>Servicios de negocios y otros</b> <br />Tendrás centro de negocios abierto las 24 horas, periódicos gratuitos en el vestíbulo y servicio de tintorería a tu disposición. ¿Estás organizando un evento en Madrid? En este hotel tienes a tu disposición 280 metros cuadrados de espacio con zonas para conferencias. Pagando un pequeño suplemento podrás aprovechar prestaciones como servicio de transporte al aeropuerto (ida y vuelta) a petición y aparcamiento sin asistencia (de pago).</p>",
+                    "name": "Iberostar Las Letras Gran Via",
+                    "geo_position": {
+                        "latitude": 40.41969,
+                        "longitude": -3.69958
+                    },
+                    "images": [{
+                        "id": "52224309",
+                        "url": "//images.almundo.com/201/2000000/1070000/1065700/1065617/d1c225a1_b.jpg"
+                    }, {
+                        "id": "52224310",
+                        "url": "//images.almundo.com/201/2000000/1070000/1065700/1065617/1065617_273_b.jpg"
+                    }, {
+                        "id": "52224311",
+                        "url": "//images.almundo.com/201/2000000/1070000/1065700/1065617/1065617_158_b.jpg"
+                    }, {
+                        "id": "52224312",
+                        "url": "//images.almundo.com/201/2000000/1070000/1065700/1065617/1065617_171_b.jpg"
+                    }, {
+                        "id": "52224313",
+                        "url": "//images.almundo.com/201/2000000/1070000/1065700/1065617/1065617_207_b.jpg"
+                    }, {
+                        "id": "52224315",
+                        "url": "//images.almundo.com/201/2000000/1070000/1065700/1065617/1065617_255_b.jpg"
+                    }, {
+                        "id": "52224316",
+                        "url": "//images.almundo.com/201/2000000/1070000/1065700/1065617/1065617_266_b.jpg"
+                    }, {
+                        "id": "52224317",
+                        "url": "//images.almundo.com/201/2000000/1070000/1065700/1065617/1065617_275_b.jpg"
+                    }, {
+                        "id": "52224319",
+                        "url": "//images.almundo.com/201/2000000/1070000/1065700/1065617/1065617_261_b.jpg"
+                    }, {
+                        "id": "52224320",
+                        "url": "//images.almundo.com/201/2000000/1070000/1065700/1065617/1065617_279_b.jpg"
+                    }, {
+                        "id": "52224321",
+                        "url": "//images.almundo.com/201/2000000/1070000/1065700/1065617/1065617_280_b.jpg"
+                    }, {
+                        "id": "52224322",
+                        "url": "//images.almundo.com/201/2000000/1070000/1065700/1065617/1065617_260_b.jpg"
+                    }, {
+                        "id": "52224323",
+                        "url": "//images.almundo.com/201/2000000/1070000/1065700/1065617/1065617_264_b.jpg"
+                    }, {
+                        "id": "52224325",
+                        "url": "//images.almundo.com/201/2000000/1070000/1065700/1065617/1065617_298_b.jpg"
+                    }, {
+                        "id": "52224326",
+                        "url": "//images.almundo.com/201/2000000/1070000/1065700/1065617/1065617_296_b.jpg"
+                    }, {
+                        "id": "52224327",
+                        "url": "//images.almundo.com/201/2000000/1070000/1065700/1065617/1065617_292_b.jpg"
+                    }, {
+                        "id": "52224328",
+                        "url": "//images.almundo.com/201/2000000/1070000/1065700/1065617/1065617_287_b.jpg"
+                    }, {
+                        "id": "52224329",
+                        "url": "//images.almundo.com/201/2000000/1070000/1065700/1065617/1065617_305_b.jpg"
+                    }, {
+                        "id": "52224330",
+                        "url": "//images.almundo.com/201/2000000/1070000/1065700/1065617/1065617_306_b.jpg"
+                    }, {
+                        "id": "52224331",
+                        "url": "//images.almundo.com/201/2000000/1070000/1065700/1065617/17b69e43_b.jpg"
+                    }, {
+                        "id": "52224332",
+                        "url": "//images.almundo.com/201/2000000/1070000/1065700/1065617/26c37cc5_b.jpg"
+                    }, {
+                        "id": "52224333",
+                        "url": "//images.almundo.com/201/2000000/1070000/1065700/1065617/70265c79_b.jpg"
+                    }, {
+                        "id": "52224334",
+                        "url": "//images.almundo.com/201/2000000/1070000/1065700/1065617/a9f4ed63_b.jpg"
+                    }, {
+                        "id": "52224335",
+                        "url": "//images.almundo.com/201/2000000/1070000/1065700/1065617/bd129bc4_b.jpg"
+                    }, {
+                        "id": "52224336",
+                        "url": "//images.almundo.com/201/2000000/1070000/1065700/1065617/ddd42534_b.jpg"
+                    }, {
+                        "id": "52224337",
+                        "url": "//images.almundo.com/201/2000000/1070000/1065700/1065617/5e93c53f_b.jpg"
+                    }, {
+                        "id": "52224338",
+                        "url": "//images.almundo.com/201/2000000/1070000/1065700/1065617/85e9201f_b.jpg"
+                    }, {
+                        "id": "52815907",
+                        "url": "//images.almundo.com/201/2000000/1070000/1065700/1065617/fbae4039_b.jpg"
+                    }, {
+                        "id": "52815908",
+                        "url": "//images.almundo.com/201/2000000/1070000/1065700/1065617/ea342652_b.jpg"
+                    }, {
+                        "id": "52815909",
+                        "url": "//images.almundo.com/201/2000000/1070000/1065700/1065617/86beb0bd_b.jpg"
+                    }, {
+                        "id": "52815910",
+                        "url": "//images.almundo.com/201/2000000/1070000/1065700/1065617/7235fa4a_b.jpg"
+                    }, {
+                        "id": "52815911",
+                        "url": "//images.almundo.com/201/2000000/1070000/1065700/1065617/c05d470f_b.jpg"
+                    }, {
+                        "id": "52815912",
+                        "url": "//images.almundo.com/201/2000000/1070000/1065700/1065617/4205440b_b.jpg"
+                    }, {
+                        "id": "52815913",
+                        "url": "//images.almundo.com/201/2000000/1070000/1065700/1065617/3408cee4_b.jpg"
+                    }, {
+                        "id": "52815914",
+                        "url": "//images.almundo.com/201/2000000/1070000/1065700/1065617/09bdfe88_b.jpg"
+                    }, {
+                        "id": "52815915",
+                        "url": "//images.almundo.com/201/2000000/1070000/1065700/1065617/db469e36_b.jpg"
+                    }, {
+                        "id": "52815916",
+                        "url": "//images.almundo.com/201/2000000/1070000/1065700/1065617/afc8bfb8_b.jpg"
+                    }, {
+                        "id": "52815917",
+                        "url": "//images.almundo.com/201/2000000/1070000/1065700/1065617/92e014b9_b.jpg"
+                    }],
+                    "amenities": [{
+                        "code": "wedding-services",
+                        "description": "servicios de boda"
+                    }, {
+                        "code": "bar",
+                        "description": "bar"
+                    }, {
+                        "code": "television",
+                        "description": "televisión"
+                    }, {
+                        "code": "tours-ticket-assistance",
+                        "description": "asistencia turística"
+                    }, {
+                        "code": "pets",
+                        "description": "mascotas"
+                    }, {
+                        "code": "laundry-facilities",
+                        "description": "lavanderia"
+                    }, {
+                        "code": "fitness-center",
+                        "description": "gimnasio"
+                    }, {
+                        "code": "coffee-shop",
+                        "description": "tienda de café"
+                    }, {
+                        "code": "restaurant",
+                        "description": "restaurante"
+                    }, {
+                        "code": "business-center",
+                        "description": "centro de negocios"
+                    }, {
+                        "code": "meeting-rooms",
+                        "description": "sala de reuniones"
+                    }, {
+                        "code": "parking",
+                        "description": "estacionamiento"
+                    }, {
+                        "code": "check-in",
+                        "description": "check-in 24hs"
+                    }, {
+                        "code": "internet",
+                        "description": "internet"
+                    }, {
+                        "code": "housekeeping",
+                        "description": "servicio de limpieza"
+                    }],
+                    "stars": 4,
+                    "recommended": true,
+                    "checkin_time": "2:00 PM",
+                    "checkout_time": "12:00 PM",
+                    "hotel_chain": "",
+                    "rating_summary": {},
+                    "rate": {
+                        "id": "cdb59836-bbd0-4f8e-a3c0-7313c6191190",
+                        "price": {
+                            "per_night": 3505.06,
+                            "total": 24535.3745,
+                            "discount": {
+                                "amount": 2478.23,
+                                "percentage": 9
+                            },
+                            "currency": {
+                                "id": 2654210,
+                                "code": "ARS",
+                                "mask": "$",
+                                "ratio": 16.25
+                            },
+                            "price_without_discount": 27013.6045,
+                            "price_per_night_per_room": 3859.09,
+                            "total_with_operation_cost": 25762.143225,
+                            "charges": [{
+                                "amount": 442.73436568139675,
+                                "type": "VAT",
+                                "description": "VAT",
+                                "included": true
+                            }],
+                            "show_amount": 20277.169008467234,
+                            "show_amount_per_night_per_room": 2896.74,
+                            "show_amount_with_operation_cost": 21291.027458890596,
+                            "show_amount_per_night_per_room_without_discount": 3183.23,
+                            "show_amount_without_discount": 22282.60330600795
+                        },
+                        "smoking_preference": {
+                            "code": "NS"
+                        },
+                        "meal_plan": {
+                            "code": "ROOM_ONLY",
+                            "description": "solo la habitación"
+                        },
+                        "payment_method": {
+                            "code": "PREPAID",
+                            "description": "Paga en cuotas"
+                        },
+                        "refundable": false,
+                        "promotion": "",
+                        "status": "UNCHECKED",
+                        "cancel_policies": [],
+                        "free_cancel_date": {
+                            "date": 0,
+                            "monthNumber": 0,
+                            "year": 0,
+                            "plain": ""
+                        }
+                    },
+                    "payment_methods": [{
+                        "code": "PREPAID",
+                        "description": "Paga en cuotas"
+                    }, {
+                        "code": "PAY_AT_DESTINATION",
+                        "description": "Paga en destino"
+                    }],
+                    "slug": "iberostar-las-letras-gran-via-106662",
+                    "defaultPaymentMethod": "PREPAID"
+                }, {
+                    "id": "12119",
+                    "description": "<p><b>Ubicación del establecimiento</b> <br />En Hotel Emperador gozarás de una ubicación céntrica en Madrid, a pocos pasos de Teatro Rialto y Plaza de Santo Domingo.  Este hotel de 4 estrellas se encuentra cerca de lugares de interés como: Plaza Mayor y Museo del Prado.</p><p><b>Habitaciones</b> <br />Te sentirás como en tu propia casa en una de las 232 habitaciones con aire acondicionado y minibar. La conexión a Internet wifi gratis te mantendrá en contacto con los tuyos; también podrás ver tu programa favorito en el televisor con canales por satélite. El baño privado con bañera o ducha está provisto de artículos de higiene personal gratuitos y secador de pelo. Las comodidades incluyen caja fuerte, escritorio y teléfono.</p><p><b>Servicios</b> <br />Apreciarás las instalaciones de ocio, que incluyen piscina al aire libre, sauna y gimnasio. Encontrarás también conexión a Internet wifi gratis, servicios de conserjería y servicio de peluquería.</p><p><b>Para comer</b> <br />Tienes una cafetería a tu disposición para comer algo, pero si lo prefieres, puedes llamar al servicio de habitaciones con horario limitado de este hotel. Disfruta de tu bebida favorita en el bar o lounge o en el bar junto a la piscina. Se sirve un desayuno de pago.</p><p><b>Servicios de negocios y otros</b> <br />Tendrás centro de negocios, servicio de limusina o coche con chófer y servicio de tintorería a tu disposición. Hay un aparcamiento sin asistencia (de pago) disponible.</p>",
+                    "name": "Hotel Emperador",
+                    "geo_position": {
+                        "latitude": 40.42156,
+                        "longitude": -3.70804
+                    },
+                    "images": [{
+                        "id": "21342290",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_241_b.jpg"
+                    }, {
+                        "id": "21342291",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_276_b.jpg"
+                    }, {
+                        "id": "21342292",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_208_b.jpg"
+                    }, {
+                        "id": "21342293",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_213_b.jpg"
+                    }, {
+                        "id": "21342294",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_215_b.jpg"
+                    }, {
+                        "id": "21342295",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_218_b.jpg"
+                    }, {
+                        "id": "21342296",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_221_b.jpg"
+                    }, {
+                        "id": "21342297",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_224_b.jpg"
+                    }, {
+                        "id": "21342298",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_207_b.jpg"
+                    }, {
+                        "id": "21342299",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_211_b.jpg"
+                    }, {
+                        "id": "21342300",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_210_b.jpg"
+                    }, {
+                        "id": "21342301",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_220_b.jpg"
+                    }, {
+                        "id": "21342302",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_212_b.jpg"
+                    }, {
+                        "id": "21342303",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_219_b.jpg"
+                    }, {
+                        "id": "21342304",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_209_b.jpg"
+                    }, {
+                        "id": "21342305",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_217_b.jpg"
+                    }, {
+                        "id": "21342306",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_222_b.jpg"
+                    }, {
+                        "id": "21342307",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_223_b.jpg"
+                    }, {
+                        "id": "21342308",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_256_b.jpg"
+                    }, {
+                        "id": "21342309",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_251_b.jpg"
+                    }, {
+                        "id": "21342310",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_232_b.jpg"
+                    }, {
+                        "id": "21342311",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_235_b.jpg"
+                    }, {
+                        "id": "21342312",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_240_b.jpg"
+                    }, {
+                        "id": "21342313",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_230_b.jpg"
+                    }, {
+                        "id": "21342314",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_246_b.jpg"
+                    }, {
+                        "id": "21342315",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_248_b.jpg"
+                    }, {
+                        "id": "21342316",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_250_b.jpg"
+                    }, {
+                        "id": "21342317",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_234_b.jpg"
+                    }, {
+                        "id": "21342318",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_252_b.jpg"
+                    }, {
+                        "id": "21342319",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_237_b.jpg"
+                    }, {
+                        "id": "21342320",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_254_b.jpg"
+                    }, {
+                        "id": "21342321",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_249_b.jpg"
+                    }, {
+                        "id": "21342322",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_245_b.jpg"
+                    }, {
+                        "id": "21342323",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_255_b.jpg"
+                    }, {
+                        "id": "21342324",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_259_b.jpg"
+                    }, {
+                        "id": "21342325",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_260_b.jpg"
+                    }, {
+                        "id": "21342326",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_261_b.jpg"
+                    }, {
+                        "id": "21342327",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_264_b.jpg"
+                    }, {
+                        "id": "21342328",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_266_b.jpg"
+                    }, {
+                        "id": "21342329",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_265_b.jpg"
+                    }, {
+                        "id": "21342330",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_271_b.jpg"
+                    }, {
+                        "id": "21342331",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_272_b.jpg"
+                    }, {
+                        "id": "21342332",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_275_b.jpg"
+                    }, {
+                        "id": "21342333",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_274_b.jpg"
+                    }, {
+                        "id": "21342334",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_278_b.jpg"
+                    }, {
+                        "id": "21342335",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_268_b.jpg"
+                    }, {
+                        "id": "21342336",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_273_b.jpg"
+                    }, {
+                        "id": "21342337",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_279_b.jpg"
+                    }, {
+                        "id": "21342338",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_269_b.jpg"
+                    }, {
+                        "id": "21342339",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_270_b.jpg"
+                    }, {
+                        "id": "21342340",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/915_277_b.jpg"
+                    }, {
+                        "id": "35684195",
+                        "url": "//images.almundo.com/201/1000000/10000/1000/915/fd21fc2b_b.jpg"
+                    }],
+                    "amenities": [{
+                        "code": "wedding-services",
+                        "description": "servicios de boda"
+                    }, {
+                        "code": "bar",
+                        "description": "bar"
+                    }, {
+                        "code": "tours-ticket-assistance",
+                        "description": "asistencia turística"
+                    }, {
+                        "code": "laundry-facilities",
+                        "description": "lavanderia"
+                    }, {
+                        "code": "pool-bar",
+                        "description": "bar en la piscina"
+                    }, {
+                        "code": "fitness-center",
+                        "description": "gimnasio"
+                    }, {
+                        "code": "coffee-shop",
+                        "description": "tienda de café"
+                    }, {
+                        "code": "hair-salon",
+                        "description": "peluqueria"
+                    }, {
+                        "code": "sheets",
+                        "description": "sábanas"
+                    }, {
+                        "code": "parking",
+                        "description": "estacionamiento"
+                    }, {
+                        "code": "check-in",
+                        "description": "check-in 24hs"
+                    }, {
+                        "code": "internet",
+                        "description": "internet"
+                    }, {
+                        "code": "housekeeping",
+                        "description": "servicio de limpieza"
+                    }, {
+                        "code": "pool",
+                        "description": "piscina"
+                    }],
+                    "stars": 5,
+                    "recommended": true,
+                    "checkin_time": "",
+                    "checkout_time": "",
+                    "hotel_chain": "",
+                    "rating_summary": {},
+                    "rate": {
+                        "id": "5793ec03-0e64-4793-a23e-c89a5653b2a2",
+                        "price": {
+                            "per_night": 3508.97,
+                            "total": 24562.783375,
+                            "discount": {
+                                "amount": 2481,
+                                "percentage": 9
+                            },
+                            "currency": {
+                                "id": 2654210,
+                                "code": "ARS",
+                                "mask": "$",
+                                "ratio": 16.25
+                            },
+                            "price_without_discount": 27043.783375,
+                            "price_per_night_per_room": 3863.4,
+                            "total_with_operation_cost": 25790.92254375,
+                            "charges": [{
+                                "amount": 464.2576518373966,
+                                "type": "VAT",
+                                "description": "VAT",
+                                "included": true
+                            }],
+                            "show_amount": 20299.82097127738,
+                            "show_amount_per_night_per_room": 2899.98,
+                            "show_amount_with_operation_cost": 21314.812019841247,
+                            "show_amount_per_night_per_room_without_discount": 3186.79,
+                            "show_amount_without_discount": 22307.495572832286
+                        },
+                        "smoking_preference": {
+                            "code": "NS"
+                        },
+                        "meal_plan": {
+                            "code": "ROOM_ONLY",
+                            "description": "solo la habitación"
+                        },
+                        "payment_method": {
+                            "code": "PREPAID",
+                            "description": "Paga en cuotas"
+                        },
+                        "refundable": false,
+                        "promotion": "",
+                        "status": "UNCHECKED",
+                        "cancel_policies": [],
+                        "free_cancel_date": {
+                            "date": 0,
+                            "monthNumber": 0,
+                            "year": 0,
+                            "plain": ""
+                        }
+                    },
+                    "payment_methods": [{
+                        "code": "PREPAID",
+                        "description": "Paga en cuotas"
+                    }],
+                    "slug": "hotel-emperador-12119",
+                    "defaultPaymentMethod": "PREPAID"
+                }, {
+                    "id": "267301",
+                    "description": "<p><b>Ubicación del establecimiento</b> <br />Hostal Jemasaca-Palma61 está en pleno corazón de Madrid, a pocos pasos de Plaza del Dos de Mayo y Teatro Victoria.  Este hostal se encuentra cerca de Plaza Mayor y de Museo del Prado.</p><p><b>Habitaciones</b> <br />Te sentirás como en tu propia casa en una de las 28 habitaciones con aire acondicionado y televisor de pantalla plana. Mantén el contacto con los tuyos gracias a la conexión a Internet wifi gratis. El baño privado con ducha y bañera combinadas está provisto de artículos de higiene personal gratuitos y bidé. Las comodidades incluyen escritorio y servicio de descubierta, además de un servicio de limpieza disponible todos los días.</p><p><b>Servicios</b> <br />Aprovecha los prácticos servicios que se te ofrecen, como conexión a Internet wifi gratis o televisor en zonas comunes. El servicio de transporte (de pago) te llevará a varios puntos imprescindibles de la zona.</p><p><b>Servicios de negocios y otros</b> <br />Tendrás servicio de recepción 24 horas y depósito de equipaje a tu disposición. Pagando un pequeño suplemento podrás aprovechar prestaciones como servicio de transporte al aeropuerto (ida y vuelta) (disponible las 24 horas) y servicio de traslado desde la estación de trenes.</p>",
+                    "name": "Hostal Jemasaca-Palma61",
+                    "geo_position": {
+                        "latitude": 40.42673,
+                        "longitude": -3.70783
+                    },
+                    "images": [{
+                        "id": "43939632",
+                        "url": "//images.almundo.com/201/5000000/4930000/4925100/4925043/6f60fff3_b.jpg"
+                    }, {
+                        "id": "43939633",
+                        "url": "//images.almundo.com/201/5000000/4930000/4925100/4925043/2c0b43be_b.jpg"
+                    }, {
+                        "id": "43939634",
+                        "url": "//images.almundo.com/201/5000000/4930000/4925100/4925043/59db4521_b.jpg"
+                    }, {
+                        "id": "43939635",
+                        "url": "//images.almundo.com/201/5000000/4930000/4925100/4925043/0033a2ce_b.jpg"
+                    }, {
+                        "id": "43939637",
+                        "url": "//images.almundo.com/201/5000000/4930000/4925100/4925043/878e2d8d_b.jpg"
+                    }, {
+                        "id": "43939638",
+                        "url": "//images.almundo.com/201/5000000/4930000/4925100/4925043/64dd71d1_b.jpg"
+                    }, {
+                        "id": "43939640",
+                        "url": "//images.almundo.com/201/5000000/4930000/4925100/4925043/20548a76_b.jpg"
+                    }, {
+                        "id": "43939641",
+                        "url": "//images.almundo.com/201/5000000/4930000/4925100/4925043/3d916a9a_b.jpg"
+                    }, {
+                        "id": "43939642",
+                        "url": "//images.almundo.com/201/5000000/4930000/4925100/4925043/42c95320_b.jpg"
+                    }, {
+                        "id": "43939643",
+                        "url": "//images.almundo.com/201/5000000/4930000/4925100/4925043/44d07c88_b.jpg"
+                    }, {
+                        "id": "43939645",
+                        "url": "//images.almundo.com/201/5000000/4930000/4925100/4925043/7b48701e_b.jpg"
+                    }, {
+                        "id": "43939646",
+                        "url": "//images.almundo.com/201/5000000/4930000/4925100/4925043/bf67eced_b.jpg"
+                    }, {
+                        "id": "43939647",
+                        "url": "//images.almundo.com/201/5000000/4930000/4925100/4925043/0c995729_b.jpg"
+                    }, {
+                        "id": "43939648",
+                        "url": "//images.almundo.com/201/5000000/4930000/4925100/4925043/580a6eaf_b.jpg"
+                    }, {
+                        "id": "43939649",
+                        "url": "//images.almundo.com/201/5000000/4930000/4925100/4925043/5fca8ae5_b.jpg"
+                    }, {
+                        "id": "43939650",
+                        "url": "//images.almundo.com/201/5000000/4930000/4925100/4925043/8afe6339_b.jpg"
+                    }, {
+                        "id": "43939651",
+                        "url": "//images.almundo.com/201/5000000/4930000/4925100/4925043/e5c4dc9b_b.jpg"
+                    }, {
+                        "id": "43939652",
+                        "url": "//images.almundo.com/201/5000000/4930000/4925100/4925043/95e5df56_b.jpg"
+                    }, {
+                        "id": "43939653",
+                        "url": "//images.almundo.com/201/5000000/4930000/4925100/4925043/3be5c536_b.jpg"
+                    }, {
+                        "id": "43939654",
+                        "url": "//images.almundo.com/201/5000000/4930000/4925100/4925043/a1283506_b.jpg"
+                    }, {
+                        "id": "43939655",
+                        "url": "//images.almundo.com/201/5000000/4930000/4925100/4925043/283f97f6_b.jpg"
+                    }, {
+                        "id": "45401850",
+                        "url": "//images.almundo.com/201/5000000/4930000/4925100/4925043/64eb1738_b.jpg"
+                    }, {
+                        "id": "45401851",
+                        "url": "//images.almundo.com/201/5000000/4930000/4925100/4925043/28f3affa_b.jpg"
+                    }, {
+                        "id": "45401852",
+                        "url": "//images.almundo.com/201/5000000/4930000/4925100/4925043/8645a236_b.jpg"
+                    }, {
+                        "id": "46063960",
+                        "url": "//images.almundo.com/201/5000000/4930000/4925100/4925043/225d49a5_b.jpg"
+                    }, {
+                        "id": "46063962",
+                        "url": "//images.almundo.com/201/5000000/4930000/4925100/4925043/43afe030_b.jpg"
+                    }, {
+                        "id": "46063963",
+                        "url": "//images.almundo.com/201/5000000/4930000/4925100/4925043/6a2bb548_b.jpg"
+                    }, {
+                        "id": "46063964",
+                        "url": "//images.almundo.com/201/5000000/4930000/4925100/4925043/8c660ec4_b.jpg"
+                    }, {
+                        "id": "46063965",
+                        "url": "//images.almundo.com/201/5000000/4930000/4925100/4925043/d8fd673c_b.jpg"
+                    }, {
+                        "id": "46063966",
+                        "url": "//images.almundo.com/201/5000000/4930000/4925100/4925043/e218079d_b.jpg"
+                    }],
+                    "amenities": [{
+                        "code": "transportation",
+                        "description": "traslados"
+                    }, {
+                        "code": "check-in",
+                        "description": "check-in 24hs"
+                    }, {
+                        "code": "internet",
+                        "description": "internet"
+                    }],
+                    "stars": 2,
+                    "recommended": false,
+                    "checkin_time": "",
+                    "checkout_time": "",
+                    "hotel_chain": "",
+                    "rating_summary": {},
+                    "rate": {
+                        "id": "68d1c069-c37e-4fd7-9ad8-46da249cefbf",
+                        "price": {
+                            "per_night": 1387.11,
+                            "total": 9709.7585,
+                            "discount": {
+                                "amount": 3237.11,
+                                "percentage": 25
+                            },
+                            "currency": {
+                                "id": 2654210,
+                                "code": "ARS",
+                                "mask": "$",
+                                "ratio": 16.25
+                            },
+                            "price_without_discount": 12946.8685,
+                            "price_per_night_per_room": 1849.56,
+                            "total_with_operation_cost": 10195.246425,
+                            "charges": [{
+                                "amount": 49.0824669398115,
+                                "type": "VAT",
+                                "description": "VAT",
+                                "included": true
+                            }],
+                            "show_amount": 8024.593801733138,
+                            "show_amount_per_night_per_room": 1146.38,
+                            "show_amount_with_operation_cost": 8425.823491819796,
+                            "show_amount_per_night_per_room_without_discount": 1528.51,
+                            "show_amount_without_discount": 10699.458402310851
+                        },
+                        "smoking_preference": {},
+                        "meal_plan": {
+                            "code": "ROOM_ONLY",
+                            "description": "solo la habitación"
+                        },
+                        "payment_method": {
+                            "code": "PREPAID",
+                            "description": "Paga en cuotas"
+                        },
+                        "refundable": false,
+                        "promotion": "",
+                        "status": "UNCHECKED",
+                        "cancel_policies": [],
+                        "free_cancel_date": {
+                            "date": 0,
+                            "monthNumber": 0,
+                            "year": 0,
+                            "plain": ""
+                        }
+                    },
+                    "payment_methods": [{
+                        "code": "PREPAID",
+                        "description": "Paga en cuotas"
+                    }, {
+                        "code": "PAY_AT_DESTINATION",
+                        "description": "Paga en destino"
+                    }],
+                    "slug": "hostal-jemasaca-palma61-267301",
+                    "defaultPaymentMethod": "PREPAID"
+                }, {
+                    "id": "188245",
+                    "description": "<p><b>Ubicación del establecimiento</b> <br />En Hotel Nuevo Boston gozarás de una buena ubicación en Madrid, en el distrito financiero, a poca distancia de Palacio Municipal de Congresos y Parque acuático Aquopolis.  Este hotel de 4 estrellas se encuentra a pocos kilómetros de Ciudad del Real Madrid y Campo de golf Golf Negralejo.</p><p><b>Habitaciones</b> <br />Te sentirás como en tu propia casa en una de las 162 habitaciones con aire acondicionado. Para los momentos de ocio, tienes un televisor con canales por satélite y conexión a Internet por cable y wifi gratis. El cuarto de baño está provisto de artículos de higiene personal gratuitos y bidé. Las comodidades incluyen caja fuerte (cabe un portátil), escritorio y teléfono.</p><p><b>Servicios</b> <br />No te pierdas instalaciones recreativas como piscina al aire libre o gimnasio abierto las 24 horas: ¡lo pasarás en grande! Otros servicios de este hotel incluyen conexión a Internet wifi gratis, servicios de conserjería y servicio de canguro (de pago).</p><p><b>Para comer</b> <br />Descubre las delicias que te esperan en el restaurante de este hotel, con un bar y vista al jardín. Si lo prefieres, puedes aprovechar el servicio de habitaciones con horario limitado. Disfruta de tu bebida favorita en el bar o lounge o en el bar junto a la piscina. Todos los días se sirve un desayuno bufé de pago.</p><p><b>Servicios de negocios y otros</b> <br />Tendrás conexión a Internet de alta velocidad por cable (gratuita), centro de negocios y periódicos gratuitos en el vestíbulo a tu disposición. ¿Estás organizando un evento en Madrid? En este hotel tienes a tu disposición 800 metros cuadrados de espacio con centro de conferencias y salas de reuniones. Se ofrece servicio de transporte al aeropuerto (ida y vuelta) gratuito (disponible las 24 horas).</p>",
+                    "name": "Hotel Nuevo Boston",
+                    "geo_position": {
+                        "latitude": 40.44937,
+                        "longitude": -3.57698
+                    },
+                    "images": [{
+                        "id": "50530651",
+                        "url": "//images.almundo.com/201/3000000/2470000/2466900/2466861/2466861_184_b.jpg"
+                    }, {
+                        "id": "50530652",
+                        "url": "//images.almundo.com/201/3000000/2470000/2466900/2466861/2466861_151_b.jpg"
+                    }, {
+                        "id": "50530653",
+                        "url": "//images.almundo.com/201/3000000/2470000/2466900/2466861/d6cfbf94_b.jpg"
+                    }, {
+                        "id": "50530654",
+                        "url": "//images.almundo.com/201/3000000/2470000/2466900/2466861/2466861_202_b.jpg"
+                    }, {
+                        "id": "50530655",
+                        "url": "//images.almundo.com/201/3000000/2470000/2466900/2466861/2466861_113_b.jpg"
+                    }, {
+                        "id": "50530656",
+                        "url": "//images.almundo.com/201/3000000/2470000/2466900/2466861/2466861_144_b.jpg"
+                    }, {
+                        "id": "50530657",
+                        "url": "//images.almundo.com/201/3000000/2470000/2466900/2466861/2466861_141_b.jpg"
+                    }, {
+                        "id": "50530658",
+                        "url": "//images.almundo.com/201/3000000/2470000/2466900/2466861/2466861_140_b.jpg"
+                    }, {
+                        "id": "50530659",
+                        "url": "//images.almundo.com/201/3000000/2470000/2466900/2466861/2466861_143_b.jpg"
+                    }, {
+                        "id": "50530660",
+                        "url": "//images.almundo.com/201/3000000/2470000/2466900/2466861/2466861_146_b.jpg"
+                    }, {
+                        "id": "50530661",
+                        "url": "//images.almundo.com/201/3000000/2470000/2466900/2466861/2466861_142_b.jpg"
+                    }, {
+                        "id": "50530662",
+                        "url": "//images.almundo.com/201/3000000/2470000/2466900/2466861/2466861_149_b.jpg"
+                    }, {
+                        "id": "50530663",
+                        "url": "//images.almundo.com/201/3000000/2470000/2466900/2466861/2466861_155_b.jpg"
+                    }, {
+                        "id": "50530664",
+                        "url": "//images.almundo.com/201/3000000/2470000/2466900/2466861/2466861_159_b.jpg"
+                    }, {
+                        "id": "50530665",
+                        "url": "//images.almundo.com/201/3000000/2470000/2466900/2466861/2466861_164_b.jpg"
+                    }, {
+                        "id": "50530666",
+                        "url": "//images.almundo.com/201/3000000/2470000/2466900/2466861/2466861_189_b.jpg"
+                    }, {
+                        "id": "50530667",
+                        "url": "//images.almundo.com/201/3000000/2470000/2466900/2466861/2466861_190_b.jpg"
+                    }, {
+                        "id": "50530668",
+                        "url": "//images.almundo.com/201/3000000/2470000/2466900/2466861/2466861_192_b.jpg"
+                    }, {
+                        "id": "50530669",
+                        "url": "//images.almundo.com/201/3000000/2470000/2466900/2466861/2466861_191_b.jpg"
+                    }, {
+                        "id": "50530670",
+                        "url": "//images.almundo.com/201/3000000/2470000/2466900/2466861/2466861_195_b.jpg"
+                    }, {
+                        "id": "50530671",
+                        "url": "//images.almundo.com/201/3000000/2470000/2466900/2466861/2466861_196_b.jpg"
+                    }, {
+                        "id": "50530672",
+                        "url": "//images.almundo.com/201/3000000/2470000/2466900/2466861/2466861_197_b.jpg"
+                    }, {
+                        "id": "50530673",
+                        "url": "//images.almundo.com/201/3000000/2470000/2466900/2466861/2466861_198_b.jpg"
+                    }, {
+                        "id": "50530674",
+                        "url": "//images.almundo.com/201/3000000/2470000/2466900/2466861/2466861_201_b.jpg"
+                    }, {
+                        "id": "50530675",
+                        "url": "//images.almundo.com/201/3000000/2470000/2466900/2466861/2466861_199_b.jpg"
+                    }, {
+                        "id": "50530676",
+                        "url": "//images.almundo.com/201/3000000/2470000/2466900/2466861/2466861_200_b.jpg"
+                    }, {
+                        "id": "50530677",
+                        "url": "//images.almundo.com/201/3000000/2470000/2466900/2466861/765ae282_b.jpg"
+                    }, {
+                        "id": "50530678",
+                        "url": "//images.almundo.com/201/3000000/2470000/2466900/2466861/afa5592b_b.jpg"
+                    }, {
+                        "id": "50530679",
+                        "url": "//images.almundo.com/201/3000000/2470000/2466900/2466861/daeae499_b.jpg"
+                    }, {
+                        "id": "50530680",
+                        "url": "//images.almundo.com/201/3000000/2470000/2466900/2466861/6adc2d6c_b.jpg"
+                    }, {
+                        "id": "50530681",
+                        "url": "//images.almundo.com/201/3000000/2470000/2466900/2466861/2466861_112_b.jpg"
+                    }, {
+                        "id": "50530682",
+                        "url": "//images.almundo.com/201/3000000/2470000/2466900/2466861/2466861_111_b.jpg"
+                    }, {
+                        "id": "50530683",
+                        "url": "//images.almundo.com/201/3000000/2470000/2466900/2466861/2466861_147_b.jpg"
+                    }],
+                    "amenities": [{
+                        "code": "wedding-services",
+                        "description": "servicios de boda"
+                    }, {
+                        "code": "bar",
+                        "description": "bar"
+                    }, {
+                        "code": "beach-pool-facilities",
+                        "description": "instalaciones en playa/piscina"
+                    }, {
+                        "code": "safety-box",
+                        "description": "caja de seguridad"
+                    }, {
+                        "code": "tours-ticket-assistance",
+                        "description": "asistencia turística"
+                    }, {
+                        "code": "laundry-facilities",
+                        "description": "lavanderia"
+                    }, {
+                        "code": "pool-bar",
+                        "description": "bar en la piscina"
+                    }, {
+                        "code": "fitness-center",
+                        "description": "gimnasio"
+                    }, {
+                        "code": "garden",
+                        "description": "jardin"
+                    }, {
+                        "code": "coffee-shop",
+                        "description": "tienda de café"
+                    }, {
+                        "code": "restaurant",
+                        "description": "restaurante"
+                    }, {
+                        "code": "business-center",
+                        "description": "centro de negocios"
+                    }, {
+                        "code": "meeting-rooms",
+                        "description": "sala de reuniones"
+                    }, {
+                        "code": "parking",
+                        "description": "estacionamiento"
+                    }, {
+                        "code": "check-in",
+                        "description": "check-in 24hs"
+                    }, {
+                        "code": "smoking-areas",
+                        "description": "áreas fumadores"
+                    }, {
+                        "code": "internet",
+                        "description": "internet"
+                    }, {
+                        "code": "housekeeping",
+                        "description": "servicio de limpieza"
+                    }, {
+                        "code": "pool",
+                        "description": "piscina"
+                    }],
+                    "stars": 4,
+                    "recommended": false,
+                    "checkin_time": "",
+                    "checkout_time": "",
+                    "hotel_chain": "",
+                    "rating_summary": {},
+                    "rate": {
+                        "id": "d8bf003d-8110-49bd-b1aa-2f534171e91e",
+                        "price": {
+                            "per_night": 1750.63,
+                            "total": 12254.393125,
+                            "discount": {
+                                "amount": 3713.5,
+                                "percentage": 23
+                            },
+                            "currency": {
+                                "id": 2654210,
+                                "code": "ARS",
+                                "mask": "$",
+                                "ratio": 16.25
+                            },
+                            "price_without_discount": 15967.893125,
+                            "price_per_night_per_room": 2281.13,
+                            "total_with_operation_cost": 12867.11278125,
+                            "charges": [{
+                                "amount": 231.61709193111938,
+                                "type": "VAT",
+                                "description": "VAT",
+                                "included": true
+                            }],
+                            "show_amount": 10127.597624068218,
+                            "show_amount_per_night_per_room": 1446.8,
+                            "show_amount_with_operation_cost": 10633.977505271629,
+                            "show_amount_per_night_per_room_without_discount": 1878.96,
+                            "show_amount_without_discount": 13152.724187101581
+                        },
+                        "smoking_preference": {
+                            "code": "NS"
+                        },
+                        "meal_plan": {
+                            "code": "ROOM_ONLY",
+                            "description": "solo la habitación"
+                        },
+                        "payment_method": {
+                            "code": "PREPAID",
+                            "description": "Paga en cuotas"
+                        },
+                        "refundable": false,
+                        "promotion": "",
+                        "status": "UNCHECKED",
+                        "cancel_policies": [],
+                        "free_cancel_date": {
+                            "date": 0,
+                            "monthNumber": 0,
+                            "year": 0,
+                            "plain": ""
+                        }
+                    },
+                    "payment_methods": [{
+                        "code": "PREPAID",
+                        "description": "Paga en cuotas"
+                    }],
+                    "slug": "hotel-nuevo-boston-188245",
+                    "defaultPaymentMethod": "PREPAID"
+                }, {
+                    "id": "432474",
+                    "description": "<p><b>Ubicación del establecimiento</b> <br />Este hostal se encuentra cerca de Plaza Mayor y de Museo del Prado.  En Hostal Rober gozarás de una ubicación céntrica en Madrid, a pocos pasos de Plaza de Isabel II y Plaza de San Martín.</p><p><b>Habitaciones</b> <br />Te sentirás como en tu propia casa en una de las 13 habitaciones con aire acondicionado y televisor de pantalla plana. Las habitaciones disponen de balcón o patio. Mantén el contacto con los tuyos gracias a la conexión a Internet wifi gratis. El baño privado con bañera o ducha está provisto de artículos de higiene personal gratuitos y secador de pelo.</p><p><b>Servicios</b> <br />Aprovecha los prácticos servicios que se te ofrecen, como conexión a Internet wifi gratis o servicios de conserjería.</p><p><b>Servicios de negocios y otros</b> <br />Tendrás servicio de recepción 24 horas, atención multilingüe y depósito de equipaje a tu disposición. Se ofrece servicio de transporte al aeropuerto (ida y vuelta) de pago (disponible las 24 horas).</p>",
+                    "name": "Hostal Rober",
+                    "geo_position": {
+                        "latitude": 40.41771,
+                        "longitude": -3.70829
+                    },
+                    "images": [{
+                        "id": "43953840",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/3dbfc174_b.jpg"
+                    }, {
+                        "id": "43953841",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/398cb1b1_b.jpg"
+                    }, {
+                        "id": "43953842",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/997f0214_b.jpg"
+                    }, {
+                        "id": "43953843",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/1f3f2f77_b.jpg"
+                    }, {
+                        "id": "43953844",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/267d938d_b.jpg"
+                    }, {
+                        "id": "43953845",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/65459cbb_b.jpg"
+                    }, {
+                        "id": "43953846",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/6a0ef413_b.jpg"
+                    }, {
+                        "id": "43953847",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/bfa1b71f_b.jpg"
+                    }, {
+                        "id": "43953848",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/c1087974_b.jpg"
+                    }, {
+                        "id": "43953849",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/fa232672_b.jpg"
+                    }, {
+                        "id": "43953850",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/00d76b2b_b.jpg"
+                    }, {
+                        "id": "43953851",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/08745afc_b.jpg"
+                    }, {
+                        "id": "43953852",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/1d3331d7_b.jpg"
+                    }, {
+                        "id": "43953853",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/1dedc8c4_b.jpg"
+                    }, {
+                        "id": "43953854",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/1f98dbb1_b.jpg"
+                    }, {
+                        "id": "43953855",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/24b94172_b.jpg"
+                    }, {
+                        "id": "43953856",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/2bf624e2_b.jpg"
+                    }, {
+                        "id": "43953858",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/3de7b8b8_b.jpg"
+                    }, {
+                        "id": "43953859",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/41fe46c0_b.jpg"
+                    }, {
+                        "id": "43953860",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/44ad53f9_b.jpg"
+                    }, {
+                        "id": "43953862",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/4fe0060a_b.jpg"
+                    }, {
+                        "id": "43953863",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/53da73e2_b.jpg"
+                    }, {
+                        "id": "43953864",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/5aa6f462_b.jpg"
+                    }, {
+                        "id": "43953865",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/644d3fda_b.jpg"
+                    }, {
+                        "id": "43953866",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/6ac979f1_b.jpg"
+                    }, {
+                        "id": "43953867",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/85eb762c_b.jpg"
+                    }, {
+                        "id": "43953868",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/8c0cc6e9_b.jpg"
+                    }, {
+                        "id": "43953869",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/96ad483c_b.jpg"
+                    }, {
+                        "id": "43953872",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/ae2ad5c9_b.jpg"
+                    }, {
+                        "id": "43953873",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/b649be83_b.jpg"
+                    }, {
+                        "id": "43953874",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/ba4c9d80_b.jpg"
+                    }, {
+                        "id": "43953875",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/bae130c2_b.jpg"
+                    }, {
+                        "id": "43953876",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/c13ba4f8_b.jpg"
+                    }, {
+                        "id": "43953877",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/c32c9d5d_b.jpg"
+                    }, {
+                        "id": "43953878",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/c60a562a_b.jpg"
+                    }, {
+                        "id": "43953879",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/cdc573b3_b.jpg"
+                    }, {
+                        "id": "43953880",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/d2ea9145_b.jpg"
+                    }, {
+                        "id": "43953882",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/dad65990_b.jpg"
+                    }, {
+                        "id": "43953883",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/e0f77a53_b.jpg"
+                    }, {
+                        "id": "43953884",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/e83eb4a8_b.jpg"
+                    }, {
+                        "id": "43953885",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/eb103c42_b.jpg"
+                    }, {
+                        "id": "43953886",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/f2cde2ec_b.jpg"
+                    }, {
+                        "id": "43953887",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/2d2792ff_b.jpg"
+                    }, {
+                        "id": "43953888",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/1a5f0e92_b.jpg"
+                    }, {
+                        "id": "43953889",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/140319c9_b.jpg"
+                    }, {
+                        "id": "43953890",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/93a52b66_b.jpg"
+                    }, {
+                        "id": "44739752",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/0c8a4fcd_b.jpg"
+                    }, {
+                        "id": "44739753",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/0df0d0b6_b.jpg"
+                    }, {
+                        "id": "44739754",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/1180755a_b.jpg"
+                    }, {
+                        "id": "44739755",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/66f03feb_b.jpg"
+                    }, {
+                        "id": "44739756",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/947839e9_b.jpg"
+                    }, {
+                        "id": "44739757",
+                        "url": "//images.almundo.com/201/9000000/8740000/8731500/8731498/99731baf_b.jpg"
+                    }],
+                    "amenities": [{
+                        "code": "check-in",
+                        "description": "check-in 24hs"
+                    }, {
+                        "code": "tours-ticket-assistance",
+                        "description": "asistencia turística"
+                    }, {
+                        "code": "internet",
+                        "description": "internet"
+                    }],
+                    "stars": 2,
+                    "recommended": false,
+                    "checkin_time": "",
+                    "checkout_time": "",
+                    "hotel_chain": "",
+                    "rating_summary": {},
+                    "rate": {
+                        "id": "c38f5180-5b90-4a02-9293-3a216be0913d",
+                        "price": {
+                            "per_night": 1935.77,
+                            "total": 13550.34525,
+                            "discount": {
+                                "amount": 3387.38,
+                                "percentage": 20
+                            },
+                            "currency": {
+                                "id": 2654210,
+                                "code": "ARS",
+                                "mask": "$",
+                                "ratio": 16.25
+                            },
+                            "price_without_discount": 16937.72525,
+                            "price_per_night_per_room": 2419.68,
+                            "total_with_operation_cost": 14227.8625125,
+                            "charges": [{
+                                "amount": 68.49648966615975,
+                                "type": "VAT",
+                                "description": "VAT",
+                                "included": true
+                            }],
+                            "show_amount": 11198.632438128516,
+                            "show_amount_per_night_per_room": 1599.81,
+                            "show_amount_with_operation_cost": 11758.564060034942,
+                            "show_amount_per_night_per_room_without_discount": 1999.76,
+                            "show_amount_without_discount": 13998.290547660645
+                        },
+                        "smoking_preference": {},
+                        "meal_plan": {
+                            "code": "ROOM_ONLY",
+                            "description": "solo la habitación"
+                        },
+                        "payment_method": {
+                            "code": "PREPAID",
+                            "description": "Paga en cuotas"
+                        },
+                        "refundable": false,
+                        "promotion": "",
+                        "status": "UNCHECKED",
+                        "cancel_policies": [],
+                        "free_cancel_date": {
+                            "date": 0,
+                            "monthNumber": 0,
+                            "year": 0,
+                            "plain": ""
+                        }
+                    },
+                    "payment_methods": [{
+                        "code": "PREPAID",
+                        "description": "Paga en cuotas"
+                    }, {
+                        "code": "PAY_AT_DESTINATION",
+                        "description": "Paga en destino"
+                    }],
+                    "slug": "hostal-rober-432474",
+                    "defaultPaymentMethod": "PREPAID"
+                }, {
+                    "id": "232717",
+                    "description": "<p><b>Ubicación del establecimiento</b> <br />Este hostal se encuentra cerca de Palacio de Santa Cruz y de Colegiata de San Isidro.  En Hostal Montaloya gozarás de una ubicación céntrica en Madrid, a pocos minutos de Plaza del Ángel y Plaza Mayor.</p><p><b>Habitaciones</b> <br />Te sentirás como en tu propia casa en una de las 30 habitaciones con aire acondicionado y televisor de pantalla plana. La conexión a Internet wifi gratis te mantendrá en contacto con los tuyos; también podrás ver tu programa favorito en el televisor con canales por cable. El baño privado con ducha está provisto de artículos de higiene personal gratuitos y secador de pelo. Las comodidades incluyen escritorio y cortinas opacas, además de un servicio de limpieza disponible todos los días.</p><p><b>Servicios</b> <br />Aprovecha los prácticos servicios que se te ofrecen, como conexión a Internet wifi gratis o servicios de conserjería.</p><p><b>Servicios de negocios y otros</b> <br />Tendrás servicio de recepción 24 horas, atención multilingüe y depósito de equipaje a tu disposición. Se ofrece servicio de transporte al aeropuerto (ida y vuelta) de pago (disponible las 24 horas).</p>",
+                    "name": "Hostal Montaloya",
+                    "geo_position": {
+                        "latitude": 40.41251,
+                        "longitude": -3.70372
+                    },
+                    "images": [{
+                        "id": "24678529",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/8733778_57_b.jpg"
+                    }, {
+                        "id": "24678530",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/8733778_63_b.jpg"
+                    }, {
+                        "id": "24678531",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/8733778_66_b.jpg"
+                    }, {
+                        "id": "24678532",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/8733778_89_b.jpg"
+                    }, {
+                        "id": "24678533",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/8733778_83_b.jpg"
+                    }, {
+                        "id": "24678534",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/8733778_11_b.jpg"
+                    }, {
+                        "id": "24678535",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/8733778_42_b.jpg"
+                    }, {
+                        "id": "24678536",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/8733778_43_b.jpg"
+                    }, {
+                        "id": "24678537",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/8733778_44_b.jpg"
+                    }, {
+                        "id": "24678538",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/8733778_45_b.jpg"
+                    }, {
+                        "id": "24678539",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/8733778_69_b.jpg"
+                    }, {
+                        "id": "24678540",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/8733778_46_b.jpg"
+                    }, {
+                        "id": "24678541",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/8733778_47_b.jpg"
+                    }, {
+                        "id": "24678542",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/8733778_48_b.jpg"
+                    }, {
+                        "id": "24678543",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/8733778_50_b.jpg"
+                    }, {
+                        "id": "24678544",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/8733778_51_b.jpg"
+                    }, {
+                        "id": "24678545",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/8733778_52_b.jpg"
+                    }, {
+                        "id": "24678546",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/8733778_53_b.jpg"
+                    }, {
+                        "id": "24678547",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/8733778_55_b.jpg"
+                    }, {
+                        "id": "24678548",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/8733778_58_b.jpg"
+                    }, {
+                        "id": "24678550",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/8733778_62_b.jpg"
+                    }, {
+                        "id": "24678551",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/8733778_64_b.jpg"
+                    }, {
+                        "id": "24678552",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/8733778_65_b.jpg"
+                    }, {
+                        "id": "24678553",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/8733778_67_b.jpg"
+                    }, {
+                        "id": "24678554",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/8733778_68_b.jpg"
+                    }, {
+                        "id": "24678555",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/8733778_76_b.jpg"
+                    }, {
+                        "id": "24678556",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/8733778_77_b.jpg"
+                    }, {
+                        "id": "24678557",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/8733778_78_b.jpg"
+                    }, {
+                        "id": "24678558",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/8733778_79_b.jpg"
+                    }, {
+                        "id": "24678559",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/8733778_80_b.jpg"
+                    }, {
+                        "id": "24678560",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/8733778_81_b.jpg"
+                    }, {
+                        "id": "24678561",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/8733778_82_b.jpg"
+                    }, {
+                        "id": "24678562",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/8733778_71_b.jpg"
+                    }, {
+                        "id": "24678563",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/8733778_72_b.jpg"
+                    }, {
+                        "id": "24678564",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/8733778_84_b.jpg"
+                    }, {
+                        "id": "24678565",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/8733778_85_b.jpg"
+                    }, {
+                        "id": "24678566",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/8733778_87_b.jpg"
+                    }, {
+                        "id": "24678568",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/8733778_75_b.jpg"
+                    }, {
+                        "id": "31032082",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/8733778_91_b.jpg"
+                    }, {
+                        "id": "31032083",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/71d8cf6d_b.jpg"
+                    }, {
+                        "id": "31032084",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/9738f9ba_b.jpg"
+                    }, {
+                        "id": "31032085",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/a27ab5ab_b.jpg"
+                    }, {
+                        "id": "31032089",
+                        "url": "//images.almundo.com/201/9000000/8740000/8733800/8733778/c3192756_b.jpg"
+                    }],
+                    "amenities": [{
+                        "code": "check-in",
+                        "description": "check-in 24hs"
+                    }, {
+                        "code": "tours-ticket-assistance",
+                        "description": "asistencia turística"
+                    }, {
+                        "code": "internet",
+                        "description": "internet"
+                    }],
+                    "stars": 2,
+                    "recommended": false,
+                    "checkin_time": "",
+                    "checkout_time": "",
+                    "hotel_chain": "",
+                    "rating_summary": {},
+                    "rate": {
+                        "id": "60750005-cd3d-464a-9c7e-3166d1143f24",
+                        "price": {
+                            "per_night": 2815.32,
+                            "total": 19707.234625,
+                            "discount": {
+                                "amount": 4926.51,
+                                "percentage": 20
+                            },
+                            "currency": {
+                                "id": 2654210,
+                                "code": "ARS",
+                                "mask": "$",
+                                "ratio": 16.25
+                            },
+                            "price_without_discount": 24633.744625,
+                            "price_per_night_per_room": 3519.11,
+                            "total_with_operation_cost": 20692.59635625,
+                            "charges": [{
+                                "amount": 99.61933573905787,
+                                "type": "VAT",
+                                "description": "VAT",
+                                "included": true
+                            }],
+                            "show_amount": 16286.97076462568,
+                            "show_amount_per_night_per_room": 2326.72,
+                            "show_amount_with_operation_cost": 17101.319302856962,
+                            "show_amount_per_night_per_room_without_discount": 2908.4,
+                            "show_amount_without_discount": 20358.7134557821
+                        },
+                        "smoking_preference": {},
+                        "meal_plan": {
+                            "code": "ROOM_ONLY",
+                            "description": "solo la habitación"
+                        },
+                        "payment_method": {
+                            "code": "PREPAID",
+                            "description": "Paga en cuotas"
+                        },
+                        "refundable": false,
+                        "promotion": "",
+                        "status": "UNCHECKED",
+                        "cancel_policies": [],
+                        "free_cancel_date": {
+                            "date": 0,
+                            "monthNumber": 0,
+                            "year": 0,
+                            "plain": ""
+                        }
+                    },
+                    "payment_methods": [{
+                        "code": "PREPAID",
+                        "description": "Paga en cuotas"
+                    }, {
+                        "code": "PAY_AT_DESTINATION",
+                        "description": "Paga en destino"
+                    }],
+                    "slug": "hostal-montaloya-232717",
+                    "defaultPaymentMethod": "PREPAID"
+                }, {
+                    "id": "36113",
+                    "description": "<p><b>Ubicación del establecimiento</b> <br />Si te alojas en Hotel ILUNION Suites Madrid, en Madrid (Chamartín), estarás a poca distancia de Parque de Berlín y Museo del Prado.  Este hotel de 4 estrellas se encuentra cerca de lugares de interés como: Palacio Municipal de Congresos y Plaza Mayor.</p><p><b>Habitaciones</b> <br />Te sentirás como en tu propia casa en una de las 152 habitaciones con aire acondicionado y televisor de pantalla plana. La conexión a Internet wifi gratis te mantendrá en contacto con los tuyos; también podrás ver tu programa favorito en el televisor con canales por satélite. El baño privado con ducha y bañera combinadas está provisto de artículos de higiene personal gratuitos y bidé. Las comodidades incluyen caja fuerte, escritorio y teléfono.</p><p><b>Servicios</b> <br />Aprovecha los prácticos servicios que se te ofrecen, como conexión a Internet wifi gratis, servicio de celebración de bodas o televisor en zonas comunes.</p><p><b>Para comer</b> <br />Si tienes hambre, pasa por el restaurante de este hotel, que ofrece desayunos, almuerzos y cenas. También hay una cafetería y servicio de habitaciones con horario limitado. Apaga la sed con tu bebida favorita en el bar o lounge.</p><p><b>Servicios de negocios y otros</b> <br />Tendrás periódicos gratuitos en el vestíbulo, servicio de tintorería y servicio de recepción 24 horas a tu disposición. ¿Estás organizando un evento en Madrid? En este hotel tienes a tu disposición 650 metros cuadrados de espacio con centro de conferencias. Hay un aparcamiento sin asistencia (de pago) disponible.</p>",
+                    "name": "Hotel ILUNION Suites Madrid",
+                    "geo_position": {
+                        "latitude": 40.4477,
+                        "longitude": -3.66894
+                    },
+                    "images": [{
+                        "id": "21771151",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/874154_347_b.jpg"
+                    }, {
+                        "id": "21771211",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/874154_364_b.jpg"
+                    }, {
+                        "id": "37012300",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/7a396d27_b.jpg"
+                    }, {
+                        "id": "37012301",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/91cd4471_b.jpg"
+                    }, {
+                        "id": "37012302",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/b6a7a91e_b.jpg"
+                    }, {
+                        "id": "37012303",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/aeee3acd_b.jpg"
+                    }, {
+                        "id": "37012304",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/affe7329_b.jpg"
+                    }, {
+                        "id": "37012305",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/d4514e40_b.jpg"
+                    }, {
+                        "id": "37012306",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/115de493_b.jpg"
+                    }, {
+                        "id": "37012307",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/86662ad4_b.jpg"
+                    }, {
+                        "id": "37012308",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/9fa55812_b.jpg"
+                    }, {
+                        "id": "37012309",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/e249e5b0_b.jpg"
+                    }, {
+                        "id": "37012310",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/e6ca6390_b.jpg"
+                    }, {
+                        "id": "37012311",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/7a621788_b.jpg"
+                    }, {
+                        "id": "37012312",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/9d75c4c8_b.jpg"
+                    }, {
+                        "id": "37012313",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/02b67e22_b.jpg"
+                    }, {
+                        "id": "37012314",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/0680509c_b.jpg"
+                    }, {
+                        "id": "37012315",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/08172121_b.jpg"
+                    }, {
+                        "id": "37012316",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/14d2fac7_b.jpg"
+                    }, {
+                        "id": "37012317",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/196b0089_b.jpg"
+                    }, {
+                        "id": "37012318",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/1bd4af04_b.jpg"
+                    }, {
+                        "id": "37012319",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/48e08d34_b.jpg"
+                    }, {
+                        "id": "37012320",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/5660a4c8_b.jpg"
+                    }, {
+                        "id": "37012321",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/63ae9d7f_b.jpg"
+                    }, {
+                        "id": "37012322",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/77cd1e61_b.jpg"
+                    }, {
+                        "id": "37012323",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/80c198aa_b.jpg"
+                    }, {
+                        "id": "37012324",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/857ace05_b.jpg"
+                    }, {
+                        "id": "37012325",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/85d89fff_b.jpg"
+                    }, {
+                        "id": "37012326",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/8d78d2cb_b.jpg"
+                    }, {
+                        "id": "37012327",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/9c872c2a_b.jpg"
+                    }, {
+                        "id": "37012328",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/a212a8df_b.jpg"
+                    }, {
+                        "id": "37012329",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/af5c0caf_b.jpg"
+                    }, {
+                        "id": "37012330",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/ca845845_b.jpg"
+                    }, {
+                        "id": "37012331",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/cd6805b5_b.jpg"
+                    }, {
+                        "id": "37012332",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/d94d2675_b.jpg"
+                    }, {
+                        "id": "37012333",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/dede5f33_b.jpg"
+                    }, {
+                        "id": "37012334",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/e76d9007_b.jpg"
+                    }, {
+                        "id": "37012335",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/e96b1524_b.jpg"
+                    }, {
+                        "id": "37012336",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/ffff73d3_b.jpg"
+                    }, {
+                        "id": "37012337",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/1f00ee55_b.jpg"
+                    }, {
+                        "id": "37012338",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/5236aad2_b.jpg"
+                    }, {
+                        "id": "37012339",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/b325b3d5_b.jpg"
+                    }, {
+                        "id": "37012340",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/24e297fd_b.jpg"
+                    }, {
+                        "id": "37012341",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/6c8b3a3e_b.jpg"
+                    }, {
+                        "id": "37012342",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/ba5dd094_b.jpg"
+                    }, {
+                        "id": "37012343",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/167fefc9_b.jpg"
+                    }, {
+                        "id": "37012344",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/77b9679e_b.jpg"
+                    }, {
+                        "id": "37012345",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/3a74f086_b.jpg"
+                    }, {
+                        "id": "37012346",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/3c6c4e05_b.jpg"
+                    }, {
+                        "id": "37012347",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/92c96986_b.jpg"
+                    }, {
+                        "id": "37012348",
+                        "url": "//images.almundo.com/201/1000000/880000/874200/874154/9577719b_b.jpg"
+                    }],
+                    "amenities": [{
+                        "code": "coffee-shop",
+                        "description": "tienda de café"
+                    }, {
+                        "code": "restaurant",
+                        "description": "restaurante"
+                    }, {
+                        "code": "meeting-rooms",
+                        "description": "sala de reuniones"
+                    }, {
+                        "code": "parking",
+                        "description": "estacionamiento"
+                    }, {
+                        "code": "wedding-services",
+                        "description": "servicios de boda"
+                    }, {
+                        "code": "bar",
+                        "description": "bar"
+                    }, {
+                        "code": "check-in",
+                        "description": "check-in 24hs"
+                    }, {
+                        "code": "tours-ticket-assistance",
+                        "description": "asistencia turística"
+                    }, {
+                        "code": "internet",
+                        "description": "internet"
+                    }, {
+                        "code": "laundry-facilities",
+                        "description": "lavanderia"
+                    }, {
+                        "code": "housekeeping",
+                        "description": "servicio de limpieza"
+                    }],
+                    "stars": 4,
+                    "recommended": false,
+                    "checkin_time": "2:00 PM",
+                    "checkout_time": "12:00 PM",
+                    "hotel_chain": "",
+                    "rating_summary": {},
+                    "rate": {
+                        "id": "7e510f54-1ccb-4881-bb6f-8cae8db2cdd9",
+                        "price": {
+                            "per_night": 1715.96,
+                            "total": 12011.65225,
+                            "discount": {
+                                "amount": 2729.83,
+                                "percentage": 19
+                            },
+                            "currency": {
+                                "id": 2654210,
+                                "code": "ARS",
+                                "mask": "$",
+                                "ratio": 16.25
+                            },
+                            "price_without_discount": 14741.48225,
+                            "price_per_night_per_room": 2105.93,
+                            "total_with_operation_cost": 12612.2348625,
+                            "charges": [{
+                                "amount": 227.02601031976775,
+                                "type": "VAT",
+                                "description": "VAT",
+                                "included": true
+                            }],
+                            "show_amount": 9926.985330677782,
+                            "show_amount_per_night_per_room": 1418.15,
+                            "show_amount_with_operation_cost": 10423.334597211671,
+                            "show_amount_per_night_per_room_without_discount": 1750.8,
+                            "show_amount_without_discount": 12255.537445281212
+                        },
+                        "smoking_preference": {
+                            "code": "NS"
+                        },
+                        "meal_plan": {
+                            "code": "ROOM_ONLY",
+                            "description": "solo la habitación"
+                        },
+                        "payment_method": {
+                            "code": "PREPAID",
+                            "description": "Paga en cuotas"
+                        },
+                        "refundable": false,
+                        "promotion": "",
+                        "status": "UNCHECKED",
+                        "cancel_policies": [],
+                        "free_cancel_date": {
+                            "date": 0,
+                            "monthNumber": 0,
+                            "year": 0,
+                            "plain": ""
+                        }
+                    },
+                    "payment_methods": [{
+                        "code": "PREPAID",
+                        "description": "Paga en cuotas"
+                    }, {
+                        "code": "PAY_AT_DESTINATION",
+                        "description": "Paga en destino"
+                    }],
+                    "slug": "hotel-ilunion-suites-madrid-36113",
+                    "defaultPaymentMethod": "PREPAID"
+                }, {
+                    "id": "204744",
+                    "description": "<p><b>Ubicación del establecimiento</b> <br />En Apartamentos Blume Cruz gozarás de una ubicación céntrica en Madrid, a pocos pasos de Plaza del Ángel y de Plaza Mayor.  Este complejo de apartamentos se encuentra cerca de Teatro Español y de Palacio de Santa Cruz.</p><p><b>Habitaciones</b> <br />Disfruta de una estancia fabulosa en una de las 16 habitaciones con decoraciones diferentes, todas dotadas de cocina con frigorífico y placa de cocina. Descansa como nunca en tu cama con edredón de plumas o en el sofá cama individual disponible en todas las habitaciones. La conexión a Internet wifi gratis te permite comunicarte con los tuyos, y en tus ratos libres tendrás un televisor de pantalla plana con canales digitales para entretenerte. Las comodidades incluyen caja fuerte, escritorio y teléfono.</p><p><b>Servicios</b> <br />Aprovecha los prácticos servicios que se te ofrecen, como conexión a Internet wifi gratis, servicios de conserjería o tienda de recuerdos o quiosco. Divertirse nunca fue tan fácil, aprovecha el servicio de transporte al parque temático (de pago).</p><p><b>Para comer</b> <br />Todos los días se sirve un desayuno continental de pago.</p><p><b>Servicios de negocios y otros</b> <br />Tendrás servicio de tintorería, atención multilingüe y lavandería a tu disposición. Se ofrece servicio de transporte al aeropuerto (ida y vuelta) de pago a petición.</p>",
+                    "name": "Apartamentos Blume Cruz",
+                    "geo_position": {
+                        "latitude": 40.41487,
+                        "longitude": -3.70264
+                    },
+                    "images": [{
+                        "id": "24296279",
+                        "url": "//images.almundo.com/201/3000000/2540000/2536500/2536466/2536466_65_b.jpg"
+                    }, {
+                        "id": "24296281",
+                        "url": "//images.almundo.com/201/3000000/2540000/2536500/2536466/2536466_41_b.jpg"
+                    }, {
+                        "id": "24296282",
+                        "url": "//images.almundo.com/201/3000000/2540000/2536500/2536466/2536466_25_b.jpg"
+                    }, {
+                        "id": "24296283",
+                        "url": "//images.almundo.com/201/3000000/2540000/2536500/2536466/2536466_26_b.jpg"
+                    }, {
+                        "id": "24296284",
+                        "url": "//images.almundo.com/201/3000000/2540000/2536500/2536466/2536466_29_b.jpg"
+                    }, {
+                        "id": "24296285",
+                        "url": "//images.almundo.com/201/3000000/2540000/2536500/2536466/2536466_34_b.jpg"
+                    }, {
+                        "id": "24296286",
+                        "url": "//images.almundo.com/201/3000000/2540000/2536500/2536466/2536466_36_b.jpg"
+                    }, {
+                        "id": "24296287",
+                        "url": "//images.almundo.com/201/3000000/2540000/2536500/2536466/2536466_38_b.jpg"
+                    }, {
+                        "id": "24296288",
+                        "url": "//images.almundo.com/201/3000000/2540000/2536500/2536466/2536466_40_b.jpg"
+                    }, {
+                        "id": "24296289",
+                        "url": "//images.almundo.com/201/3000000/2540000/2536500/2536466/2536466_43_b.jpg"
+                    }, {
+                        "id": "24296290",
+                        "url": "//images.almundo.com/201/3000000/2540000/2536500/2536466/2536466_33_b.jpg"
+                    }, {
+                        "id": "24296291",
+                        "url": "//images.almundo.com/201/3000000/2540000/2536500/2536466/2536466_27_b.jpg"
+                    }, {
+                        "id": "24296293",
+                        "url": "//images.almundo.com/201/3000000/2540000/2536500/2536466/2536466_44_b.jpg"
+                    }, {
+                        "id": "24296294",
+                        "url": "//images.almundo.com/201/3000000/2540000/2536500/2536466/2536466_30_b.jpg"
+                    }, {
+                        "id": "24296296",
+                        "url": "//images.almundo.com/201/3000000/2540000/2536500/2536466/2536466_35_b.jpg"
+                    }, {
+                        "id": "24296297",
+                        "url": "//images.almundo.com/201/3000000/2540000/2536500/2536466/2536466_37_b.jpg"
+                    }, {
+                        "id": "24296298",
+                        "url": "//images.almundo.com/201/3000000/2540000/2536500/2536466/2536466_31_b.jpg"
+                    }, {
+                        "id": "24296300",
+                        "url": "//images.almundo.com/201/3000000/2540000/2536500/2536466/2536466_53_b.jpg"
+                    }, {
+                        "id": "24296302",
+                        "url": "//images.almundo.com/201/3000000/2540000/2536500/2536466/2536466_47_b.jpg"
+                    }, {
+                        "id": "24296304",
+                        "url": "//images.almundo.com/201/3000000/2540000/2536500/2536466/2536466_49_b.jpg"
+                    }, {
+                        "id": "24296305",
+                        "url": "//images.almundo.com/201/3000000/2540000/2536500/2536466/2536466_50_b.jpg"
+                    }, {
+                        "id": "24296307",
+                        "url": "//images.almundo.com/201/3000000/2540000/2536500/2536466/2536466_56_b.jpg"
+                    }, {
+                        "id": "24296308",
+                        "url": "//images.almundo.com/201/3000000/2540000/2536500/2536466/2536466_58_b.jpg"
+                    }, {
+                        "id": "24296309",
+                        "url": "//images.almundo.com/201/3000000/2540000/2536500/2536466/2536466_62_b.jpg"
+                    }, {
+                        "id": "24296310",
+                        "url": "//images.almundo.com/201/3000000/2540000/2536500/2536466/2536466_64_b.jpg"
+                    }, {
+                        "id": "24296311",
+                        "url": "//images.almundo.com/201/3000000/2540000/2536500/2536466/2536466_60_b.jpg"
+                    }, {
+                        "id": "24296312",
+                        "url": "//images.almundo.com/201/3000000/2540000/2536500/2536466/2536466_20_b.jpg"
+                    }, {
+                        "id": "24296313",
+                        "url": "//images.almundo.com/201/3000000/2540000/2536500/2536466/2536466_61_b.jpg"
+                    }, {
+                        "id": "24296314",
+                        "url": "//images.almundo.com/201/3000000/2540000/2536500/2536466/2536466_59_b.jpg"
+                    }, {
+                        "id": "24296315",
+                        "url": "//images.almundo.com/201/3000000/2540000/2536500/2536466/2536466_63_b.jpg"
+                    }, {
+                        "id": "51970850",
+                        "url": "//images.almundo.com/201/3000000/2540000/2536500/2536466/6db5f72e_b.jpg"
+                    }, {
+                        "id": "51970851",
+                        "url": "//images.almundo.com/201/3000000/2540000/2536500/2536466/06bf3e14_b.jpg"
+                    }, {
+                        "id": "51970852",
+                        "url": "//images.almundo.com/201/3000000/2540000/2536500/2536466/47b47d0d_b.jpg"
+                    }, {
+                        "id": "51970855",
+                        "url": "//images.almundo.com/201/3000000/2540000/2536500/2536466/e2d51790_b.jpg"
+                    }, {
+                        "id": "51970856",
+                        "url": "//images.almundo.com/201/3000000/2540000/2536500/2536466/e33b08d7_b.jpg"
+                    }, {
+                        "id": "51970858",
+                        "url": "//images.almundo.com/201/3000000/2540000/2536500/2536466/ff455edb_b.jpg"
+                    }, {
+                        "id": "51970859",
+                        "url": "//images.almundo.com/201/3000000/2540000/2536500/2536466/6820c3f1_b.jpg"
+                    }, {
+                        "id": "52243111",
+                        "url": "//images.almundo.com/201/3000000/2540000/2536500/2536466/48a26b58_b.jpg"
+                    }, {
+                        "id": "52243112",
+                        "url": "//images.almundo.com/201/3000000/2540000/2536500/2536466/26daf12e_b.jpg"
+                    }, {
+                        "id": "52243113",
+                        "url": "//images.almundo.com/201/3000000/2540000/2536500/2536466/7833623a_b.jpg"
+                    }, {
+                        "id": "52243114",
+                        "url": "//images.almundo.com/201/3000000/2540000/2536500/2536466/834d7912_b.jpg"
+                    }],
+                    "amenities": [{
+                        "code": "television",
+                        "description": "televisión"
+                    }, {
+                        "code": "tours-ticket-assistance",
+                        "description": "asistencia turística"
+                    }, {
+                        "code": "internet",
+                        "description": "internet"
+                    }, {
+                        "code": "laundry-facilities",
+                        "description": "lavanderia"
+                    }, {
+                        "code": "housekeeping",
+                        "description": "servicio de limpieza"
+                    }],
+                    "stars": 3,
+                    "recommended": false,
+                    "checkin_time": "2:00 PM",
+                    "checkout_time": "12:00 PM",
+                    "hotel_chain": "",
+                    "rating_summary": {},
+                    "rate": {
+                        "id": "47c0feab-2352-433a-a208-2b81048a471d",
+                        "price": {
+                            "per_night": 2505.12,
+                            "total": 17535.7715,
+                            "discount": {
+                                "amount": 3985.53,
+                                "percentage": 19
+                            },
+                            "currency": {
+                                "id": 2654210,
+                                "code": "ARS",
+                                "mask": "$",
+                                "ratio": 16.25
+                            },
+                            "price_without_discount": 21521.3015,
+                            "price_per_night_per_room": 3074.48,
+                            "total_with_operation_cost": 18412.560075,
+                            "charges": [{
+                                "amount": 301.34179957242725,
+                                "type": "VAT",
+                                "description": "VAT",
+                                "included": true
+                            }],
+                            "show_amount": 14492.373140640791,
+                            "show_amount_per_night_per_room": 2070.34,
+                            "show_amount_with_operation_cost": 15216.99179767283,
+                            "show_amount_per_night_per_room_without_discount": 2555.98,
+                            "show_amount_without_discount": 17891.818692149125
+                        },
+                        "smoking_preference": {
+                            "code": "NS"
+                        },
+                        "meal_plan": {
+                            "code": "ROOM_ONLY",
+                            "description": "solo la habitación"
+                        },
+                        "payment_method": {
+                            "code": "PREPAID",
+                            "description": "Paga en cuotas"
+                        },
+                        "refundable": false,
+                        "promotion": "",
+                        "status": "UNCHECKED",
+                        "cancel_policies": [],
+                        "free_cancel_date": {
+                            "date": 0,
+                            "monthNumber": 0,
+                            "year": 0,
+                            "plain": ""
+                        }
+                    },
+                    "payment_methods": [{
+                        "code": "PREPAID",
+                        "description": "Paga en cuotas"
+                    }, {
+                        "code": "PAY_AT_DESTINATION",
+                        "description": "Paga en destino"
+                    }],
+                    "slug": "apartamentos-blume-cruz-204744",
+                    "defaultPaymentMethod": "PREPAID"
+                }, {
+                    "id": "504377",
+                    "description": "<p><b>Ubicación del establecimiento</b> <br />Este complejo de apartamentos de 4 estrellas se encuentra cerca de lugares de interés como: Museo del Prado y Plaza Mayor.  Si te alojas en Gran Via Suites, en Madrid (Chueca), estarás a pocos minutos de Mercado de San Antón y Casino Gran Vía.</p><p><b>Habitaciones</b> <br />Reserva una de las 16 habitaciones climatizadas, todas dotadas de cocina con frigorífico y microondas. Mantén el contacto con los tuyos gracias a la conexión a Internet wifi gratis. Las comodidades incluyen cafetera y tetera y sofá cama, además de un servicio de limpieza disponible cada semana.</p><p><b>Servicios de negocios y otros</b> <br />La recepción tiene un horario limitado. Pagando un pequeño suplemento podrás aprovechar prestaciones como servicio de transporte al aeropuerto (ida y vuelta) (disponible las 24 horas) y aparcamiento sin asistencia (de pago).</p>",
+                    "name": "Gran Via Suites",
+                    "geo_position": {
+                        "latitude": 40.42022,
+                        "longitude": -3.69795
+                    },
+                    "images": [{
+                        "id": "27455453",
+                        "url": "//images.almundo.com/201/9000000/8380000/8370900/8370827/8370827_15_b.jpg"
+                    }, {
+                        "id": "27455454",
+                        "url": "//images.almundo.com/201/9000000/8380000/8370900/8370827/8370827_14_b.jpg"
+                    }, {
+                        "id": "27455455",
+                        "url": "//images.almundo.com/201/9000000/8380000/8370900/8370827/8370827_12_b.jpg"
+                    }, {
+                        "id": "27455456",
+                        "url": "//images.almundo.com/201/9000000/8380000/8370900/8370827/8370827_32_b.jpg"
+                    }, {
+                        "id": "27455457",
+                        "url": "//images.almundo.com/201/9000000/8380000/8370900/8370827/8370827_13_b.jpg"
+                    }, {
+                        "id": "27455458",
+                        "url": "//images.almundo.com/201/9000000/8380000/8370900/8370827/8370827_31_b.jpg"
+                    }, {
+                        "id": "27455459",
+                        "url": "//images.almundo.com/201/9000000/8380000/8370900/8370827/8370827_28_b.jpg"
+                    }, {
+                        "id": "27455460",
+                        "url": "//images.almundo.com/201/9000000/8380000/8370900/8370827/8370827_36_b.jpg"
+                    }, {
+                        "id": "28342015",
+                        "url": "//images.almundo.com/201/9000000/8380000/8370900/8370827/8370827_42_b.jpg"
+                    }, {
+                        "id": "28342016",
+                        "url": "//images.almundo.com/201/9000000/8380000/8370900/8370827/8370827_44_b.jpg"
+                    }, {
+                        "id": "28342017",
+                        "url": "//images.almundo.com/201/9000000/8380000/8370900/8370827/8370827_45_b.jpg"
+                    }, {
+                        "id": "28342018",
+                        "url": "//images.almundo.com/201/9000000/8380000/8370900/8370827/8370827_46_b.jpg"
+                    }, {
+                        "id": "28342019",
+                        "url": "//images.almundo.com/201/9000000/8380000/8370900/8370827/8370827_47_b.jpg"
+                    }, {
+                        "id": "28342020",
+                        "url": "//images.almundo.com/201/9000000/8380000/8370900/8370827/8370827_48_b.jpg"
+                    }, {
+                        "id": "28342021",
+                        "url": "//images.almundo.com/201/9000000/8380000/8370900/8370827/8370827_49_b.jpg"
+                    }, {
+                        "id": "28342022",
+                        "url": "//images.almundo.com/201/9000000/8380000/8370900/8370827/8370827_50_b.jpg"
+                    }, {
+                        "id": "28342023",
+                        "url": "//images.almundo.com/201/9000000/8380000/8370900/8370827/8370827_51_b.jpg"
+                    }, {
+                        "id": "28342024",
+                        "url": "//images.almundo.com/201/9000000/8380000/8370900/8370827/8370827_52_b.jpg"
+                    }, {
+                        "id": "28342025",
+                        "url": "//images.almundo.com/201/9000000/8380000/8370900/8370827/8370827_43_b.jpg"
+                    }],
+                    "amenities": [{
+                        "code": "parking",
+                        "description": "estacionamiento"
+                    }, {
+                        "code": "internet",
+                        "description": "internet"
+                    }],
+                    "stars": 4,
+                    "recommended": false,
+                    "checkin_time": "3:00 PM",
+                    "checkout_time": "11:00 AM",
+                    "hotel_chain": "",
+                    "rating_summary": {},
+                    "rate": {
+                        "id": "9b72e844-bf86-42bd-b6cb-5073afd3898d",
+                        "price": {
+                            "per_night": 2757.7,
+                            "total": 19303.890125,
+                            "discount": {
+                                "amount": 4387.39,
+                                "percentage": 19
+                            },
+                            "currency": {
+                                "id": 2654210,
+                                "code": "ARS",
+                                "mask": "$",
+                                "ratio": 16.25
+                            },
+                            "price_without_discount": 23691.280125,
+                            "price_per_night_per_room": 3384.47,
+                            "total_with_operation_cost": 20269.08463125,
+                            "charges": [{
+                                "amount": 331.6518501908186,
+                                "type": "VAT",
+                                "description": "VAT",
+                                "included": true
+                            }],
+                            "show_amount": 15953.628202638874,
+                            "show_amount_per_night_per_room": 2279.09,
+                            "show_amount_with_operation_cost": 16751.30961277082,
+                            "show_amount_per_night_per_room_without_discount": 2813.69,
+                            "show_amount_without_discount": 19695.837287208487
+                        },
+                        "smoking_preference": {
+                            "code": "NS"
+                        },
+                        "meal_plan": {
+                            "code": "ROOM_ONLY",
+                            "description": "solo la habitación"
+                        },
+                        "payment_method": {
+                            "code": "PREPAID",
+                            "description": "Paga en cuotas"
+                        },
+                        "refundable": false,
+                        "promotion": "",
+                        "status": "UNCHECKED",
+                        "cancel_policies": [],
+                        "free_cancel_date": {
+                            "date": 0,
+                            "monthNumber": 0,
+                            "year": 0,
+                            "plain": ""
+                        }
+                    },
+                    "payment_methods": [{
+                        "code": "PREPAID",
+                        "description": "Paga en cuotas"
+                    }, {
+                        "code": "PAY_AT_DESTINATION",
+                        "description": "Paga en destino"
+                    }],
+                    "slug": "gran-via-suites-504377",
+                    "defaultPaymentMethod": "PREPAID"
+                }, {
+                    "id": "47266",
+                    "description": "<p><b>Ubicación del establecimiento</b> <br />Este hotel de 4 estrellas se encuentra muy cerca de Rascacielos Torre de Cristal y Parque de Berlín.  Si te alojas en Hotel ILUNION Pio XII, en Madrid (Chamartín), estarás a poca distancia de Parque empresarial Cuatro Torres y Palacio Municipal de Congresos.</p><p><b>Habitaciones</b> <br />Te sentirás como en tu propia casa en una de las 214  habitaciones con aire acondicionado y televisor de pantalla plana. La conexión a Internet wifi gratis te mantendrá en contacto con los tuyos; también podrás ver tu programa favorito en el televisor con canales por satélite. El baño privado con ducha y bañera combinadas está provisto de artículos de higiene personal gratuitos y bidé. Las comodidades incluyen caja fuerte, escritorio y teléfono.</p><p><b>Servicios</b> <br />Con gimnasio y muchas otras instalaciones recreativas a tu disposición, no te quedará ni un minuto libre. Tienes también una terraza donde sentarte a contemplar el paisaje. Encontrarás también conexión a Internet wifi gratis, servicio de celebración de bodas y asistencia turística y para la compra de entradas.</p><p><b>Para comer</b> <br />Podrás comer en el restaurante de este hotel, que cuenta con un bar, o aprovechar el servicio de habitaciones con horario limitado. Apaga la sed con tu bebida favorita en el bar o lounge. Todos los días se sirve un desayuno bufé de pago.</p><p><b>Servicios de negocios y otros</b> <br />Tendrás centro de negocios, periódicos gratuitos en el vestíbulo y servicio de tintorería a tu disposición. ¿Estás organizando un evento en Madrid? En este hotel tienes a tu disposición 400 metros cuadrados de espacio con centro de conferencias y salas de reuniones. Hay un aparcamiento sin asistencia (de pago) disponible.</p>",
+                    "name": "Hotel ILUNION Pio XII",
+                    "geo_position": {
+                        "latitude": 40.4688,
+                        "longitude": -3.67345
+                    },
+                    "images": [{
+                        "id": "37178925",
+                        "url": "//images.almundo.com/201/1000000/800000/796700/796680/dd4b04fd_b.jpg"
+                    }, {
+                        "id": "37178926",
+                        "url": "//images.almundo.com/201/1000000/800000/796700/796680/3eb44a3a_b.jpg"
+                    }, {
+                        "id": "37178927",
+                        "url": "//images.almundo.com/201/1000000/800000/796700/796680/fc0dd124_b.jpg"
+                    }, {
+                        "id": "37178928",
+                        "url": "//images.almundo.com/201/1000000/800000/796700/796680/2ed09f9f_b.jpg"
+                    }, {
+                        "id": "37178929",
+                        "url": "//images.almundo.com/201/1000000/800000/796700/796680/e2e4cee0_b.jpg"
+                    }, {
+                        "id": "37178930",
+                        "url": "//images.almundo.com/201/1000000/800000/796700/796680/4477a084_b.jpg"
+                    }, {
+                        "id": "37178931",
+                        "url": "//images.almundo.com/201/1000000/800000/796700/796680/6ea9fc72_b.jpg"
+                    }, {
+                        "id": "37178932",
+                        "url": "//images.almundo.com/201/1000000/800000/796700/796680/75f67c9d_b.jpg"
+                    }, {
+                        "id": "37178933",
+                        "url": "//images.almundo.com/201/1000000/800000/796700/796680/b84f7943_b.jpg"
+                    }, {
+                        "id": "37178934",
+                        "url": "//images.almundo.com/201/1000000/800000/796700/796680/f2dd6f08_b.jpg"
+                    }, {
+                        "id": "37178935",
+                        "url": "//images.almundo.com/201/1000000/800000/796700/796680/f76ba32d_b.jpg"
+                    }, {
+                        "id": "37178936",
+                        "url": "//images.almundo.com/201/1000000/800000/796700/796680/0d11798b_b.jpg"
+                    }, {
+                        "id": "37178937",
+                        "url": "//images.almundo.com/201/1000000/800000/796700/796680/1215e27a_b.jpg"
+                    }, {
+                        "id": "37178938",
+                        "url": "//images.almundo.com/201/1000000/800000/796700/796680/49096e47_b.jpg"
+                    }, {
+                        "id": "37178939",
+                        "url": "//images.almundo.com/201/1000000/800000/796700/796680/4da75774_b.jpg"
+                    }, {
+                        "id": "37178940",
+                        "url": "//images.almundo.com/201/1000000/800000/796700/796680/7cd8ff84_b.jpg"
+                    }, {
+                        "id": "37178941",
+                        "url": "//images.almundo.com/201/1000000/800000/796700/796680/803bf73c_b.jpg"
+                    }, {
+                        "id": "37178942",
+                        "url": "//images.almundo.com/201/1000000/800000/796700/796680/a2b53038_b.jpg"
+                    }, {
+                        "id": "37178943",
+                        "url": "//images.almundo.com/201/1000000/800000/796700/796680/c1de9c75_b.jpg"
+                    }, {
+                        "id": "37178944",
+                        "url": "//images.almundo.com/201/1000000/800000/796700/796680/caffcf43_b.jpg"
+                    }, {
+                        "id": "37178945",
+                        "url": "//images.almundo.com/201/1000000/800000/796700/796680/cf704927_b.jpg"
+                    }, {
+                        "id": "37178946",
+                        "url": "//images.almundo.com/201/1000000/800000/796700/796680/fd108a1f_b.jpg"
+                    }, {
+                        "id": "37178947",
+                        "url": "//images.almundo.com/201/1000000/800000/796700/796680/1fc7edef_b.jpg"
+                    }, {
+                        "id": "37178948",
+                        "url": "//images.almundo.com/201/1000000/800000/796700/796680/ed168121_b.jpg"
+                    }, {
+                        "id": "37178949",
+                        "url": "//images.almundo.com/201/1000000/800000/796700/796680/5778d96b_b.jpg"
+                    }, {
+                        "id": "37178950",
+                        "url": "//images.almundo.com/201/1000000/800000/796700/796680/625f0a6a_b.jpg"
+                    }, {
+                        "id": "37178951",
+                        "url": "//images.almundo.com/201/1000000/800000/796700/796680/ae541a8f_b.jpg"
+                    }, {
+                        "id": "37178952",
+                        "url": "//images.almundo.com/201/1000000/800000/796700/796680/b19c070f_b.jpg"
+                    }, {
+                        "id": "37178953",
+                        "url": "//images.almundo.com/201/1000000/800000/796700/796680/0e3df3ae_b.jpg"
+                    }, {
+                        "id": "37178954",
+                        "url": "//images.almundo.com/201/1000000/800000/796700/796680/297db564_b.jpg"
+                    }, {
+                        "id": "37178955",
+                        "url": "//images.almundo.com/201/1000000/800000/796700/796680/3c92e5c1_b.jpg"
+                    }, {
+                        "id": "37178956",
+                        "url": "//images.almundo.com/201/1000000/800000/796700/796680/82b02985_b.jpg"
+                    }, {
+                        "id": "37178957",
+                        "url": "//images.almundo.com/201/1000000/800000/796700/796680/9756e139_b.jpg"
+                    }, {
+                        "id": "37178958",
+                        "url": "//images.almundo.com/201/1000000/800000/796700/796680/af01a1c8_b.jpg"
+                    }, {
+                        "id": "37178959",
+                        "url": "//images.almundo.com/201/1000000/800000/796700/796680/df034ef0_b.jpg"
+                    }, {
+                        "id": "37178960",
+                        "url": "//images.almundo.com/201/1000000/800000/796700/796680/6cb5807a_b.jpg"
+                    }, {
+                        "id": "37178961",
+                        "url": "//images.almundo.com/201/1000000/800000/796700/796680/67864e9c_b.jpg"
+                    }, {
+                        "id": "37178962",
+                        "url": "//images.almundo.com/201/1000000/800000/796700/796680/360e5ace_b.jpg"
+                    }, {
+                        "id": "37178963",
+                        "url": "//images.almundo.com/201/1000000/800000/796700/796680/606feda3_b.jpg"
+                    }, {
+                        "id": "37178964",
+                        "url": "//images.almundo.com/201/1000000/800000/796700/796680/8e4126ff_b.jpg"
+                    }],
+                    "amenities": [{
+                        "code": "wedding-services",
+                        "description": "servicios de boda"
+                    }, {
+                        "code": "bar",
+                        "description": "bar"
+                    }, {
+                        "code": "safety-box",
+                        "description": "caja de seguridad"
+                    }, {
+                        "code": "tours-ticket-assistance",
+                        "description": "asistencia turística"
+                    }, {
+                        "code": "laundry-facilities",
+                        "description": "lavanderia"
+                    }, {
+                        "code": "fitness-center",
+                        "description": "gimnasio"
+                    }, {
+                        "code": "coffee-shop",
+                        "description": "tienda de café"
+                    }, {
+                        "code": "restaurant",
+                        "description": "restaurante"
+                    }, {
+                        "code": "meeting-rooms",
+                        "description": "sala de reuniones"
+                    }, {
+                        "code": "parking",
+                        "description": "estacionamiento"
+                    }, {
+                        "code": "check-in",
+                        "description": "check-in 24hs"
+                    }, {
+                        "code": "internet",
+                        "description": "internet"
+                    }, {
+                        "code": "housekeeping",
+                        "description": "servicio de limpieza"
+                    }],
+                    "stars": 4,
+                    "recommended": false,
+                    "checkin_time": "",
+                    "checkout_time": "",
+                    "hotel_chain": "",
+                    "rating_summary": {},
+                    "rate": {
+                        "id": "35652eb2-d3df-404c-b9f7-ef1cdf90301a",
+                        "price": {
+                            "per_night": 1582.55,
+                            "total": 11077.781,
+                            "discount": {
+                                "amount": 2517.6,
+                                "percentage": 19
+                            },
+                            "currency": {
+                                "id": 2654210,
+                                "code": "ARS",
+                                "mask": "$",
+                                "ratio": 16.25
+                            },
+                            "price_without_discount": 13595.381,
+                            "price_per_night_per_room": 1942.2,
+                            "total_with_operation_cost": 11631.67005,
+                            "charges": [{
+                                "amount": 209.41638222143274,
+                                "type": "VAT",
+                                "description": "VAT",
+                                "included": true
+                            }],
+                            "show_amount": 9155.190909182462,
+                            "show_amount_per_night_per_room": 1307.89,
+                            "show_amount_with_operation_cost": 9612.950454641585,
+                            "show_amount_per_night_per_room_without_discount": 1614.68,
+                            "show_amount_without_discount": 11302.704826151188
+                        },
+                        "smoking_preference": {
+                            "code": "NS"
+                        },
+                        "meal_plan": {
+                            "code": "ROOM_ONLY",
+                            "description": "solo la habitación"
+                        },
+                        "payment_method": {
+                            "code": "PREPAID",
+                            "description": "Paga en cuotas"
+                        },
+                        "refundable": false,
+                        "promotion": "",
+                        "status": "UNCHECKED",
+                        "cancel_policies": [],
+                        "free_cancel_date": {
+                            "date": 0,
+                            "monthNumber": 0,
+                            "year": 0,
+                            "plain": ""
+                        }
+                    },
+                    "payment_methods": [{
+                        "code": "PREPAID",
+                        "description": "Paga en cuotas"
+                    }, {
+                        "code": "PAY_AT_DESTINATION",
+                        "description": "Paga en destino"
+                    }],
+                    "slug": "hotel-ilunion-pio-xii-47266",
+                    "defaultPaymentMethod": "PREPAID"
+                }, {
+                    "id": "21106",
+                    "description": "<p><b>Ubicación del establecimiento</b> <br />En Hotel Santo Domingo gozarás de una ubicación céntrica en Madrid, a pocos pasos de Plaza de Santo Domingo y Teatro Rialto.  Este hotel de 4 estrellas se encuentra cerca de lugares de interés como: Plaza Mayor y Museo del Prado.</p><p><b>Habitaciones</b> <br />Te sentirás como en tu propia casa en una de las 200 habitaciones con decoraciones diferentes, dotadas de minibar y televisor de plasma. La conexión a Internet wifi gratis te mantendrá en contacto con los tuyos; también podrás ver tu programa favorito en el televisor con canales digitales. El cuarto de baño está provisto de artículos de higiene personal gratuitos y secador de pelo. Las comodidades incluyen caja fuerte, escritorio y teléfono.</p><p><b>Servicios</b> <br />Elige entre las numerosas instalaciones recreativas ofrecidas, que incluyen discoteca y piscina al aire libre de temporada. Se ofrece además conexión a Internet wifi gratis, servicios de conserjería y servicio de canguro (de pago).</p><p><b>Para comer</b> <br />Si tienes hambre, pasa por el restaurante de este hotel, que ofrece almuerzos o llama al servicio de habitaciones con horario limitado. Disfruta de tu bebida favorita en el bar o lounge o en el bar junto a la piscina.</p><p><b>Servicios de negocios y otros</b> <br />Tendrás centro de negocios, periódicos gratuitos en el vestíbulo y servicio de tintorería a tu disposición. Las instalaciones para eventos de este hotel incluyen zonas para conferencias y salas de reuniones. Pagando un pequeño suplemento podrás aprovechar prestaciones como servicio de transporte desde el hotel hasta el aeropuerto con horario limitado y aparcamiento sin asistencia (de pago).</p>",
+                    "name": "Hotel Santo Domingo",
+                    "geo_position": {
+                        "latitude": 40.42063,
+                        "longitude": -3.70835
+                    },
+                    "images": [{
+                        "id": "21521076",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/3472151_202_b.jpg"
+                    }, {
+                        "id": "21521077",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/3472151_150_b.jpg"
+                    }, {
+                        "id": "21521078",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/3472151_108_b.jpg"
+                    }, {
+                        "id": "21521079",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/3472151_101_b.jpg"
+                    }, {
+                        "id": "21521080",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/3472151_106_b.jpg"
+                    }, {
+                        "id": "21521081",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/3472151_109_b.jpg"
+                    }, {
+                        "id": "21521082",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/3472151_153_b.jpg"
+                    }, {
+                        "id": "21521083",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/3472151_151_b.jpg"
+                    }, {
+                        "id": "21521084",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/3472151_163_b.jpg"
+                    }, {
+                        "id": "21521085",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/3472151_164_b.jpg"
+                    }, {
+                        "id": "21521086",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/3472151_174_b.jpg"
+                    }, {
+                        "id": "21521087",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/3472151_176_b.jpg"
+                    }, {
+                        "id": "21521088",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/3472151_177_b.jpg"
+                    }, {
+                        "id": "21521089",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/3472151_179_b.jpg"
+                    }, {
+                        "id": "21521090",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/3472151_180_b.jpg"
+                    }, {
+                        "id": "21521091",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/3472151_184_b.jpg"
+                    }, {
+                        "id": "21521092",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/3472151_185_b.jpg"
+                    }, {
+                        "id": "21521093",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/3472151_183_b.jpg"
+                    }, {
+                        "id": "21521094",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/3472151_181_b.jpg"
+                    }, {
+                        "id": "21521095",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/3472151_182_b.jpg"
+                    }, {
+                        "id": "21521096",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/3472151_186_b.jpg"
+                    }, {
+                        "id": "21521097",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/3472151_187_b.jpg"
+                    }, {
+                        "id": "21521098",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/3472151_189_b.jpg"
+                    }, {
+                        "id": "21521099",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/3472151_190_b.jpg"
+                    }, {
+                        "id": "21521100",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/3472151_191_b.jpg"
+                    }, {
+                        "id": "21521101",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/3472151_192_b.jpg"
+                    }, {
+                        "id": "21521102",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/3472151_193_b.jpg"
+                    }, {
+                        "id": "21521103",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/3472151_194_b.jpg"
+                    }, {
+                        "id": "21521104",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/3472151_195_b.jpg"
+                    }, {
+                        "id": "21521105",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/3472151_196_b.jpg"
+                    }, {
+                        "id": "21521106",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/3472151_198_b.jpg"
+                    }, {
+                        "id": "21521107",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/3472151_200_b.jpg"
+                    }, {
+                        "id": "21521108",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/3472151_201_b.jpg"
+                    }, {
+                        "id": "21521109",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/3472151_199_b.jpg"
+                    }, {
+                        "id": "21521110",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/22041bd6_b.jpg"
+                    }, {
+                        "id": "21521111",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/a89225ac_b.JPG"
+                    }, {
+                        "id": "21521112",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/db99210e_b.jpg"
+                    }, {
+                        "id": "21521113",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/670e7612_b.jpg"
+                    }, {
+                        "id": "21521114",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/0337edf0_b.jpg"
+                    }, {
+                        "id": "21521115",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/f0b6c3d7_b.JPG"
+                    }, {
+                        "id": "21521116",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/c62a1586_b.jpg"
+                    }, {
+                        "id": "21521117",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/f66b263d_b.jpg"
+                    }, {
+                        "id": "21521118",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/b18dd5fd_b.jpg"
+                    }, {
+                        "id": "21521119",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/ae805904_b.jpg"
+                    }, {
+                        "id": "21521120",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/3adcf4ef_b.jpg"
+                    }, {
+                        "id": "21521121",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/dfe26453_b.jpg"
+                    }, {
+                        "id": "21521122",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/ce1a9685_b.jpg"
+                    }, {
+                        "id": "21521123",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/a8a227c1_b.jpg"
+                    }, {
+                        "id": "21521124",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/9fc59bb6_b.jpg"
+                    }, {
+                        "id": "21521125",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/49bcd332_b.jpg"
+                    }, {
+                        "id": "21521126",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/46301ab7_b.jpg"
+                    }, {
+                        "id": "21521127",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/3472151_188_b.jpg"
+                    }, {
+                        "id": "21521128",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/3472151_158_b.jpg"
+                    }, {
+                        "id": "21521129",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/3472151_157_b.jpg"
+                    }, {
+                        "id": "21521130",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/3472151_156_b.jpg"
+                    }, {
+                        "id": "21521131",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/3472151_155_b.jpg"
+                    }, {
+                        "id": "21521132",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/3472151_160_b.jpg"
+                    }, {
+                        "id": "21521133",
+                        "url": "//images.almundo.com/201/4000000/3480000/3472200/3472151/3472151_159_b.jpg"
+                    }],
+                    "amenities": [{
+                        "code": "wedding-services",
+                        "description": "servicios de boda"
+                    }, {
+                        "code": "bar",
+                        "description": "bar"
+                    }, {
+                        "code": "safety-box",
+                        "description": "caja de seguridad"
+                    }, {
+                        "code": "tours-ticket-assistance",
+                        "description": "asistencia turística"
+                    }, {
+                        "code": "laundry-facilities",
+                        "description": "lavanderia"
+                    }, {
+                        "code": "pool-bar",
+                        "description": "bar en la piscina"
+                    }, {
+                        "code": "children-club",
+                        "description": "guarderia"
+                    }, {
+                        "code": "restaurant",
+                        "description": "restaurante"
+                    }, {
+                        "code": "meeting-rooms",
+                        "description": "sala de reuniones"
+                    }, {
+                        "code": "parking",
+                        "description": "estacionamiento"
+                    }, {
+                        "code": "check-in",
+                        "description": "check-in 24hs"
+                    }, {
+                        "code": "internet",
+                        "description": "internet"
+                    }, {
+                        "code": "housekeeping",
+                        "description": "servicio de limpieza"
+                    }, {
+                        "code": "pool",
+                        "description": "piscina"
+                    }],
+                    "stars": 4,
+                    "recommended": false,
+                    "checkin_time": "1:00 PM",
+                    "checkout_time": "12:00 PM",
+                    "hotel_chain": "",
+                    "rating_summary": {},
+                    "rate": {
+                        "id": "2b74ffea-775e-4d0f-beaa-4c1b7952720e",
+                        "price": {
+                            "per_night": 2980.67,
+                            "total": 20864.63275,
+                            "discount": {
+                                "amount": 3681.71,
+                                "percentage": 15
+                            },
+                            "currency": {
+                                "id": 2654210,
+                                "code": "ARS",
+                                "mask": "$",
+                                "ratio": 16.25
+                            },
+                            "price_without_discount": 24546.34275,
+                            "price_per_night_per_room": 3506.63,
+                            "total_with_operation_cost": 21907.8643875,
+                            "charges": [{
+                                "amount": 105.46994007762225,
+                                "type": "VAT",
+                                "description": "VAT",
+                                "included": true
+                            }],
+                            "show_amount": 17243.498140668304,
+                            "show_amount_per_night_per_room": 2463.36,
+                            "show_amount_with_operation_cost": 18105.67304770172,
+                            "show_amount_per_night_per_room_without_discount": 2898.07,
+                            "show_amount_without_discount": 20286.468400786238
+                        },
+                        "smoking_preference": {},
+                        "meal_plan": {
+                            "code": "ROOM_ONLY",
+                            "description": "solo la habitación"
+                        },
+                        "payment_method": {
+                            "code": "PREPAID",
+                            "description": "Paga en cuotas"
+                        },
+                        "refundable": false,
+                        "promotion": "",
+                        "status": "UNCHECKED",
+                        "cancel_policies": [],
+                        "free_cancel_date": {
+                            "date": 0,
+                            "monthNumber": 0,
+                            "year": 0,
+                            "plain": ""
+                        }
+                    },
+                    "payment_methods": [{
+                        "code": "PREPAID",
+                        "description": "Paga en cuotas"
+                    }, {
+                        "code": "PAY_AT_DESTINATION",
+                        "description": "Paga en destino"
+                    }],
+                    "slug": "hotel-santo-domingo-21106",
+                    "defaultPaymentMethod": "PREPAID"
+                }, {
+                    "id": "17447",
+                    "description": "<p><b>Ubicación del establecimiento</b> <br />Hotel Miguel Angel by BlueBay está en pleno corazón de Madrid, a pocos pasos de Museo de Ciencias Naturales y Museo Sorolla.  Este hotel de 5 estrellas se encuentra cerca de lugares de interés como: Museo del Prado y Plaza Mayor.</p><p><b>Habitaciones</b> <br />Te sentirás como en tu propia casa en una de las 267 habitaciones con aire acondicionado, minibar y televisor LCD. La conexión a Internet wifi gratis te mantendrá en contacto con los tuyos; también podrás ver tu programa favorito en el televisor con canales digitales. El baño privado con bañera está provisto de artículos de higiene personal de diseño y bidé. Las comodidades incluyen caja fuerte, escritorio y teléfono.</p><p><b>Servicios</b> <br />Para un relax sin igual, nada como una visita al spa, que ofrece masajes, tratamientos corporales y tratamientos faciales. Si quieres divertirte, aquí tienes bañera de hidromasaje y gimnasio, entre muchas otras instalaciones. Otros servicios de este hotel incluyen conexión a Internet wifi gratis, servicio de celebración de bodas y asistencia turística y para la compra de entradas.</p><p><b>Para comer</b> <br />Acércate a uno de los 3 restaurantes de este hotel para comer algo, o aprovecha el servicio de habitaciones las 24 horas. Todos los días se sirve un desayuno bufé de pago.</p><p><b>Servicios de negocios y otros</b> <br />Tendrás centro de negocios abierto las 24 horas, servicio de tintorería y servicio de recepción 24 horas a tu disposición. Podrás utilizar el servicio de traslado desde la estación de trenes (de pago).</p>",
+                    "name": "Hotel Miguel Angel by BlueBay",
+                    "geo_position": {
+                        "latitude": 40.43775,
+                        "longitude": -3.6913
+                    },
+                    "images": [{
+                        "id": "21442693",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/6574_133_b.jpg"
+                    }, {
+                        "id": "21442694",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/6574_102_b.jpg"
+                    }, {
+                        "id": "21442695",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/6574_145_b.jpg"
+                    }, {
+                        "id": "21442696",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/6574_91_b.jpg"
+                    }, {
+                        "id": "21442697",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/6574_92_b.jpg"
+                    }, {
+                        "id": "21442698",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/6574_94_b.jpg"
+                    }, {
+                        "id": "21442699",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/6574_96_b.jpg"
+                    }, {
+                        "id": "21442700",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/6574_97_b.jpg"
+                    }, {
+                        "id": "21442701",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/6574_98_b.jpg"
+                    }, {
+                        "id": "21442702",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/6574_99_b.jpg"
+                    }, {
+                        "id": "21442703",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/6574_100_b.jpg"
+                    }, {
+                        "id": "21442704",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/6574_103_b.jpg"
+                    }, {
+                        "id": "21442705",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/6574_104_b.jpg"
+                    }, {
+                        "id": "21442706",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/6574_105_b.jpg"
+                    }, {
+                        "id": "21442707",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/6574_106_b.jpg"
+                    }, {
+                        "id": "21442708",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/6574_107_b.jpg"
+                    }, {
+                        "id": "21442709",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/6574_108_b.jpg"
+                    }, {
+                        "id": "21442711",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/6574_110_b.jpg"
+                    }, {
+                        "id": "21442712",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/6574_111_b.jpg"
+                    }, {
+                        "id": "21442713",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/6574_112_b.jpg"
+                    }, {
+                        "id": "21442714",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/6574_115_b.jpg"
+                    }, {
+                        "id": "21442715",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/6574_118_b.jpg"
+                    }, {
+                        "id": "21442716",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/6574_121_b.jpg"
+                    }, {
+                        "id": "21442717",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/6574_124_b.jpg"
+                    }, {
+                        "id": "21442718",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/6574_126_b.jpg"
+                    }, {
+                        "id": "21442719",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/6574_129_b.jpg"
+                    }, {
+                        "id": "21442720",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/6574_117_b.jpg"
+                    }, {
+                        "id": "21442721",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/6574_120_b.jpg"
+                    }, {
+                        "id": "21442722",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/6574_125_b.jpg"
+                    }, {
+                        "id": "21442723",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/6574_119_b.jpg"
+                    }, {
+                        "id": "21442724",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/6574_130_b.jpg"
+                    }, {
+                        "id": "21442725",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/6574_116_b.jpg"
+                    }, {
+                        "id": "21442726",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/6574_123_b.jpg"
+                    }, {
+                        "id": "21442727",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/6574_128_b.jpg"
+                    }, {
+                        "id": "21442728",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/6574_131_b.jpg"
+                    }, {
+                        "id": "21442729",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/6574_132_b.jpg"
+                    }, {
+                        "id": "21442730",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/6574_138_b.jpg"
+                    }, {
+                        "id": "21442731",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/6574_140_b.jpg"
+                    }, {
+                        "id": "21442734",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/6574_144_b.jpg"
+                    }, {
+                        "id": "21442735",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/6574_146_b.jpg"
+                    }, {
+                        "id": "21442736",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/6edd8cdd_b.jpg"
+                    }, {
+                        "id": "21442737",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/80d1b450_b.jpg"
+                    }, {
+                        "id": "21442738",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/8a394540_b.jpg"
+                    }, {
+                        "id": "21442739",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/c7421a70_b.jpg"
+                    }, {
+                        "id": "21442740",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/c4449bcd_b.jpg"
+                    }, {
+                        "id": "21442741",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/35c6bf62_b.jpg"
+                    }, {
+                        "id": "21442742",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/3a8bbc49_b.jpg"
+                    }, {
+                        "id": "21442743",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/587da450_b.jpg"
+                    }, {
+                        "id": "21442744",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/645ef895_b.jpg"
+                    }, {
+                        "id": "21442745",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/66b81fed_b.jpg"
+                    }, {
+                        "id": "21442746",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/795f439c_b.jpg"
+                    }, {
+                        "id": "21442747",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/db6c5e0c_b.jpg"
+                    }, {
+                        "id": "21442748",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/e51ba0bd_b.jpg"
+                    }, {
+                        "id": "21442749",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/65921151_b.jpg"
+                    }, {
+                        "id": "21442750",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/5026638b_b.jpg"
+                    }, {
+                        "id": "21442751",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/58496caf_b.jpg"
+                    }, {
+                        "id": "21442752",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/70421f63_b.jpg"
+                    }, {
+                        "id": "21442753",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/ec7a8309_b.jpg"
+                    }, {
+                        "id": "21442754",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/3adbc87a_b.jpg"
+                    }, {
+                        "id": "21442755",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/5125bbc2_b.jpg"
+                    }, {
+                        "id": "21442756",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/001eaf12_b.jpg"
+                    }, {
+                        "id": "21442757",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/36d44db4_b.jpg"
+                    }, {
+                        "id": "21442758",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/c06955f3_b.jpg"
+                    }, {
+                        "id": "21442759",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/4309d1d7_b.jpg"
+                    }, {
+                        "id": "21442760",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/989fb5b4_b.jpg"
+                    }, {
+                        "id": "21442761",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/efde4608_b.jpg"
+                    }, {
+                        "id": "37005066",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/6df30493_b.jpg"
+                    }, {
+                        "id": "37005067",
+                        "url": "//images.almundo.com/201/1000000/10000/6600/6574/8055e6fd_b.jpg"
+                    }],
+                    "amenities": [{
+                        "code": "business-center",
+                        "description": "centro de negocios"
+                    }, {
+                        "code": "meeting-rooms",
+                        "description": "sala de reuniones"
+                    }, {
+                        "code": "transportation",
+                        "description": "traslados"
+                    }, {
+                        "code": "wedding-services",
+                        "description": "servicios de boda"
+                    }, {
+                        "code": "spa",
+                        "description": "spa"
+                    }, {
+                        "code": "check-in",
+                        "description": "check-in 24hs"
+                    }, {
+                        "code": "tours-ticket-assistance",
+                        "description": "asistencia turística"
+                    }, {
+                        "code": "internet",
+                        "description": "internet"
+                    }, {
+                        "code": "laundry-facilities",
+                        "description": "lavanderia"
+                    }, {
+                        "code": "housekeeping",
+                        "description": "servicio de limpieza"
+                    }, {
+                        "code": "newspaper",
+                        "description": "periódico"
+                    }, {
+                        "code": "fitness-center",
+                        "description": "gimnasio"
+                    }],
+                    "stars": 5,
+                    "recommended": false,
+                    "checkin_time": "",
+                    "checkout_time": "",
+                    "hotel_chain": "",
+                    "rating_summary": {},
+                    "rate": {
+                        "id": "9d543a21-d562-464a-b266-58f7cfe135fc",
+                        "price": {
+                            "per_night": 2140.04,
+                            "total": 14980.229875,
+                            "discount": {
+                                "amount": 2644.2,
+                                "percentage": 15
+                            },
+                            "currency": {
+                                "id": 2654210,
+                                "code": "ARS",
+                                "mask": "$",
+                                "ratio": 16.25
+                            },
+                            "price_without_discount": 17624.429875,
+                            "price_per_night_per_room": 2517.78,
+                            "total_with_operation_cost": 15729.24136875,
+                            "charges": [{
+                                "amount": 75.72450309556763,
+                                "type": "VAT",
+                                "description": "VAT",
+                                "included": true
+                            }],
+                            "show_amount": 12380.355268718846,
+                            "show_amount_per_night_per_room": 1768.63,
+                            "show_amount_with_operation_cost": 12999.373032154786,
+                            "show_amount_per_night_per_room_without_discount": 2080.74,
+                            "show_amount_without_discount": 14565.123845551581
+                        },
+                        "smoking_preference": {},
+                        "meal_plan": {
+                            "code": "ROOM_ONLY",
+                            "description": "solo la habitación"
+                        },
+                        "payment_method": {
+                            "code": "PREPAID",
+                            "description": "Paga en cuotas"
+                        },
+                        "refundable": false,
+                        "promotion": "",
+                        "status": "UNCHECKED",
+                        "cancel_policies": [],
+                        "free_cancel_date": {
+                            "date": 0,
+                            "monthNumber": 0,
+                            "year": 0,
+                            "plain": ""
+                        }
+                    },
+                    "payment_methods": [{
+                        "code": "PREPAID",
+                        "description": "Paga en cuotas"
+                    }, {
+                        "code": "PAY_AT_DESTINATION",
+                        "description": "Paga en destino"
+                    }],
+                    "slug": "hotel-miguel-angel-by-bluebay-17447",
+                    "defaultPaymentMethod": "PREPAID"
+                }, {
+                    "id": "48712",
+                    "description": "<p><b>Ubicación del establecimiento</b> <br />Alojándote en Gran Hotel Velazquez estarás en pleno corazón de Madrid, a pocos pasos de Fundación Juan March y de ABC Serrano.  Este hotel de 4 estrellas se encuentra cerca de lugares de interés como: Museo del Prado y Plaza Mayor.</p><p><b>Habitaciones</b> <br />Te sentirás como en tu propia casa en una de las 143 habitaciones con aire acondicionado y minibar. La conexión a Internet wifi gratis te mantendrá en contacto con los tuyos; también podrás ver tu programa favorito en el televisor con canales por satélite. El baño privado con bañera está provisto de artículos de higiene personal gratuitos y bidé. Las comodidades incluyen caja fuerte y escritorio, además de un servicio de limpieza disponible todos los días.</p><p><b>Servicios</b> <br />Aprovecha los prácticos servicios que se te ofrecen, como conexión a Internet wifi gratis, servicio de peluquería o servicio de celebración de bodas.</p><p><b>Para comer</b> <br />Descubre los deliciosos platos de los 2 restaurantes y la cafetería de este hotel. Y si no te apetece salir, puedes llamar al servicio de habitaciones con horario limitado. Apaga la sed con tu bebida favorita en el bar o lounge.</p><p><b>Servicios de negocios y otros</b> <br />Tendrás periódicos gratuitos en el vestíbulo, servicio de tintorería y servicio de recepción 24 horas a tu disposición. Pagando un pequeño suplemento podrás aprovechar prestaciones como servicio de transporte al aeropuerto (ida y vuelta) (disponible las 24 horas) y aparcamiento sin asistencia (de pago).</p>",
+                    "name": "Gran Hotel Velazquez",
+                    "geo_position": {
+                        "latitude": 40.42813,
+                        "longitude": -3.68382
+                    },
+                    "images": [{
+                        "id": "50215475",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/865586_91_b.jpg"
+                    }, {
+                        "id": "50215476",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/865586_95_b.jpg"
+                    }, {
+                        "id": "50215477",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/865586_65_b.jpg"
+                    }, {
+                        "id": "50215478",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/865586_67_b.jpg"
+                    }, {
+                        "id": "50215479",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/865586_69_b.jpg"
+                    }, {
+                        "id": "50215480",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/865586_75_b.jpg"
+                    }, {
+                        "id": "50215481",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/865586_85_b.jpg"
+                    }, {
+                        "id": "50215482",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/865586_81_b.jpg"
+                    }, {
+                        "id": "50215483",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/865586_74_b.jpg"
+                    }, {
+                        "id": "50215484",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/865586_80_b.jpg"
+                    }, {
+                        "id": "50215485",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/865586_83_b.jpg"
+                    }, {
+                        "id": "50215486",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/865586_102_b.jpg"
+                    }, {
+                        "id": "50215487",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/865586_104_b.jpg"
+                    }, {
+                        "id": "50215488",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/865586_100_b.jpg"
+                    }, {
+                        "id": "50215489",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/865586_101_b.jpg"
+                    }, {
+                        "id": "50215490",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/09efd949_b.jpg"
+                    }, {
+                        "id": "50215491",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/10bf35ca_b.jpg"
+                    }, {
+                        "id": "50215492",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/1191507e_b.jpg"
+                    }, {
+                        "id": "50215493",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/253407bc_b.jpg"
+                    }, {
+                        "id": "50215494",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/3e6bfa4c_b.jpg"
+                    }, {
+                        "id": "50215495",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/4863adea_b.jpg"
+                    }, {
+                        "id": "50215496",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/68430524_b.jpg"
+                    }, {
+                        "id": "50215497",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/6f9a283f_b.jpg"
+                    }, {
+                        "id": "50215498",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/7237c345_b.jpg"
+                    }, {
+                        "id": "50215499",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/7d3b2d7f_b.jpg"
+                    }, {
+                        "id": "50215500",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/84437868_b.jpg"
+                    }, {
+                        "id": "50215501",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/990aacd7_b.jpg"
+                    }, {
+                        "id": "50215502",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/a70496a0_b.jpg"
+                    }, {
+                        "id": "50215503",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/b6e0c808_b.jpg"
+                    }, {
+                        "id": "50215504",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/b9e10728_b.jpg"
+                    }, {
+                        "id": "50215505",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/d661df7d_b.jpg"
+                    }, {
+                        "id": "50215506",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/fceb207e_b.jpg"
+                    }, {
+                        "id": "50215507",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/865586_79_b.jpg"
+                    }, {
+                        "id": "50215508",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/865586_70_b.jpg"
+                    }, {
+                        "id": "50215509",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/865586_28_b.jpg"
+                    }, {
+                        "id": "50215510",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/ccad519a_b.jpg"
+                    }, {
+                        "id": "50215511",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/5b369bdf_b.jpg"
+                    }, {
+                        "id": "50215512",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/e134c7d8_b.jpg"
+                    }, {
+                        "id": "50215513",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/b3b37c21_b.jpg"
+                    }, {
+                        "id": "50215514",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/38dd0953_b.jpg"
+                    }, {
+                        "id": "50215515",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/ee6008d5_b.jpg"
+                    }, {
+                        "id": "50215516",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/c2058951_b.jpg"
+                    }, {
+                        "id": "50215517",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/863d8d87_b.jpg"
+                    }, {
+                        "id": "50215518",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/13319508_b.jpg"
+                    }, {
+                        "id": "50215519",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/1f91e915_b.jpg"
+                    }, {
+                        "id": "50215520",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/17e45ce3_b.jpg"
+                    }, {
+                        "id": "50215521",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/0eed8c16_b.jpg"
+                    }, {
+                        "id": "50215522",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/eaf638e4_b.jpg"
+                    }, {
+                        "id": "50215523",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/3b4c96f4_b.jpg"
+                    }, {
+                        "id": "50215524",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/29643dbf_b.jpg"
+                    }, {
+                        "id": "50215525",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/21cd3d1b_b.jpg"
+                    }, {
+                        "id": "50215526",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/61528b71_b.JPG"
+                    }, {
+                        "id": "50215527",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/3ccac0a3_b.jpg"
+                    }, {
+                        "id": "50215528",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/7d77914e_b.jpg"
+                    }, {
+                        "id": "50215529",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/979a9290_b.jpg"
+                    }, {
+                        "id": "50215530",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/5cdd30a7_b.jpg"
+                    }, {
+                        "id": "50215531",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/d1aa2456_b.jpg"
+                    }, {
+                        "id": "50215532",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/d746115d_b.jpg"
+                    }, {
+                        "id": "50215533",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/6bd9ff15_b.jpg"
+                    }, {
+                        "id": "50215534",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/4191f6ea_b.jpg"
+                    }, {
+                        "id": "50215535",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/389cc9e0_b.jpg"
+                    }, {
+                        "id": "50215536",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/dd48c243_b.jpg"
+                    }, {
+                        "id": "50215537",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/b939e1af_b.jpg"
+                    }, {
+                        "id": "50215538",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/7b9e18c5_b.JPG"
+                    }, {
+                        "id": "50215539",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/19cef112_b.jpg"
+                    }, {
+                        "id": "50215540",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/0cc91d20_b.jpg"
+                    }, {
+                        "id": "50215541",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/865586_99_b.jpg"
+                    }, {
+                        "id": "50215542",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/865586_90_b.jpg"
+                    }, {
+                        "id": "50215543",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/865586_98_b.jpg"
+                    }, {
+                        "id": "50215544",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/865586_94_b.jpg"
+                    }, {
+                        "id": "50215545",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/865586_93_b.jpg"
+                    }, {
+                        "id": "50215546",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/865586_86_b.jpg"
+                    }, {
+                        "id": "50215547",
+                        "url": "//images.almundo.com/201/1000000/870000/865600/865586/865586_97_b.jpg"
+                    }],
+                    "amenities": [{
+                        "code": "coffee-shop",
+                        "description": "tienda de café"
+                    }, {
+                        "code": "hair-salon",
+                        "description": "peluqueria"
+                    }, {
+                        "code": "meeting-rooms",
+                        "description": "sala de reuniones"
+                    }, {
+                        "code": "parking",
+                        "description": "estacionamiento"
+                    }, {
+                        "code": "wedding-services",
+                        "description": "servicios de boda"
+                    }, {
+                        "code": "bar",
+                        "description": "bar"
+                    }, {
+                        "code": "check-in",
+                        "description": "check-in 24hs"
+                    }, {
+                        "code": "internet",
+                        "description": "internet"
+                    }, {
+                        "code": "laundry-facilities",
+                        "description": "lavanderia"
+                    }, {
+                        "code": "housekeeping",
+                        "description": "servicio de limpieza"
+                    }],
+                    "stars": 4,
+                    "recommended": false,
+                    "checkin_time": "12:00 PM",
+                    "checkout_time": "12:00 PM",
+                    "hotel_chain": "",
+                    "rating_summary": {},
+                    "rate": {
+                        "id": "030e2415-04e3-4972-9085-e550a82aae92",
+                        "price": {
+                            "per_night": 2192.19,
+                            "total": 15345.27475,
+                            "discount": {
+                                "amount": 2708.21,
+                                "percentage": 15
+                            },
+                            "currency": {
+                                "id": 2654210,
+                                "code": "ARS",
+                                "mask": "$",
+                                "ratio": 16.25
+                            },
+                            "price_without_discount": 18053.48475,
+                            "price_per_night_per_room": 2579.07,
+                            "total_with_operation_cost": 16112.5384875,
+                            "charges": [{
+                                "amount": 77.56979131862025,
+                                "type": "VAT",
+                                "description": "VAT",
+                                "included": true
+                            }],
+                            "show_amount": 12682.045248060705,
+                            "show_amount_per_night_per_room": 1811.73,
+                            "show_amount_with_operation_cost": 13316.14751046374,
+                            "show_amount_per_night_per_room_without_discount": 2131.45,
+                            "show_amount_without_discount": 14920.053233012595
+                        },
+                        "smoking_preference": {},
+                        "meal_plan": {
+                            "code": "ROOM_ONLY",
+                            "description": "solo la habitación"
+                        },
+                        "payment_method": {
+                            "code": "PREPAID",
+                            "description": "Paga en cuotas"
+                        },
+                        "refundable": false,
+                        "promotion": "",
+                        "status": "UNCHECKED",
+                        "cancel_policies": [],
+                        "free_cancel_date": {
+                            "date": 0,
+                            "monthNumber": 0,
+                            "year": 0,
+                            "plain": ""
+                        }
+                    },
+                    "payment_methods": [{
+                        "code": "PREPAID",
+                        "description": "Paga en cuotas"
+                    }, {
+                        "code": "PAY_AT_DESTINATION",
+                        "description": "Paga en destino"
+                    }],
+                    "slug": "gran-hotel-velazquez-48712",
+                    "defaultPaymentMethod": "PREPAID"
+                }, {
+                    "id": "48711",
+                    "description": "<p><b>Ubicación del establecimiento</b> <br />En Hotel Mayorazgo gozarás de una ubicación céntrica en Madrid, a pocos pasos de Teatro Coliseum y de Teatro Rialto.  Este hotel de 4 estrellas se encuentra cerca de lugares de interés como: Plaza Mayor y Museo del Prado.</p><p><b>Habitaciones</b> <br />Te sentirás como en tu propia casa en una de las 200 habitaciones con aire acondicionado y minibar. La conexión a Internet wifi gratis te mantendrá en contacto con los tuyos; también podrás ver tu programa favorito en el televisor con canales por satélite. El baño privado con ducha está provisto de artículos de higiene personal de diseño y secador de pelo. Las comodidades incluyen caja fuerte, escritorio y teléfono.</p><p><b>Servicios</b> <br />Aprovecha los prácticos servicios que se te ofrecen, como conexión a Internet wifi gratis, servicios de conserjería o servicio de celebración de bodas.</p><p><b>Para comer</b> <br />Si tienes hambre, pasa por el restaurante de este hotel, que ofrece desayunos, almuerzos y cenas. También hay una cafetería y servicio de habitaciones con horario limitado. Apaga la sed con tu bebida favorita en el bar o lounge.</p><p><b>Servicios de negocios y otros</b> <br />Tendrás centro de negocios, servicio de limusina o coche con chófer y periódicos gratuitos en el vestíbulo a tu disposición. Este hotel pone a tu disposición 5 salas de reuniones donde celebrar todo tipo de eventos. Hay un aparcamiento sin asistencia (de pago) disponible.</p>",
+                    "name": "Hotel Mayorazgo",
+                    "geo_position": {
+                        "latitude": 40.42214,
+                        "longitude": -3.7095
+                    },
+                    "images": [{
+                        "id": "50215361",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_684_b.jpg"
+                    }, {
+                        "id": "50215362",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_634_b.jpg"
+                    }, {
+                        "id": "50215363",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_666_b.jpg"
+                    }, {
+                        "id": "50215364",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_667_b.jpg"
+                    }, {
+                        "id": "50215365",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_669_b.jpg"
+                    }, {
+                        "id": "50215366",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_670_b.jpg"
+                    }, {
+                        "id": "50215367",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_672_b.jpg"
+                    }, {
+                        "id": "50215368",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_673_b.jpg"
+                    }, {
+                        "id": "50215369",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_674_b.jpg"
+                    }, {
+                        "id": "50215370",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_675_b.jpg"
+                    }, {
+                        "id": "50215371",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_676_b.jpg"
+                    }, {
+                        "id": "50215372",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_678_b.jpg"
+                    }, {
+                        "id": "50215373",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_679_b.jpg"
+                    }, {
+                        "id": "50215374",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_680_b.jpg"
+                    }, {
+                        "id": "50215375",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_683_b.jpg"
+                    }, {
+                        "id": "50215376",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_691_b.jpg"
+                    }, {
+                        "id": "50215377",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_658_b.jpg"
+                    }, {
+                        "id": "50215378",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_681_b.jpg"
+                    }, {
+                        "id": "50215379",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_661_b.jpg"
+                    }, {
+                        "id": "50215380",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_636_b.jpg"
+                    }, {
+                        "id": "50215381",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_651_b.jpg"
+                    }, {
+                        "id": "50215382",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_655_b.jpg"
+                    }, {
+                        "id": "50215383",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_656_b.jpg"
+                    }, {
+                        "id": "50215384",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_642_b.jpg"
+                    }, {
+                        "id": "50215385",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_657_b.jpg"
+                    }, {
+                        "id": "50215386",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/368ca3e9_b.jpg"
+                    }, {
+                        "id": "50215387",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/c8a47fa3_b.jpg"
+                    }, {
+                        "id": "50215388",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/01bf7ccf_b.jpg"
+                    }, {
+                        "id": "50215389",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/8491d797_b.jpg"
+                    }, {
+                        "id": "50215390",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/86d36b44_b.jpg"
+                    }, {
+                        "id": "50215391",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/a50a1865_b.jpg"
+                    }, {
+                        "id": "50215392",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/6c48d50c_b.jpg"
+                    }, {
+                        "id": "50215393",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/1e73aba1_b.jpg"
+                    }, {
+                        "id": "50215394",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/187b9cbb_b.jpg"
+                    }, {
+                        "id": "50215395",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/0f5fa14c_b.jpg"
+                    }, {
+                        "id": "50215396",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/0ebeb66a_b.jpg"
+                    }, {
+                        "id": "50215397",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/2dc5c457_b.jpg"
+                    }, {
+                        "id": "50215398",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_665_b.jpg"
+                    }, {
+                        "id": "50215399",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_663_b.jpg"
+                    }, {
+                        "id": "50215400",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_662_b.jpg"
+                    }, {
+                        "id": "50215401",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_660_b.jpg"
+                    }, {
+                        "id": "50215402",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_659_b.jpg"
+                    }, {
+                        "id": "50215403",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_653_b.jpg"
+                    }, {
+                        "id": "50215404",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_652_b.jpg"
+                    }, {
+                        "id": "50215405",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_650_b.jpg"
+                    }, {
+                        "id": "50215406",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_649_b.jpg"
+                    }, {
+                        "id": "50215407",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_648_b.jpg"
+                    }, {
+                        "id": "50215408",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_647_b.jpg"
+                    }, {
+                        "id": "50215409",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_646_b.jpg"
+                    }, {
+                        "id": "50215410",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_645_b.jpg"
+                    }, {
+                        "id": "50215411",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_644_b.jpg"
+                    }, {
+                        "id": "50215412",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_641_b.jpg"
+                    }, {
+                        "id": "50215413",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_640_b.jpg"
+                    }, {
+                        "id": "50215414",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_639_b.jpg"
+                    }, {
+                        "id": "50215415",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_638_b.jpg"
+                    }, {
+                        "id": "50215416",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_637_b.jpg"
+                    }, {
+                        "id": "50215417",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_635_b.jpg"
+                    }, {
+                        "id": "50215418",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_685_b.jpg"
+                    }, {
+                        "id": "50215419",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_633_b.jpg"
+                    }, {
+                        "id": "50215420",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_688_b.jpg"
+                    }, {
+                        "id": "50215421",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_671_b.jpg"
+                    }, {
+                        "id": "50215422",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_668_b.jpg"
+                    }, {
+                        "id": "50215423",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_690_b.jpg"
+                    }, {
+                        "id": "50215424",
+                        "url": "//images.almundo.com/201/1000000/60000/54500/54490/54490_664_b.jpg"
+                    }],
+                    "amenities": [{
+                        "code": "wedding-services",
+                        "description": "servicios de boda"
+                    }, {
+                        "code": "bar",
+                        "description": "bar"
+                    }, {
+                        "code": "safety-box",
+                        "description": "caja de seguridad"
+                    }, {
+                        "code": "tours-ticket-assistance",
+                        "description": "asistencia turística"
+                    }, {
+                        "code": "laundry-facilities",
+                        "description": "lavanderia"
+                    }, {
+                        "code": "coffee-shop",
+                        "description": "tienda de café"
+                    }, {
+                        "code": "restaurant",
+                        "description": "restaurante"
+                    }, {
+                        "code": "business-center",
+                        "description": "centro de negocios"
+                    }, {
+                        "code": "meeting-rooms",
+                        "description": "sala de reuniones"
+                    }, {
+                        "code": "parking",
+                        "description": "estacionamiento"
+                    }, {
+                        "code": "check-in",
+                        "description": "check-in 24hs"
+                    }, {
+                        "code": "internet",
+                        "description": "internet"
+                    }, {
+                        "code": "housekeeping",
+                        "description": "servicio de limpieza"
+                    }],
+                    "stars": 4,
+                    "recommended": false,
+                    "checkin_time": "2:00 PM",
+                    "checkout_time": "12:00 PM",
+                    "hotel_chain": "",
+                    "rating_summary": {},
+                    "rate": {
+                        "id": "5e68f44e-25da-4368-a02a-0706b6180a41",
+                        "price": {
+                            "per_night": 2330.8,
+                            "total": 16315.547625,
+                            "discount": {
+                                "amount": 2878.77,
+                                "percentage": 15
+                            },
+                            "currency": {
+                                "id": 2654210,
+                                "code": "ARS",
+                                "mask": "$",
+                                "ratio": 16.25
+                            },
+                            "price_without_discount": 19194.317625,
+                            "price_per_night_per_room": 2742.05,
+                            "total_with_operation_cost": 17131.32500625,
+                            "charges": [{
+                                "amount": 82.47448450020488,
+                                "type": "VAT",
+                                "description": "VAT",
+                                "included": true
+                            }],
+                            "show_amount": 13483.923657159632,
+                            "show_amount_per_night_per_room": 1926.28,
+                            "show_amount_with_operation_cost": 14158.119840017614,
+                            "show_amount_per_night_per_room_without_discount": 2266.21,
+                            "show_amount_without_discount": 15863.439596658392
+                        },
+                        "smoking_preference": {},
+                        "meal_plan": {
+                            "code": "ROOM_ONLY",
+                            "description": "solo la habitación"
+                        },
+                        "payment_method": {
+                            "code": "PREPAID",
+                            "description": "Paga en cuotas"
+                        },
+                        "refundable": false,
+                        "promotion": "",
+                        "status": "UNCHECKED",
+                        "cancel_policies": [],
+                        "free_cancel_date": {
+                            "date": 0,
+                            "monthNumber": 0,
+                            "year": 0,
+                            "plain": ""
+                        }
+                    },
+                    "payment_methods": [{
+                        "code": "PREPAID",
+                        "description": "Paga en cuotas"
+                    }, {
+                        "code": "PAY_AT_DESTINATION",
+                        "description": "Paga en destino"
+                    }],
+                    "slug": "hotel-mayorazgo-48711",
+                    "defaultPaymentMethod": "PREPAID"
+                }, {
+                    "id": "100890",
+                    "description": "<p><b>Ubicación del establecimiento</b> <br />TÓTEM Madrid está en pleno corazón de Madrid, a pocos pasos de Espacio cultural Fernán Gómez Centro Cultural de la Villa y Plaza de Colón.  Este hotel de 4 estrellas se encuentra cerca de lugares de interés como: Museo del Prado y Plaza Mayor.</p><p><b>Habitaciones</b> <br />Te sentirás como en tu propia casa en una de las 64 habitaciones con aire acondicionado, minibar y televisor de pantalla plana. Las camas cuentan con colchones con una capa de acolchado adicional y edredón de plumas para descansar plácidamente. La conexión a Internet wifi gratis te mantendrá en contacto con los tuyos; también podrás ver tu programa favorito en el televisor con canales digitales. El baño privado con ducha está provisto de cabezal de ducha tipo lluvia y artículos de higiene personal gratuitos.</p><p><b>Servicios</b> <br />Con gimnasio abierto las 24 horas y muchas otras instalaciones recreativas a tu disposición, no te quedará ni un minuto libre. Se ofrece también conexión a Internet wifi gratis y servicios de conserjería. Se ofrece además servicio de canguro (de pago) y televisor en zonas comunes.</p><p><b>Para comer</b> <br />Tienes un restaurante y una cafetería a tu disposición para comer algo, pero si lo prefieres, puedes llamar al servicio de habitaciones las 24 horas de este hotel. Apaga la sed con tu bebida favorita en el bar o lounge.</p><p><b>Servicios de negocios y otros</b> <br />Tendrás periódicos gratuitos en el vestíbulo, servicio de tintorería y servicio de recepción 24 horas a tu disposición. Pagando un pequeño suplemento podrás aprovechar prestaciones como servicio de transporte al aeropuerto (ida y vuelta) (disponible las 24 horas) y servicio de traslado desde la estación de trenes.</p>",
+                    "name": "TÓTEM Madrid",
+                    "geo_position": {
+                        "latitude": 40.42639,
+                        "longitude": -3.68532
+                    },
+                    "images": [{
+                        "id": "49771398",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/d279a5f8_b.jpg"
+                    }, {
+                        "id": "49771399",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/f2079a96_b.jpg"
+                    }, {
+                        "id": "49771400",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/0baf59cf_b.jpg"
+                    }, {
+                        "id": "49771401",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/11fe7e81_b.jpg"
+                    }, {
+                        "id": "49771402",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/18bc8332_b.jpg"
+                    }, {
+                        "id": "49771403",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/70ccc974_b.jpg"
+                    }, {
+                        "id": "49771404",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/90e3236f_b.jpg"
+                    }, {
+                        "id": "49771405",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/980426f7_b.jpg"
+                    }, {
+                        "id": "49771406",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/ce9895e6_b.jpg"
+                    }, {
+                        "id": "49771407",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/d794cc6e_b.jpg"
+                    }, {
+                        "id": "49771408",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/ed0b99a2_b.jpg"
+                    }, {
+                        "id": "49771409",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/423042f5_b.jpg"
+                    }, {
+                        "id": "49771410",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/561eb5a4_b.jpg"
+                    }, {
+                        "id": "49771411",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/7e3db930_b.jpg"
+                    }, {
+                        "id": "49771412",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/bc64cf17_b.jpg"
+                    }, {
+                        "id": "49771413",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/d3794622_b.jpg"
+                    }, {
+                        "id": "49771414",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/04737f0d_b.jpg"
+                    }, {
+                        "id": "49771415",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/148a5d71_b.jpg"
+                    }, {
+                        "id": "49771416",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/cd1a7266_b.jpg"
+                    }, {
+                        "id": "49771417",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/02f00e7c_b.jpg"
+                    }, {
+                        "id": "49771418",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/0bea9eb8_b.jpg"
+                    }, {
+                        "id": "49771419",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/2a05007c_b.jpg"
+                    }, {
+                        "id": "49771420",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/3d610483_b.jpg"
+                    }, {
+                        "id": "49771421",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/8594b300_b.jpg"
+                    }, {
+                        "id": "49771422",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/9d24e23e_b.jpg"
+                    }, {
+                        "id": "49771423",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/c8d3dac0_b.jpg"
+                    }, {
+                        "id": "49771424",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/f292bcf3_b.jpg"
+                    }, {
+                        "id": "49771425",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/be84a94f_b.jpg"
+                    }, {
+                        "id": "49771426",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/28e89f88_b.jpg"
+                    }, {
+                        "id": "49771427",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/0d9df7c1_b.jpg"
+                    }, {
+                        "id": "49771428",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/58a7e26f_b.jpg"
+                    }, {
+                        "id": "49771429",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/7c5087f4_b.jpg"
+                    }, {
+                        "id": "49771430",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/80d0065b_b.jpg"
+                    }, {
+                        "id": "49771431",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/f4e1ecab_b.jpg"
+                    }, {
+                        "id": "49771432",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/52e9584a_b.jpg"
+                    }, {
+                        "id": "49771433",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/6ef9308f_b.jpg"
+                    }, {
+                        "id": "49771434",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/79c777fa_b.jpg"
+                    }, {
+                        "id": "49771435",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/7b0d63c4_b.jpg"
+                    }, {
+                        "id": "49771436",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/80fca850_b.jpg"
+                    }, {
+                        "id": "49771437",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/9666f6fc_b.jpg"
+                    }, {
+                        "id": "49771438",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/0419262f_b.jpg"
+                    }, {
+                        "id": "49771439",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/64220319_b.jpg"
+                    }, {
+                        "id": "49771440",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/2be72870_b.jpg"
+                    }, {
+                        "id": "49771441",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/2c0ef927_b.jpg"
+                    }, {
+                        "id": "49771442",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/8772d955_b.jpg"
+                    }, {
+                        "id": "49771443",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/afbd0a41_b.jpg"
+                    }, {
+                        "id": "49771444",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/33a7790d_b.jpg"
+                    }, {
+                        "id": "49771445",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/5c71a25e_b.jpg"
+                    }, {
+                        "id": "49771446",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/baf4bb91_b.jpg"
+                    }, {
+                        "id": "49771447",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/c1043503_b.jpg"
+                    }, {
+                        "id": "49771448",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/c542a8d6_b.jpg"
+                    }, {
+                        "id": "49771449",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/8188db0f_b.jpg"
+                    }, {
+                        "id": "49771450",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/61d02b9d_b.jpg"
+                    }, {
+                        "id": "49771451",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/279c8464_b.jpg"
+                    }, {
+                        "id": "49771452",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/3437670f_b.jpg"
+                    }, {
+                        "id": "49771453",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/6e9ab89a_b.jpg"
+                    }, {
+                        "id": "49771454",
+                        "url": "//images.almundo.com/201/2000000/1340000/1336000/1336000/85a479f4_b.jpg"
+                    }],
+                    "amenities": [{
+                        "code": "bar",
+                        "description": "bar"
+                    }, {
+                        "code": "tours-ticket-assistance",
+                        "description": "asistencia turística"
+                    }, {
+                        "code": "laundry-facilities",
+                        "description": "lavanderia"
+                    }, {
+                        "code": "children-club",
+                        "description": "guarderia"
+                    }, {
+                        "code": "fitness-center",
+                        "description": "gimnasio"
+                    }, {
+                        "code": "coffee-shop",
+                        "description": "tienda de café"
+                    }, {
+                        "code": "restaurant",
+                        "description": "restaurante"
+                    }, {
+                        "code": "sheets",
+                        "description": "sábanas"
+                    }, {
+                        "code": "parking",
+                        "description": "estacionamiento"
+                    }, {
+                        "code": "transportation",
+                        "description": "traslados"
+                    }, {
+                        "code": "check-in",
+                        "description": "check-in 24hs"
+                    }, {
+                        "code": "internet",
+                        "description": "internet"
+                    }, {
+                        "code": "housekeeping",
+                        "description": "servicio de limpieza"
+                    }],
+                    "stars": 4,
+                    "recommended": false,
+                    "checkin_time": "",
+                    "checkout_time": "12:00 PM",
+                    "hotel_chain": "",
+                    "rating_summary": {},
+                    "rate": {
+                        "id": "46c6d954-6c41-423a-a8ce-71be86d5e9e8",
+                        "price": {
+                            "per_night": 4094.6,
+                            "total": 28662.131875,
+                            "discount": {
+                                "amount": 5058.03,
+                                "percentage": 15
+                            },
+                            "currency": {
+                                "id": 2654210,
+                                "code": "ARS",
+                                "mask": "$",
+                                "ratio": 16.25
+                            },
+                            "price_without_discount": 33720.161875,
+                            "price_per_night_per_room": 4817.17,
+                            "total_with_operation_cost": 30095.23846875,
+                            "charges": [{
+                                "amount": 144.88600722450562,
+                                "type": "VAT",
+                                "description": "VAT",
+                                "included": true
+                            }],
+                            "show_amount": 23687.712293625307,
+                            "show_amount_per_night_per_room": 3383.96,
+                            "show_amount_with_operation_cost": 24872.097908306572,
+                            "show_amount_per_night_per_room_without_discount": 3981.13,
+                            "show_amount_without_discount": 27867.896816029774
+                        },
+                        "smoking_preference": {},
+                        "meal_plan": {
+                            "code": "ROOM_ONLY",
+                            "description": "solo la habitación"
+                        },
+                        "payment_method": {
+                            "code": "PREPAID",
+                            "description": "Paga en cuotas"
+                        },
+                        "refundable": false,
+                        "promotion": "",
+                        "status": "UNCHECKED",
+                        "cancel_policies": [],
+                        "free_cancel_date": {
+                            "date": 0,
+                            "monthNumber": 0,
+                            "year": 0,
+                            "plain": ""
+                        }
+                    },
+                    "payment_methods": [{
+                        "code": "PREPAID",
+                        "description": "Paga en cuotas"
+                    }, {
+                        "code": "PAY_AT_DESTINATION",
+                        "description": "Paga en destino"
+                    }],
+                    "slug": "t-tem-madrid-100890",
+                    "defaultPaymentMethod": "PREPAID"
+                }, {
+                    "id": "86884",
+                    "description": "<p><b>Ubicación del establecimiento</b> <br />Si te alojas en Vincci Vía 66, en Madrid (Gran Vía), estarás a pocos minutos de Teatro Coliseum y de Plaza de España.  Este hotel de 4 estrellas se encuentra cerca de lugares de interés como: Plaza Mayor y Museo del Prado.</p><p><b>Habitaciones</b> <br />Te sentirás como en tu propia casa en una de las 116 habitaciones con aire acondicionado, minibar y televisor de pantalla plana. La conexión a Internet de alta velocidad por cable (gratuita) te mantendrá en contacto con los tuyos; también podrás ver tu programa favorito en el televisor con canales por satélite. El baño privado con ducha y bañera combinadas está provisto de artículos de higiene personal gratuitos y bidé. Las comodidades incluyen caja fuerte, escritorio y teléfono.</p><p><b>Servicios</b> <br />Con una terraza en la azotea donde descansar y comodidades como conexión a Internet wifi gratis y servicios de conserjería, ¡no te faltará de nada!</p><p><b>Para comer</b> <br />Tienes una cafetería a tu disposición para comer algo, pero si lo prefieres, puedes llamar al servicio de habitaciones con horario limitado de este hotel. Apaga la sed con tu bebida favorita en el bar o lounge.</p><p><b>Servicios de negocios y otros</b> <br />Tendrás check-in rápido, servicio de tintorería y servicio de recepción 24 horas a tu disposición.</p>",
+                    "name": "Vincci Vía 66",
+                    "geo_position": {
+                        "latitude": 40.42235,
+                        "longitude": -3.70914
+                    },
+                    "images": [{
+                        "id": "40090488",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/1709915_116_b.jpg"
+                    }, {
+                        "id": "40090489",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/c89cda1b_b.jpg"
+                    }, {
+                        "id": "40090490",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/1709915_92_b.jpg"
+                    }, {
+                        "id": "40090491",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/0530ebab_b.jpg"
+                    }, {
+                        "id": "40090492",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/1709915_69_b.jpg"
+                    }, {
+                        "id": "40090493",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/1709915_70_b.jpg"
+                    }, {
+                        "id": "40090494",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/1709915_71_b.jpg"
+                    }, {
+                        "id": "40090495",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/1709915_72_b.jpg"
+                    }, {
+                        "id": "40090496",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/1709915_107_b.jpg"
+                    }, {
+                        "id": "40090497",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/1709915_104_b.jpg"
+                    }, {
+                        "id": "40090498",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/1709915_105_b.jpg"
+                    }, {
+                        "id": "40090499",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/1709915_110_b.jpg"
+                    }, {
+                        "id": "40090500",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/1709915_123_b.jpg"
+                    }, {
+                        "id": "40090501",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/1709915_78_b.jpg"
+                    }, {
+                        "id": "40090502",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/1709915_95_b.jpg"
+                    }, {
+                        "id": "40090503",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/1709915_91_b.jpg"
+                    }, {
+                        "id": "40090504",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/1709915_86_b.jpg"
+                    }, {
+                        "id": "40090505",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/1709915_125_b.jpg"
+                    }, {
+                        "id": "40090506",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/1709915_127_b.jpg"
+                    }, {
+                        "id": "40090507",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/1709915_85_b.jpg"
+                    }, {
+                        "id": "40090508",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/1709915_87_b.jpg"
+                    }, {
+                        "id": "40090509",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/1709915_88_b.jpg"
+                    }, {
+                        "id": "40090510",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/1709915_93_b.jpg"
+                    }, {
+                        "id": "40090511",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/1709915_94_b.jpg"
+                    }, {
+                        "id": "40090512",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/1709915_106_b.jpg"
+                    }, {
+                        "id": "40090513",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/1709915_80_b.jpg"
+                    }, {
+                        "id": "40090514",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/1709915_82_b.jpg"
+                    }, {
+                        "id": "40090515",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/1709915_89_b.jpg"
+                    }, {
+                        "id": "40090516",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/1709915_101_b.jpg"
+                    }, {
+                        "id": "40090517",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/1709915_109_b.jpg"
+                    }, {
+                        "id": "40090518",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/1709915_103_b.jpg"
+                    }, {
+                        "id": "40090519",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/1709915_108_b.jpg"
+                    }, {
+                        "id": "40090520",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/1709915_97_b.jpg"
+                    }, {
+                        "id": "40090521",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/1709915_111_b.jpg"
+                    }, {
+                        "id": "40090522",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/1709915_81_b.jpg"
+                    }, {
+                        "id": "40090523",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/1709915_102_b.jpg"
+                    }, {
+                        "id": "40090524",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/1709915_79_b.jpg"
+                    }, {
+                        "id": "40090525",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/1709915_84_b.jpg"
+                    }, {
+                        "id": "40090526",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/1709915_96_b.jpg"
+                    }, {
+                        "id": "40090527",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/1709915_100_b.jpg"
+                    }, {
+                        "id": "40090528",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/1709915_117_b.jpg"
+                    }, {
+                        "id": "40090529",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/1709915_90_b.jpg"
+                    }, {
+                        "id": "40090530",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/d15ec1a3_b.jpg"
+                    }, {
+                        "id": "40090531",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/6097aa45_b.jpg"
+                    }, {
+                        "id": "40090532",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/75caf9d3_b.jpg"
+                    }, {
+                        "id": "40090533",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/9d3152b0_b.jpg"
+                    }, {
+                        "id": "40090534",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/bbb5e3e4_b.jpg"
+                    }, {
+                        "id": "40090535",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/1528fc85_b.jpg"
+                    }, {
+                        "id": "40090536",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/8ccc0053_b.jpg"
+                    }, {
+                        "id": "40090537",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/e025f63c_b.jpg"
+                    }, {
+                        "id": "40090538",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/db70efc2_b.jpg"
+                    }, {
+                        "id": "40090539",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/e69132b0_b.jpg"
+                    }, {
+                        "id": "40090540",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/f4f82b02_b.jpg"
+                    }, {
+                        "id": "40090541",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/785ac0ce_b.jpg"
+                    }, {
+                        "id": "40090542",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/02fbe269_b.jpg"
+                    }, {
+                        "id": "40090543",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/62aa5c71_b.jpg"
+                    }, {
+                        "id": "40090544",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/71939846_b.jpg"
+                    }, {
+                        "id": "40090545",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/815ea329_b.jpg"
+                    }, {
+                        "id": "40090546",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/da021c88_b.jpg"
+                    }, {
+                        "id": "40090547",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/eb28967a_b.jpg"
+                    }, {
+                        "id": "40090548",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/4f7d0d51_b.jpg"
+                    }, {
+                        "id": "40090549",
+                        "url": "//images.almundo.com/201/2000000/1710000/1710000/1709915/f3c040ab_b.jpg"
+                    }],
+                    "amenities": [{
+                        "code": "coffee-shop",
+                        "description": "tienda de café"
+                    }, {
+                        "code": "sheets",
+                        "description": "sábanas"
+                    }, {
+                        "code": "bar",
+                        "description": "bar"
+                    }, {
+                        "code": "safety-box",
+                        "description": "caja de seguridad"
+                    }, {
+                        "code": "check-in",
+                        "description": "check-in 24hs"
+                    }, {
+                        "code": "tours-ticket-assistance",
+                        "description": "asistencia turística"
+                    }, {
+                        "code": "internet",
+                        "description": "internet"
+                    }, {
+                        "code": "laundry-facilities",
+                        "description": "lavanderia"
+                    }, {
+                        "code": "housekeeping",
+                        "description": "servicio de limpieza"
+                    }],
+                    "stars": 4,
+                    "recommended": false,
+                    "checkin_time": "2:00 PM",
+                    "checkout_time": "12:00 PM",
+                    "hotel_chain": "",
+                    "rating_summary": {},
+                    "rate": {
+                        "id": "d664de3d-6054-4ccf-9386-a9a1e21976eb",
+                        "price": {
+                            "per_night": 2480.61,
+                            "total": 17364.260875,
+                            "discount": {
+                                "amount": 2785.98,
+                                "percentage": 14
+                            },
+                            "currency": {
+                                "id": 2654210,
+                                "code": "ARS",
+                                "mask": "$",
+                                "ratio": 16.25
+                            },
+                            "price_without_discount": 20150.240875,
+                            "price_per_night_per_room": 2878.61,
+                            "total_with_operation_cost": 18232.47391875,
+                            "charges": [{
+                                "amount": 358.0301931647691,
+                                "type": "VAT",
+                                "description": "VAT",
+                                "included": true
+                            }],
+                            "show_amount": 14350.628822457556,
+                            "show_amount_per_night_per_room": 2050.09,
+                            "show_amount_with_operation_cost": 15068.160263580434,
+                            "show_amount_per_night_per_room_without_discount": 2383.83,
+                            "show_amount_without_discount": 16686.777700532042
+                        },
+                        "smoking_preference": {
+                            "code": "NS"
+                        },
+                        "meal_plan": {
+                            "code": "ROOM_ONLY",
+                            "description": "solo la habitación"
+                        },
+                        "payment_method": {
+                            "code": "PREPAID",
+                            "description": "Paga en cuotas"
+                        },
+                        "refundable": false,
+                        "promotion": "",
+                        "status": "UNCHECKED",
+                        "cancel_policies": [],
+                        "free_cancel_date": {
+                            "date": 0,
+                            "monthNumber": 0,
+                            "year": 0,
+                            "plain": ""
+                        }
+                    },
+                    "payment_methods": [{
+                        "code": "PREPAID",
+                        "description": "Paga en cuotas"
+                    }, {
+                        "code": "PAY_AT_DESTINATION",
+                        "description": "Paga en destino"
+                    }],
+                    "slug": "vincci-v-a-66-86884",
+                    "defaultPaymentMethod": "PREPAID"
+                }, {
+                    "id": "122574",
+                    "description": "<p><b>Ubicación del establecimiento</b> <br />Este hotel de 4 estrellas se encuentra muy cerca de Estadio de la Comunidad y Club de golf Olivar de la Hinojosa.  En Madrid (Barajas), Maydrit Hotel se sitúa a pocos minutos de Parque de El Capricho y Centro Comercial Plenilunio.</p><p><b>Habitaciones</b> <br />Te sentirás como en tu propia casa en una de las 112 habitaciones con aire acondicionado, minibar y máquina de café espresso. Para los momentos de ocio, tienes un televisor con canales por satélite y conexión a Internet por cable y wifi gratis. El cuarto de baño está provisto de artículos de higiene personal gratuitos y secador de pelo. Las comodidades incluyen caja fuerte, escritorio y teléfono.</p><p><b>Servicios</b> <br />Aprovecha las instalaciones recreativas, que incluyen piscina al aire libre y gimnasio abierto las 24 horas.</p><p><b>Para comer</b> <br />Tienes un restaurante y una cafetería a tu disposición para comer algo, pero si lo prefieres, puedes llamar al servicio de habitaciones las 24 horas de este hotel. Apaga la sed con tu bebida favorita en el bar o lounge.</p><p><b>Servicios de negocios y otros</b> <br />Tendrás centro de negocios, periódicos gratuitos en el vestíbulo y servicio de tintorería a tu disposición. Se ofrece servicio de transporte al aeropuerto (ida y vuelta) gratuito (disponible las 24 horas).</p>",
+                    "name": "Maydrit Hotel",
+                    "geo_position": {
+                        "latitude": 40.45146,
+                        "longitude": -3.59287
+                    },
+                    "images": [{
+                        "id": "23186732",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_100_b.jpg"
+                    }, {
+                        "id": "23186734",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_57_b.jpg"
+                    }, {
+                        "id": "23186735",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_58_b.jpg"
+                    }, {
+                        "id": "23186736",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_68_b.jpg"
+                    }, {
+                        "id": "23186737",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_69_b.jpg"
+                    }, {
+                        "id": "23186738",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_70_b.jpg"
+                    }, {
+                        "id": "23186739",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_82_b.jpg"
+                    }, {
+                        "id": "23186740",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_83_b.jpg"
+                    }, {
+                        "id": "23186741",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_72_b.jpg"
+                    }, {
+                        "id": "23186742",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_73_b.jpg"
+                    }, {
+                        "id": "23186743",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_74_b.jpg"
+                    }, {
+                        "id": "23186744",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_75_b.jpg"
+                    }, {
+                        "id": "23186745",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_80_b.jpg"
+                    }, {
+                        "id": "23186746",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_81_b.jpg"
+                    }, {
+                        "id": "23186747",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_84_b.jpg"
+                    }, {
+                        "id": "23186748",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_76_b.jpg"
+                    }, {
+                        "id": "23186749",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_77_b.jpg"
+                    }, {
+                        "id": "23186750",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_78_b.jpg"
+                    }, {
+                        "id": "23186751",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_85_b.jpg"
+                    }, {
+                        "id": "23186752",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_87_b.jpg"
+                    }, {
+                        "id": "23186753",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_89_b.jpg"
+                    }, {
+                        "id": "23186754",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_90_b.jpg"
+                    }, {
+                        "id": "23186755",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_91_b.jpg"
+                    }, {
+                        "id": "23186756",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_93_b.jpg"
+                    }, {
+                        "id": "23186757",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_97_b.jpg"
+                    }, {
+                        "id": "23186758",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_98_b.jpg"
+                    }, {
+                        "id": "23186759",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_99_b.jpg"
+                    }, {
+                        "id": "23186760",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_86_b.jpg"
+                    }, {
+                        "id": "23186761",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_95_b.jpg"
+                    }, {
+                        "id": "23186762",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_102_b.jpg"
+                    }, {
+                        "id": "23186763",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_103_b.jpg"
+                    }, {
+                        "id": "23186764",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_104_b.jpg"
+                    }, {
+                        "id": "23186765",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_105_b.jpg"
+                    }, {
+                        "id": "23186766",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_106_b.jpg"
+                    }, {
+                        "id": "23186767",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_107_b.jpg"
+                    }, {
+                        "id": "23186768",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_108_b.jpg"
+                    }, {
+                        "id": "23186769",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_101_b.jpg"
+                    }, {
+                        "id": "23186770",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_109_b.jpg"
+                    }, {
+                        "id": "23186771",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_110_b.jpg"
+                    }, {
+                        "id": "23186772",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_113_b.jpg"
+                    }, {
+                        "id": "23186773",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_111_b.jpg"
+                    }, {
+                        "id": "23186774",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_112_b.jpg"
+                    }, {
+                        "id": "23186775",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_115_b.jpg"
+                    }, {
+                        "id": "23186776",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_116_b.jpg"
+                    }, {
+                        "id": "23186777",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_117_b.jpg"
+                    }, {
+                        "id": "23186778",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_119_b.jpg"
+                    }, {
+                        "id": "23186779",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/2206360_114_b.jpg"
+                    }, {
+                        "id": "43713568",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/bb143365_b.jpg"
+                    }, {
+                        "id": "43713569",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/683eea83_b.jpg"
+                    }, {
+                        "id": "43713570",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/4ca514d1_b.jpg"
+                    }, {
+                        "id": "43713571",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/ee9ad9ba_b.jpg"
+                    }, {
+                        "id": "43713572",
+                        "url": "//images.almundo.com/201/3000000/2210000/2206400/2206360/179af63a_b.jpg"
+                    }],
+                    "amenities": [{
+                        "code": "bar",
+                        "description": "bar"
+                    }, {
+                        "code": "tours-ticket-assistance",
+                        "description": "asistencia turística"
+                    }, {
+                        "code": "laundry-facilities",
+                        "description": "lavanderia"
+                    }, {
+                        "code": "fitness-center",
+                        "description": "gimnasio"
+                    }, {
+                        "code": "garden",
+                        "description": "jardin"
+                    }, {
+                        "code": "coffee-shop",
+                        "description": "tienda de café"
+                    }, {
+                        "code": "restaurant",
+                        "description": "restaurante"
+                    }, {
+                        "code": "meeting-rooms",
+                        "description": "sala de reuniones"
+                    }, {
+                        "code": "parking",
+                        "description": "estacionamiento"
+                    }, {
+                        "code": "check-in",
+                        "description": "check-in 24hs"
+                    }, {
+                        "code": "smoking-areas",
+                        "description": "áreas fumadores"
+                    }, {
+                        "code": "internet",
+                        "description": "internet"
+                    }, {
+                        "code": "housekeeping",
+                        "description": "servicio de limpieza"
+                    }, {
+                        "code": "pool",
+                        "description": "piscina"
+                    }],
+                    "stars": 4,
+                    "recommended": false,
+                    "checkin_time": "2:00 PM",
+                    "checkout_time": "12:00 PM",
+                    "hotel_chain": "",
+                    "rating_summary": {},
+                    "rate": {
+                        "id": "3d9eaa7b-8e39-4cbc-b81f-c56e87e1972a",
+                        "price": {
+                            "per_night": 1877.45,
+                            "total": 13142.14525,
+                            "discount": {
+                                "amount": 2108.04,
+                                "percentage": 14
+                            },
+                            "currency": {
+                                "id": 2654210,
+                                "code": "ARS",
+                                "mask": "$",
+                                "ratio": 16.25
+                            },
+                            "price_without_discount": 15250.18525,
+                            "price_per_night_per_room": 2178.6,
+                            "total_with_operation_cost": 13799.2525125,
+                            "charges": [{
+                                "amount": 271.0043925490785,
+                                "type": "VAT",
+                                "description": "VAT",
+                                "included": true
+                            }],
+                            "show_amount": 10861.277066224315,
+                            "show_amount_per_night_per_room": 1551.62,
+                            "show_amount_with_operation_cost": 11404.34091953553,
+                            "show_amount_per_night_per_room_without_discount": 1804.21,
+                            "show_amount_without_discount": 12629.391937470135
+                        },
+                        "smoking_preference": {
+                            "code": "NS"
+                        },
+                        "meal_plan": {
+                            "code": "ROOM_ONLY",
+                            "description": "solo la habitación"
+                        },
+                        "payment_method": {
+                            "code": "PREPAID",
+                            "description": "Paga en cuotas"
+                        },
+                        "refundable": false,
+                        "promotion": "",
+                        "status": "UNCHECKED",
+                        "cancel_policies": [],
+                        "free_cancel_date": {
+                            "date": 0,
+                            "monthNumber": 0,
+                            "year": 0,
+                            "plain": ""
+                        }
+                    },
+                    "payment_methods": [{
+                        "code": "PREPAID",
+                        "description": "Paga en cuotas"
+                    }, {
+                        "code": "PAY_AT_DESTINATION",
+                        "description": "Paga en destino"
+                    }],
+                    "slug": "maydrit-hotel-122574",
+                    "defaultPaymentMethod": "PREPAID"
+                }, {
+                    "id": "35466",
+                    "description": "<p><b>Ubicación del establecimiento</b> <br />En Vincci Madrid Centrum gozarás de una ubicación céntrica en Madrid, a pocos pasos de Casino de Madrid y de Teatro Español.  Este hotel de 4 estrellas se encuentra cerca de lugares de interés como: Museo del Prado y Plaza Mayor.</p><p><b>Habitaciones</b> <br />Te sentirás como en tu propia casa en una de las 87 habitaciones con aire acondicionado, minibar y televisor de pantalla plana. Para los momentos de ocio, tienes un televisor con canales por satélite y conexión a Internet por cable y wifi gratis. El baño privado está provisto de artículos de higiene personal gratuitos y secador de pelo. Las comodidades incluyen caja fuerte y escritorio, además de un servicio de limpieza disponible todos los días.</p><p><b>Servicios</b> <br />Aprovecha los prácticos servicios que se te ofrecen, como conexión a Internet wifi gratis, servicios de conserjería o televisor en zonas comunes.</p><p><b>Para comer</b> <br />Tienes un restaurante y una cafetería a tu disposición para comer algo, pero si lo prefieres, puedes llamar al servicio de habitaciones con horario limitado de este hotel. Apaga la sed con tu bebida favorita en el bar o lounge. Todos los días se sirve un desayuno bufé de pago.</p><p><b>Servicios de negocios y otros</b> <br />Tendrás periódicos gratuitos en el vestíbulo, servicio de tintorería y servicio de recepción 24 horas a tu disposición. Este hotel pone a tu disposición 2 salas de reuniones donde celebrar todo tipo de eventos.</p>",
+                    "name": "Vincci Madrid Centrum",
+                    "geo_position": {
+                        "latitude": 40.4176,
+                        "longitude": -3.69852
+                    },
+                    "images": [{
+                        "id": "21765118",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/912950_193_b.jpg"
+                    }, {
+                        "id": "21765119",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/912950_204_b.jpg"
+                    }, {
+                        "id": "21765123",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/912950_100_b.jpg"
+                    }, {
+                        "id": "21765131",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/912950_158_b.jpg"
+                    }, {
+                        "id": "21765132",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/912950_162_b.jpg"
+                    }, {
+                        "id": "21765135",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/912950_192_b.jpg"
+                    }, {
+                        "id": "21765136",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/912950_198_b.jpg"
+                    }, {
+                        "id": "21765137",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/912950_191_b.jpg"
+                    }, {
+                        "id": "21765138",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/912950_194_b.jpg"
+                    }, {
+                        "id": "21765139",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/912950_195_b.jpg"
+                    }, {
+                        "id": "21765140",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/912950_196_b.jpg"
+                    }, {
+                        "id": "21765141",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/912950_197_b.jpg"
+                    }, {
+                        "id": "21765142",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/912950_201_b.jpg"
+                    }, {
+                        "id": "21765143",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/912950_203_b.jpg"
+                    }, {
+                        "id": "21765144",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/912950_200_b.jpg"
+                    }, {
+                        "id": "21765145",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/912950_202_b.jpg"
+                    }, {
+                        "id": "21765147",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/912950_205_b.jpg"
+                    }, {
+                        "id": "21765149",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/912950_207_b.jpg"
+                    }, {
+                        "id": "21765150",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/912950_209_b.jpg"
+                    }, {
+                        "id": "28749583",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/912950_91_b.jpg"
+                    }, {
+                        "id": "30831111",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/6c3a12d6_b.jpg"
+                    }, {
+                        "id": "30831112",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/8984aa1c_b.jpg"
+                    }, {
+                        "id": "30831113",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/3430981d_b.jpg"
+                    }, {
+                        "id": "30831114",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/3da0ad78_b.jpg"
+                    }, {
+                        "id": "42082138",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/62014ce4_b.jpg"
+                    }, {
+                        "id": "42082143",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/8f6a6756_b.jpg"
+                    }, {
+                        "id": "42082144",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/a38abea1_b.jpg"
+                    }, {
+                        "id": "42082146",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/d0f64b6e_b.jpg"
+                    }, {
+                        "id": "42082148",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/31924b73_b.jpg"
+                    }, {
+                        "id": "42082149",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/3905acda_b.jpg"
+                    }, {
+                        "id": "42082150",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/483fbd10_b.jpg"
+                    }, {
+                        "id": "42082151",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/5c64c9ca_b.jpg"
+                    }, {
+                        "id": "42082152",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/65a33713_b.jpg"
+                    }, {
+                        "id": "42082153",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/6f672aa6_b.jpg"
+                    }, {
+                        "id": "42082154",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/74b53e6b_b.jpg"
+                    }, {
+                        "id": "42082155",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/91d08cc4_b.jpg"
+                    }, {
+                        "id": "42082157",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/96a7a3c6_b.jpg"
+                    }, {
+                        "id": "42082158",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/a4d2b304_b.jpg"
+                    }, {
+                        "id": "42082159",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/abaa8eab_b.jpg"
+                    }, {
+                        "id": "42082160",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/e9d37509_b.jpg"
+                    }, {
+                        "id": "42082161",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/ec477f26_b.jpg"
+                    }, {
+                        "id": "42082163",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/c573ad05_b.jpg"
+                    }, {
+                        "id": "42082164",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/e29f1945_b.jpg"
+                    }, {
+                        "id": "42082165",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/7996b3e3_b.jpg"
+                    }, {
+                        "id": "42082166",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/565cbaea_b.jpg"
+                    }, {
+                        "id": "42082168",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/6d05a2c2_b.jpg"
+                    }, {
+                        "id": "42082169",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/709b22af_b.jpg"
+                    }, {
+                        "id": "42082170",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/853cb276_b.jpg"
+                    }, {
+                        "id": "42082171",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/a6b0c346_b.jpg"
+                    }, {
+                        "id": "42082172",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/2ad80000_b.jpg"
+                    }, {
+                        "id": "42082173",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/00053cc2_b.jpg"
+                    }, {
+                        "id": "42082174",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/795b8870_b.jpg"
+                    }, {
+                        "id": "42082175",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/0aff77be_b.jpg"
+                    }, {
+                        "id": "42082176",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/031eb33e_b.jpg"
+                    }, {
+                        "id": "42082177",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/7b7404f7_b.jpg"
+                    }, {
+                        "id": "48596226",
+                        "url": "//images.almundo.com/201/1000000/920000/913000/912950/a8bb6408_b.jpg"
+                    }],
+                    "amenities": [{
+                        "code": "coffee-shop",
+                        "description": "tienda de café"
+                    }, {
+                        "code": "restaurant",
+                        "description": "restaurante"
+                    }, {
+                        "code": "meeting-rooms",
+                        "description": "sala de reuniones"
+                    }, {
+                        "code": "bar",
+                        "description": "bar"
+                    }, {
+                        "code": "safety-box",
+                        "description": "caja de seguridad"
+                    }, {
+                        "code": "check-in",
+                        "description": "check-in 24hs"
+                    }, {
+                        "code": "television",
+                        "description": "televisión"
+                    }, {
+                        "code": "tours-ticket-assistance",
+                        "description": "asistencia turística"
+                    }, {
+                        "code": "internet",
+                        "description": "internet"
+                    }, {
+                        "code": "laundry-facilities",
+                        "description": "lavanderia"
+                    }, {
+                        "code": "housekeeping",
+                        "description": "servicio de limpieza"
+                    }],
+                    "stars": 4,
+                    "recommended": false,
+                    "checkin_time": "",
+                    "checkout_time": "",
+                    "hotel_chain": "",
+                    "rating_summary": {},
+                    "rate": {
+                        "id": "8d0870fa-0375-4ece-9505-dfa0c9352118",
+                        "price": {
+                            "per_night": 3287.17,
+                            "total": 23010.160875,
+                            "discount": {
+                                "amount": 3691.2,
+                                "percentage": 14
+                            },
+                            "currency": {
+                                "id": 2654210,
+                                "code": "ARS",
+                                "mask": "$",
+                                "ratio": 16.25
+                            },
+                            "price_without_discount": 26701.360875,
+                            "price_per_night_per_room": 3814.49,
+                            "total_with_operation_cost": 24160.66891875,
+                            "charges": [{
+                                "amount": 474.4782303493066,
+                                "type": "VAT",
+                                "description": "VAT",
+                                "included": true
+                            }],
+                            "show_amount": 19016.661880355456,
+                            "show_amount_per_night_per_room": 2716.67,
+                            "show_amount_with_operation_cost": 19967.49497437323,
+                            "show_amount_per_night_per_room_without_discount": 3158.92,
+                            "show_amount_without_discount": 22112.39753529704
+                        },
+                        "smoking_preference": {
+                            "code": "NS"
+                        },
+                        "meal_plan": {
+                            "code": "ROOM_ONLY",
+                            "description": "solo la habitación"
+                        },
+                        "payment_method": {
+                            "code": "PREPAID",
+                            "description": "Paga en cuotas"
+                        },
+                        "refundable": false,
+                        "promotion": "",
+                        "status": "UNCHECKED",
+                        "cancel_policies": [],
+                        "free_cancel_date": {
+                            "date": 0,
+                            "monthNumber": 0,
+                            "year": 0,
+                            "plain": ""
+                        }
+                    },
+                    "payment_methods": [{
+                        "code": "PREPAID",
+                        "description": "Paga en cuotas"
+                    }, {
+                        "code": "PAY_AT_DESTINATION",
+                        "description": "Paga en destino"
+                    }],
+                    "slug": "vincci-madrid-centrum-35466",
+                    "defaultPaymentMethod": "PREPAID"
+                });
+                return hotel;
+            })
+            .then(() => console.log('finished populating hotels'))
+            .catch(err => console.log('error populating hotels', err));
+    }
 }

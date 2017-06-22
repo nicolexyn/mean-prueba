@@ -1,6 +1,5 @@
 @import '~bootstrap/less/bootstrap.less';
 @import '~font-awesome/less/font-awesome.less';
-
 @icon-font-path: '/assets/fonts/bootstrap/';
 @fa-font-path: '/assets/fonts/font-awesome/';
 
@@ -9,14 +8,74 @@
  */
 
 .browserupgrade {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
 }
 
+.navbar-default {
+    background-color: #063878;
+    border-color: #063878;
+    border-radius: 0px;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: white;
+    padding: 13px 6px;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+    color: lightgray;
+}
+
+.color-almundo {
+    color: #ff8300;
+}
+
+.menu2 {
+    background-color: #144a7e;
+    font-weight: 800;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    background-color: #144a7e;
+    color: white;
+    padding: 8px 10px 8px 10px;
+}
+
+.navbar-default .navbar-nav > .active > a:hover {
+    color: lightgray;
+}
+
+@media (min-width: 768px){ .nav2 {
+    width: 100%;
+    text-align: center;
+    > li {
+        float: none;
+        display: inline-block;
+    }
+}
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #063878;
+
+}
+
+.navbar-default .navbar-toggle {
+    border-color: #063878;
+    color: white;
+}
+
+
 /* inject:less */
+
 @import 'main/main';
 @import '../components/footer/footer';
 @import '../components/modal/modal';
+
 /* endinject */

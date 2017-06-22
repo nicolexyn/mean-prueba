@@ -1,20 +1,40 @@
-<div class="navbar navbar-default navbar-static-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button class="navbar-toggle" type="button" ng-click="$ctrl.isCollapsed = !$ctrl.isCollapsed">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a href="/" class="navbar-brand">app</a>
+<div class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="">
+                <img src="../assets/images/logo-almundo.svg">
+            </a>
+            <button class="navbar-toggle" type="button" ng-click="$ctrl.isCollapsed = !$ctrl.isCollapsed">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
+            <button class="navbar-toggle" type="button">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+            </button>
+            <button class="navbar-toggle" type="button">
+                <i class="fa fa-user" aria-hidden="true"></i>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href=""><i class="fa fa-user" aria-hidden="true"></i> Ingresar</a></li>
+                <li class="hidden-xs"><a>|</a></li>
+                <li><a href=""><span class="color-almundo">club</span><span>almundo</span></a></li>
+                <li class="hidden-xs"><a>|</a></li>
+                <li><a href="">Sucursales</a></li>
+                <li class="hidden-xs"><a>|</a></li>
+                <li><a href="">Llamanos</a></li>
+                <li class="hidden-xs"><a>|</a></li>
+                <li><a href="">Ayuda</a></li>
+            </ul>
+        </div>
     </div>
-    <div uib-collapse="$ctrl.isCollapsed" class="navbar-collapse collapse" id="navbar-main">
-      <ul class="nav navbar-nav">
-        <li ng-repeat="item in $ctrl.menu" ui-sref-active="active">
-            <a ui-sref="{{item.state}}">{{item.title}}</a>
-        </li>
-      </ul>
+    <div class="menu2">
+        <div uib-collapse="$ctrl.isCollapsed" class="navbar-collapse collapse" id="navbar-main">
+            <ul class="nav navbar-nav nav2 text-center">
+                <li ng-repeat="item in $ctrl.menu" ui-sref-active="active">
+                    <a ui-sref="{{item.state}}" ng-bind-html="item.title"></a>
+                </li>
+            </ul>
+        </div>
     </div>
-  </div>
 </div>
