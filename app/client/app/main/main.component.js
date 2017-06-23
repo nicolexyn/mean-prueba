@@ -34,30 +34,28 @@ export class MainController {
     }
   }
 
-
-
   // Arma el objeto con el cual se filtra el listado objectFilter {name, price_range, stars}
   filterList(event) {
     switch (event.type) {
-      case 'NAME':
-        this.objectFilter.name = event.filterNameHotel;
-        break;
-      case 'PRICE_RANGE':
-        this.objectFilter.price = { min: event.minValue, max: event.maxValue };
-        break;
-      case 'STAR':
-        if (event.values[0].selected) {
-          this.objectFilter.stars = '';
-        } else {
-          let starsFilter = '';
-          event.values.map(e => {
-            if (e.selected) {
-              starsFilter += e.code;
-            }
-          });
-          this.objectFilter.stars = starsFilter;
-        }
-        break;
+    case 'NAME':
+      this.objectFilter.name = event.filterNameHotel;
+      break;
+    case 'PRICE_RANGE':
+      this.objectFilter.price = { min: event.minValue, max: event.maxValue };
+      break;
+    case 'STAR':
+      if(event.values[0].selected) {
+        this.objectFilter.stars = '';
+      } else {
+        let starsFilter = '';
+        event.values.map(e => {
+          if(e.selected) {
+            starsFilter += e.code;
+          }
+        });
+        this.objectFilter.stars = starsFilter;
+      }
+      break;
     }
   }
 
@@ -68,11 +66,11 @@ export class MainController {
     let maxPrice = this.listHotels[0].rate.price.per_night;
 
     this.listHotels.map(e => {
-      if (e.stars != 'all_STAR')
+      if(e.stars != 'all_STAR')
         countStars[e.stars] = (countStars[e.stars] + 1) || 0;
-      if (e.rate.price.per_night < minPrice)
+      if(e.rate.price.per_night < minPrice)
         minPrice = e.rate.price.per_night;
-      if (e.rate.price.per_night > maxPrice)
+      if(e.rate.price.per_night > maxPrice)
         maxPrice = e.rate.price.per_night;
     });
 

@@ -6,75 +6,105 @@ var controller = require('./hotel.controller');
 var router = express.Router();
 
 
+ // *       images:
+ // *         type: array
+ // *				 items: string
+ // *				 default: ['url']
+ // *			 amenities:
+ // *         type: array
+ // *				 items: string
+ // *				 default: ['amenitie']
+ // *			 recommended:
+ // *				 type: boolean
+ // *			 checkin_time:
+ // *				 type: string
+ // *			 checkout_time:
+ // *				 type: string
+ // *			 hotel_chain:
+ // *				 type: string
+ // *			 rating_summary:
+ // *				 type: object
+ // *			 rate:
+ // *				 type: object
+ // *			 payment_methods:
+ // *			 	 type: array
+ // *				 items: string
+ // *			 slug:
+ // *				 type: string
+ // *			 defaultPaymentMethod:
+ // *			 	 type: string
+
 /**
  * @swagger
  * definition:
- *   Thing:
+ *   Hotel:
  *     properties:
+ *       id:
+ *         type: number
+ *       description:
+ *         type: string
  *       name:
  *         type: string
- *       info:
- *         type: string
- *       active:
- *         type: Boolean
+ *       geo_position:
+ *         type: object
  */
 
 /**
  * @swagger
- * /api/things:
+ * /api/hotels:
  *   get:
  *     tags:
- *       - Things
- *     description: Returns all things
+ *       - Hotels
+ *     description: Returns all hotels
  *     produces:
  *       - application/json
  *     responses:
  *       200:
- *         description: An array of things
+ *         description: An array of hotels
  *         schema:
- *           $ref: '#/definitions/Thing'
+ *           $ref: '#/definitions/Hotel'
  */
 router.get('/', controller.index);
 
 /**
  * @swagger
- * /api/things/{id}:
+ * /api/hotels/{id}:
  *   get:
  *     tags:
- *       - Things
- *     description: Returns a single thing
+ *       - Hotels
+ *     description: Returns a single hotel
  *     produces:
  *       - application/json
  *     parameters:
  *       - name: id
- *         description: Thing's id
+ *         description: Hotel's id
  *         in: path
  *         required: true
  *         type: integer
  *     responses:
  *       200:
- *         description: A single thing
+ *         description: A single hotel
  *         schema:
- *           $ref: '#/definitions/Thing'
+ *           $ref: '#/definitions/Hotel'
  */
 router.get('/:id', controller.show);
 
 /**
  * @swagger
- * /api/things:
+ * /api/hotels:
  *   post:
  *     tags:
- *       - Things
- *     description: Creates a new thing
+ *       - Hotels
+ *     description: Creates a new hotel
  *     produces:
  *       - application/json
  *     parameters:
- *       - name: thing
- *         description: Thing object
+ *       - name: hotel
+ *         description: Hotel object
  *         in: body
  *         required: true
  *         schema:
- *           $ref: '#/definitions/Thing'
+ *           $ref: '#/definitions/Hotel'
  *     responses:
  *       200:
  *         description: Successfully created
@@ -83,30 +113,29 @@ router.post('/', controller.create);
 
 /**
  * @swagger
- * /api/things/{id}:
+ * /api/hotels/{id}:
  *   put:
  *     tags:
- *       - Things
- *     description: Updates a single thing
+ *       - Hotels
+ *     description: Updates a single hotel
  *     produces:
  *       - application/json
  *     parameters:
  *       - name: id
  *         in: id
- *         description: Id of the Thing resource
+ *         description: Id of the Hotel resource
  *         dataType: string
- *       - name: thing
+ *       - name: hotel
  *         in: body
- *         description: Fields for the Thing resource
+ *         description: Fields for the Hotel resource
  *         schema:
  *           type: Object
- *           $ref: '#/definitions/Thing'
+ *           $ref: '#/definitions/Hotel'
  *     responses:
  *       200:
  *         description: Successfully updated
  */
 router.put('/:id', controller.upsert);
-router.patch('/:id', controller.patch);
 router.delete('/:id', controller.destroy);
 
 module.exports = router;

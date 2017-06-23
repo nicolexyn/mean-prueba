@@ -3,7 +3,6 @@
 import mongoose from 'mongoose';
 
 var HotelSchema = new mongoose.Schema({
-
   id: Number,
   description: String,
   name: String,

@@ -6,34 +6,32 @@ export class filtersComponent {
   /*@ngInject*/
   constructor($filter) {
     this.$filter = $filter;
-
   }
 
   $onInit() {
     var self = this;
     this.translate = function(value) {
-      return '$' + self.$filter("number")(value);
-    }
+      return `$${self.$filter('number')(value)}`;
+    };
   }
 
   filter(item, type) {
-    if (type) {
-      if (type != 'all_STAR') {
-
+    if(type) {
+      if(type != 'all_STAR') {
         // seteo all_star en false
         item.values[0].selected = false;
 
         // verifico si no hay seleccionada ninguna estrella que no sea all_stars
         let isAllFalse = true;
         item.values.map(e => {
-          if (e.selected)
+          if(e.selected){
             isAllFalse = false;
+          }
         });
-        if (isAllFalse) {
+        if(isAllFalse) {
           item.values[0].selected = true;
         }
       } else {
-
         item.values.map(e => {
           e.selected = false;
         });
@@ -55,8 +53,6 @@ export class filtersComponent {
   getStars(num) {
     return new Array(parseInt(num));
   }
-
-
 }
 
 export default angular.module('appApp.filters', [])

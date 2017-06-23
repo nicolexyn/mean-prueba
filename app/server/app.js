@@ -43,7 +43,7 @@ var options = {
   // import swaggerDefinitions
   swaggerDefinition: swaggerD,
   // path to the API docs
-  apis: [path.join(`${__dirname}/api/thing/index.js`)],
+  apis: [path.join(`${__dirname}/api/hotel/index.js`)],
 };
 
 // initialize swagger-jsdoc
