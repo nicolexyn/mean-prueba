@@ -8,6 +8,10 @@ import ngSanitize from 'angular-sanitize';
 
 import uiRouter from 'angular-ui-router';
 import uiBootstrap from 'angular-ui-bootstrap';
+import ngAnimate from 'angular-animate';
+import 'angular-ui-carousel/dist/ui-carousel.min';
+import 'angularjs-slider/dist/rzslider.min';
+import 'angular-i18n/angular-locale_es-ar';
 
 import {
   routeConfig
@@ -19,10 +23,13 @@ import main from './main/main.component';
 import constants from './app.constants';
 import util from '../components/util/util.module';
 
+import hotel from './components/hotel/hotel.component';
+import filters from './components/filters/filters.component';
+
 import './app.less';
 
-angular.module('appApp', [ngCookies, ngResource, ngSanitize, uiRouter, uiBootstrap, navbar, footer,
-  main, constants, util
+angular.module('appApp', [ngCookies, ngResource, ngSanitize, uiRouter, uiBootstrap, ngAnimate, navbar, footer,
+  main, constants, util, hotel, filters, 'ui.carousel', 'rzModule'
 ])
   .config(routeConfig);
 

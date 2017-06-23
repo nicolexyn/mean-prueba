@@ -4,7 +4,7 @@
 
 'use strict';
 
-import {EventEmitter} from 'events';
+import { EventEmitter } from 'events';
 import Hotel from './hotel.model';
 var HotelEvents = new EventEmitter();
 
@@ -25,7 +25,7 @@ for(var e in events) {
 
 function emitEvent(event) {
   return function(doc) {
-    HotelEvents.emit(event + ':' + doc._id, doc);
+    HotelEvents.emit(`${event}:${doc._id}`, doc);
     HotelEvents.emit(event, doc);
   };
 }

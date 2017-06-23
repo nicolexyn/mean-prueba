@@ -1,13 +1,41 @@
-<header class="hero-unit" id="banner">
-  <div class="container">
-    header
-  </div>
-</header>
-
 <div class="container">
-  <div class="row">
-    <div class="col-lg-12">
-      div
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li><a href="">Home</a></li>
+                <li><a href="">Hoteles</a></li>
+                <li class="active">Madrid</li>
+            </ol>
+        </div>
     </div>
-  </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="busqueda">
+                <h3>Hoteles disponibles para:</h3>
+                <span><i class="fa fa-map-marker" aria-hidden="true"></i> Madrid</span>
+                <span class="padding-left-5"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i> 16/11/2016</span>
+                <span class="padding-left-5"><i class="fa fa-calendar-minus-o" aria-hidden="true"></i> 30/11/2016</span>
+                <span class="padding-left-5"><i class="fa fa-user" aria-hidden="true"></i> 2 huéspedes</span>
+                <a class="padding-left-5" href="">Modificar búsqueda</a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-right">
+            <label>Ordenar</label>
+            <select>
+                <option>Más relevantes</option>
+            </select>
+        </div>
+    </div>
+    <div class="row padding-top-5">
+        <div class="col-md-3 no-padding-right">
+            <filters filters="$ctrl.filters" on-filter="$ctrl.filterList($event);"></filters>
+        </div>
+        <div class="col-md-9">
+            <section>
+                <hotel ng-repeat="item in $ctrl.listHotels | filter: {name: $ctrl.objectFilter.name} | filter: $ctrl.customFilter track by $index" hotel="item"></hotel>
+            </section>
+        </div>
+    </div>
 </div>

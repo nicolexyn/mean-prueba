@@ -1,0 +1,55 @@
+<section>
+    <div>
+        <div ng-style="{'background-image': 'url(../../../assets/images/googlemaps.jpg)'}" class="map-image">
+        </div>
+        <div class="view-map-desc">
+            <a href="">Ver hoteles en el mapa</a>
+        </div>
+    </div>
+    <h4 class="filter-title">Filtrar</h4>
+    <div ng-repeat="filter in $ctrl.filters track by $index" class="padding-top-10">
+        <uib-accordion ng-if="filter.type == 'NAME'">
+            <div uib-accordion-group class="panel" is-open="true" ng-init="filter.open = true">
+                <uib-accordion-heading>
+                    <a ng-click="filter.open = !filter.open">
+                        <i class="fa fa-search" aria-hidden="true"></i> Nombre del hotel<i class="pull-right fa" ng-class="{'fa-caret-up': filter.open, 'fa-caret-down': !filter.open}"></i>
+                    </a>
+                </uib-accordion-heading>
+                <div ng-class="filter.filterNameHotel ? 'input-group' : ''">
+                    <input type="text" class="form-control" placeholder="Ingrese el nombre del hotel..." ng-model="filter.filterNameHotel" ng-change="$ctrl.filter(filter)">
+                    <span class="input-group-btn">
+                 <button class="btn btn-danger" ng-if="filter.filterNameHotel" ng-click="$ctrl.cleanSearch(filter)"><i class="fa fa-times" aria-hidden="true"></i></button>
+                 </span>
+                </div>
+            </div>
+        </uib-accordion>
+        <uib-accordion ng-if="filter.type == 'PRICE_RANGE'" ng-init="filter.minValue = filter.from; filter.maxValue = filter.to;">
+            <div uib-accordion-group class="panel" is-open="true" ng-init="filter.open = true">
+                <uib-accordion-heading>
+                    <a ng-click="filter.open = !filter.open">
+                        <i class="fa fa-usd" aria-hidden="true"></i> Precio por noche<i class="pull-right fa" ng-class="{'fa-caret-up': filter.open, 'fa-caret-down': !filter.open}"></i>
+                    </a>
+                </uib-accordion-heading>
+                <rzslider  rz-slider-model="filter.minValue" ng-click="$ctrl.filter(filter)" rz-slider-high="filter.maxValue" rz-slider-options="{ceil: filter.to, floor: filter.from, translate: $ctrl.translate}"></rzslider>
+            </div>
+        </uib-accordion>
+        <uib-accordion ng-if="filter.type == 'STAR'">
+            <div uib-accordion-group class="panel" is-open="true" ng-init="filter.open = true">
+                <uib-accordion-heading>
+                    <a ng-click="filter.open = !filter.open">
+                        <i class="fa fa-star" aria-hidden="true"></i> Estrellas<i class="pull-right fa" ng-class="{'fa-caret-up': filter.open, 'fa-caret-down': !filter.open}"></i>
+                    </a>
+                </uib-accordion-heading>
+                <div>
+                    <input type="checkbox" ng-init="filter.values[0].selected = true" ng-model="filter.values[0].selected" ng-click="$ctrl.filter(filter, filter.values[0].code)">
+                    <span>Todas las estrellas</span>
+                    <span>({{filter.values[0].count}})</span>
+                </div>
+                <div class="stars" ng-repeat="star in filter.values track by $index" ng-if="star.code != 'all_STAR'">
+                    <input type="checkbox" ng-model="star.selected" ng-click="$ctrl.filter(filter, star.code)">
+                    <span class="icons" ng-repeat="item in $ctrl.getStars(star.code) track by $index"><i class="fa fa-star" aria-hidden="true" ></i></span><span class="padding-left-5">({{star.count}})</span>
+                </div>
+            </div>
+        </uib-accordion>
+    </div>
+</section>
