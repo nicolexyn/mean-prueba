@@ -63,7 +63,6 @@ export class MainController {
   }
 
   applyChange() {
-    console.log('this.sortingValue', this.sorting);
     let sort = this.sorting.split('-');
 
     if(sort[0] === 'price') {
