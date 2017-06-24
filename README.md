@@ -14,6 +14,9 @@
 1. Ejecutar `npm install` para instalar las dependencias del servidor.
 2. Ejecutar `mongod` en otra consola para tener corriendo una instancia de MongoDB.
 3. Ejecutar `gulp serve` para levantar el servidor en modo desarrollo. Esto automaticamente abrira una pestaña nueva en su navegador cuando este listo.
+4. Abrir en el navegador http://localhost:3000/
+
+* Swagger: En la ruta http://localhost:3000/api tiene toda la documentacion de las apis gracias a Swagger
 
 ## Deploy o visualizacion del proyecto
 
@@ -28,8 +31,6 @@
 2. docker-compose up -d (levantara los contenedores como demonios)
 3. docker logs -f 'nombre del contenedor' (aqui podra ver el log del proyecto para saber cuando estara listo, esto puede tomar unos segundos y asi podra ver que sucede realmente)
 4. abrir en el navegador http://localhost:8080/
-
-* Swagger: En la ruta http://localhost:3000/api tiene toda la documentacion de las apis gracias a Swagger
 
 ## Testing
 
