@@ -40,18 +40,18 @@ Ejecutar `npm test` esto ejecutara los test con Karma.
 
 Generadores disponibles:
 
-- Server side
-    . angular-fullstack:endpoint
+* Server side
+    - angular-fullstack:endpoint
 
-- Client Side
-    . angular-fullstack:route
-    . angular-fullstack:component
-    . angular-fullstack:controller
-    . angular-fullstack:filter
-    . angular-fullstack:directive
-    . angular-fullstack:service
-    . angular-fullstack:provider
-    . angular-fullstack:factory
-    . angular-fullstack:decorator
+* Client Side
+    - angular-fullstack:route
+    - angular-fullstack:component
+    - angular-fullstack:controller
+    - angular-fullstack:filter
+    - angular-fullstack:directive
+    - angular-fullstack:service
+    - angular-fullstack:provider
+    - angular-fullstack:factory
+    - angular-fullstack:decorator
 
 
