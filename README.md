@@ -1,7 +1,5 @@
 # Proyecto MEAN
 
-This project was generated with the [Angular Full-Stack Generator](https://github.com/DaftMonk/generator-angular-fullstack) version 4.1.0.
-
 ## Instrucciones para levantar el proyecto
 
 ### Requisitos
@@ -36,5 +34,23 @@ This project was generated with the [Angular Full-Stack Generator](https://githu
 ## Testing
 
 Ejecutar `npm test` esto ejecutara los test con Karma.
+
+## Yeoman
+
+Generadores disponibles:
+
+- Server side
+    . angular-fullstack:endpoint
+
+- Client Side
+    . angular-fullstack:route
+    . angular-fullstack:component
+    . angular-fullstack:controller
+    . angular-fullstack:filter
+    . angular-fullstack:directive
+    . angular-fullstack:service
+    . angular-fullstack:provider
+    . angular-fullstack:factory
+    . angular-fullstack:decorator
 
 
