@@ -27,9 +27,9 @@
 
 - Docker: Teniendo docker y docker-compose instalado debe correr los comandos 
 
-1. docker-compose build (esto realiza el build del proyecto)
-2. docker-compose up -d (levantara los contenedores como demonios)
-3. docker logs -f 'nombre del contenedor' (aqui podra ver el log del proyecto para saber cuando estara listo, esto puede tomar unos segundos y asi podra ver que sucede realmente)
+1. `docker-compose build` (esto realiza el build del proyecto)
+2. `docker-compose up -d` (levantara los contenedores como demonios)
+3. `docker logs -f 'nombre del contenedor'` (aqui podra ver el log del proyecto para saber cuando estara listo, esto puede tomar unos segundos y asi podra ver que sucede realmente)
 4. abrir en el navegador http://localhost:8080/
 
 ## Testing
