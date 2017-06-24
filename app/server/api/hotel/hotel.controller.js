@@ -61,34 +61,34 @@ export function index(req, res) {
           title: 'NAME'
         }, {
           type: 'PRICE_RANGE',
-          from: 896.59,
-          to: 20792.2,
+          from: 1387,
+          to: 4094,
           title: 'PRICE_RANGE'
         }, {
           type: 'STAR',
           values: [{
             code: 'all_STAR',
-            count: 236,
+            count: 20,
             description: 'all_STAR'
           }, {
             code: '5',
-            count: 22,
+            count: 2,
             description: '5'
           }, {
             code: '4',
-            count: 123,
+            count: 13,
             description: '4'
           }, {
             code: '3',
-            count: 62,
+            count: 2,
             description: '3'
           }, {
             code: '2',
-            count: 22,
+            count: 3,
             description: '2'
           }, {
             code: '1',
-            count: 7,
+            count: 0,
             description: '1'
           }],
           title: 'STAR'

@@ -1,23 +1,23 @@
 <article>
     <div class="row">
-        <div class=" col-md-4">
+        <div class=" col-sm-4">
             <div class="header-hotel">
                 <div data-ng-if="$ctrl.hotel.recommended && $ctrl.hotel.hotel_chain == ''" class="offer">
                     <p class="offer-text">¡Hotel recomendado!</p>
                 </div>
                 <div data-ng-if="$ctrl.hotel.rate.price.discount.amount && $ctrl.hotel.rate.price.discount.percentage >= 5" class="agreggate">
-                    <div class="gift"><span>9% OFF</span></div>
+                    <div class="gift"><span>{{$ctrl.hotel.rate.price.discount.percentage}}% OFF</span></div>
                 </div>
-            </div>
-            <div ng-style="{'background-image': 'url({{$ctrl.hotel.images[0].url}})'}" class="hotel-image">
-                <!-- <ui-carousel slides="$ctrl.hotel.images.slice(0, 3)" slides-to-show="1" autoplay="false">
+                <div ng-style="{'background-image': 'url({{$ctrl.hotel.images[0].url}})'}" class="hotel-image">
+                    <!-- <ui-carousel slides="$ctrl.hotel.images.slice(0, 3)" slides-to-show="1" autoplay="false">
                     <carousel-item>
                         <img src="{{ item.url }}" alt="{{ item.id }}">
                     </carousel-item>
                 </ui-carousel> -->
+                </div>
             </div>
         </div>
-        <div class="col-md-5">
+        <div class="col-sm-5">
             <div class="hotel-description">
                 <h4 class="name">{{$ctrl.hotel.name}}</h4>
                 <div class="stars">
@@ -31,7 +31,7 @@
                 </div>
             </div>
         </div>
-        <div class="price-box-ctn col-md-3">
+        <div class="price-box-ctn col-sm-3">
             <div class="price-box">
                 <p class="price-description">Precio por noche por habitación</p>
                 <p class="price"><span class="price_currency">{{$ctrl.hotel.rate.price.currency.code}}</span> <span class="price_amount">{{$ctrl.hotel.rate.price.per_night | number: 0}}</span></p>

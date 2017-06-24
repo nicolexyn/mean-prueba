@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="row">
+    <div class="row  hidden-sm hidden-xs">
         <div class="col-md-12">
             <ol class="breadcrumb">
                 <li><a href="">Home</a></li>
@@ -8,7 +8,11 @@
             </ol>
         </div>
     </div>
-    <div class="row">
+    <div class="visible-xs visible-sm text-center">
+        <a href="" ng-click="$ctrl.verBusquedaResponsive = !$ctrl.verBusquedaResponsive">Modificar búsqueda <i class="fa" ng-class="$ctrl.verBusquedaResponsive ? 'fa-caret-up' : 'fa-caret-down'" aria-hidden="true"></i></a>
+        <hr class="hr-grey">
+    </div>
+    <div class="row" ng-class="$ctrl.verBusquedaResponsive ? 'visible-xs visible-sm visible-md visible-lg' : 'hidden-sm hidden-xs'">
         <div class="col-md-12">
             <div class="busqueda">
                 <h3>Hoteles disponibles para:</h3>
@@ -20,22 +24,26 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12 text-right">
-            <label>Ordenar</label>
-            <select>
-                <option>Más relevantes</option>
-            </select>
-        </div>
-    </div>
     <div class="row padding-top-5">
-        <div class="col-md-3 no-padding-right">
+        <div class="col-md-3 no-padding-right padding-bottom-5">
             <filters filters="$ctrl.filters" on-filter="$ctrl.filterList($event);"></filters>
         </div>
-        <div class="col-md-9">
-            <section>
-                <hotel ng-repeat="item in $ctrl.listHotels | filter: {name: $ctrl.objectFilter.name} | filter: $ctrl.customFilter track by $index" hotel="item"></hotel>
-            </section>
+        <div class="col-md-9 no-padding">
+            <div class="col-md-12 text-right padding-bottom-5">
+                <label>Ordenar</label>
+                <select ng-model="$ctrl.sorting" ng-change="$ctrl.applyChange()">
+                    <option value="recommended" selected="selected">Más relevantes</option>
+                    <option value="price-ASC">Precio más bajo</option>
+                    <option value="price-DESC">Precio más alto</option>
+                    <option value="stars-ASC">Menos estrellas</option>
+                    <option value="stars-DESC">Más estrellas</option>
+                </select>
+            </div>
+            <div class="col-md-12">
+                <section>
+                    <hotel ng-repeat="item in $ctrl.listHotels | filter: {name: $ctrl.objectFilter.name} | filter: $ctrl.customFilter | orderBy: $ctrl.sortingValue track by $index" hotel="item"></hotel>
+                </section>
+            </div>
         </div>
     </div>
 </div>

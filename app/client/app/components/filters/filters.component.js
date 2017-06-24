@@ -47,7 +47,7 @@ export class filtersComponent {
 
   cleanSearch(filter) {
     filter.filterNameHotel = '';
-    this.filterName(filter);
+    this.filter(filter);
   }
 
   getStars(num) {

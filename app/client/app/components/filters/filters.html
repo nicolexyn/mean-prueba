@@ -1,13 +1,21 @@
 <section>
-    <div>
+    <div class="visible-xs visible-sm text-center">
+        <a href="" ng-click="$ctrl.verHotelesResponsive = !$ctrl.verHotelesResponsive">Ver hoteles en el mapa <i class="fa" ng-class="$ctrl.verHotelesResponsive ? 'fa-caret-up' : 'fa-caret-down'" aria-hidden="true"></i></a>
+        <hr class="hr-grey">
+    </div>
+    <div class=" padding-top-30" ng-class="$ctrl.verHotelesResponsive ? 'visible-xs visible-sm visible-md visible-lg' : 'hidden-sm hidden-xs'">
         <div ng-style="{'background-image': 'url(../../../assets/images/googlemaps.jpg)'}" class="map-image">
         </div>
         <div class="view-map-desc">
-            <a href="">Ver hoteles en el mapa</a>
+            <a href="">Ver hoteles en el mapa </a>
         </div>
     </div>
-    <h4 class="filter-title">Filtrar</h4>
-    <div ng-repeat="filter in $ctrl.filters track by $index" class="padding-top-10">
+    <h4 class="filter-title hidden-xs hidden-sm">Filtrar</h4>
+    <div class="visible-xs visible-sm text-center">
+        <a href="" ng-click="$ctrl.verFiltrosResponsive = !$ctrl.verFiltrosResponsive">Filtrar <i class="fa" ng-class="$ctrl.verFiltrosResponsive ? 'fa-caret-up' : 'fa-caret-down'" aria-hidden="true"></i></a>
+        <hr class="hr-grey">
+    </div>
+    <div ng-repeat="filter in $ctrl.filters track by $index" class="padding-top-10" ng-class="$ctrl.verFiltrosResponsive ? 'visible-xs visible-sm visible-md visible-lg' : 'hidden-sm hidden-xs'">
         <uib-accordion ng-if="filter.type == 'NAME'">
             <div uib-accordion-group class="panel" is-open="true" ng-init="filter.open = true">
                 <uib-accordion-heading>

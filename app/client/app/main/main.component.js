@@ -7,10 +7,17 @@ export class MainController {
   listHotels = [];
   newHotel = '';
   objectFilter = {};
+  sortingValue = '';
+  sorting = '';
 
   /*@ngInject*/
   constructor(MainService) {
     this.MainService = MainService;
+  }
+
+  $onInit() {
+    this.sortingValue = 'recommended';
+    this.sorting = this.sortingValue;
     this.objectFilter = {
       price: {
         min: 0,
@@ -18,15 +25,11 @@ export class MainController {
       },
       stars: ''
     };
-  }
-
-  $onInit() {
+    
     this.MainService.getHotelList()
       .then(response => {
         this.listHotels = response.hotels;
         this.filters = response.filters;
-
-        this.fixFilters();
       });
 
     this.customFilter = hotel => {
@@ -37,51 +40,41 @@ export class MainController {
   // Arma el objeto con el cual se filtra el listado objectFilter {name, price_range, stars}
   filterList(event) {
     switch (event.type) {
-    case 'NAME':
-      this.objectFilter.name = event.filterNameHotel;
-      break;
-    case 'PRICE_RANGE':
-      this.objectFilter.price = { min: event.minValue, max: event.maxValue };
-      break;
-    case 'STAR':
-      if(event.values[0].selected) {
-        this.objectFilter.stars = '';
-      } else {
-        let starsFilter = '';
-        event.values.map(e => {
-          if(e.selected) {
-            starsFilter += e.code;
-          }
-        });
-        this.objectFilter.stars = starsFilter;
-      }
-      break;
+      case 'NAME':
+        this.objectFilter.name = event.filterNameHotel;
+        break;
+      case 'PRICE_RANGE':
+        this.objectFilter.price = { min: event.minValue, max: event.maxValue };
+        break;
+      case 'STAR':
+        if (event.values[0].selected) {
+          this.objectFilter.stars = '';
+        } else {
+          let starsFilter = '';
+          event.values.map(e => {
+            if (e.selected) {
+              starsFilter += e.code;
+            }
+          });
+          this.objectFilter.stars = starsFilter;
+        }
+        break;
     }
   }
 
-  /* Fix del mock de filtros obtenido de produccion (EVITAR VER ESTE CODIGO) */
-  fixFilters() {
-    let countStars = [0, 0, 0, 0, 0, 0];
-    let minPrice = this.listHotels[0].rate.price.per_night;
-    let maxPrice = this.listHotels[0].rate.price.per_night;
+  applyChange() {
+    console.log('this.sortingValue', this.sorting);
+    let sort = this.sorting.split('-');
 
-    this.listHotels.map(e => {
-      if(e.stars != 'all_STAR')
-        countStars[e.stars] = (countStars[e.stars] + 1) || 0;
-      if(e.rate.price.per_night < minPrice)
-        minPrice = e.rate.price.per_night;
-      if(e.rate.price.per_night > maxPrice)
-        maxPrice = e.rate.price.per_night;
-    });
-
-    this.filters[1].from = minPrice;
-    this.filters[1].to = maxPrice;
-
-    this.filters[2].values[5].count = countStars[1];
-    this.filters[2].values[4].count = countStars[2];
-    this.filters[2].values[3].count = countStars[3];
-    this.filters[2].values[2].count = countStars[4];
-    this.filters[2].values[1].count = countStars[5];
+    if(sort[0] === 'price') {
+        if(sort[1] === 'ASC'){
+            this.sortingValue = 'rate.price.per_night'
+        } else {
+            this.sortingValue = '-rate.price.per_night'
+        }
+    } else {
+        this.sortingValue = `${sort[1] === 'DESC' ? '-' : ''}${sort[0]}`;
+    }
   }
 }
 
