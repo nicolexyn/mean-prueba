@@ -57,5 +57,3 @@ Generadores disponibles:
 Para utilizar los generadores es necesario instalar estos modulos con el siguiente comando:
 ```
 npm install -g yo gulp-cli generator-angular-fullstack
-
-
