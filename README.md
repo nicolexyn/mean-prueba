@@ -54,4 +54,8 @@ Generadores disponibles:
     - angular-fullstack:factory
     - angular-fullstack:decorator
 
+Para utilizar Yeoman es necesario instalar estos modulos con el siguiente comando:
+
+npm install -g yo gulp-cli generator-angular-fullstack
+```
 
